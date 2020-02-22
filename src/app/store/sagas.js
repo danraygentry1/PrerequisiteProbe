@@ -1,9 +1,9 @@
 import { take, put, select } from 'redux-saga/effects';
 import uuid from 'uuid';
 import axios from 'axios';
-
 import * as mutations from './mutations';
 import { history } from './history'
+import  Cookies  from 'js-cookie'
 import {REQUEST_PURCHASE_PRODUCT} from "./mutations";
 
 /*const url = process.env.NODE_ENV == 'production' ? '' : "http://localhost:8080"; //url used to communicate to the server*/
@@ -66,12 +66,13 @@ export function* userAuthenticationSaga(){
             console.log(url);
 
             yield put(mutations.setState(data.state));
-            yield put(mutations.processAuthenticateUser(mutations.AUTHENTICATED))
-
+            yield put(mutations.processAuthenticateUser(mutations.AUTHENTICATED, data.state.session.userToken))
+            Cookies.set("auth", data.state.session.userToken)
             //history.push('/dashboard?' + data.state.userName);
+            history.push('/dashboard');
             //history.push('./wizard');
 
-            yield axios.post(url + '/buysingle');
+            //yield axios.post(url + '/buysingle');
 
         } catch (e) {
             console.log("can't authenticate");

@@ -50,9 +50,10 @@ export const requestAuthenticateUser = (username,password)=>({
     username,
     password
 })
-export const processAuthenticateUser = (status = AUTHENTICATING, session = null)=>({
+export const processAuthenticateUser = (status = AUTHENTICATING, userToken, session)=>({
     type:  PROCESSING_AUTHENTICATE_USER,
     session,
+    userToken: userToken,
     authenticated: status
 });
 export const requestPurchaseProduct = ()=>({

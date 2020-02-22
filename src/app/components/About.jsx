@@ -15,5 +15,6 @@ export const AboutComponent = ()=>{
                this critical information is compiled into one place in an easily searchable format...Until Now.</p>
         </div>
     </div>
+
 };
 

@@ -20,17 +20,17 @@ import * as mutations from './mutations';
 
 export const store = createStore(
     combineReducers({
-        session(userSession = defaultState.session || {},action){
-            let {type,authenticated,session} = action;
+        session(userSession = defaultState.session || {}, action){
+            let {type,authenticated,userToken} = action;
             switch (type) {
                 case mutations.SET_STATE:
-                    return {...userSession, id:action.state.session.id}
+                    return {...userSession, id:action.state.session.id, userToken:action.state.session.userToken}
                 case mutations.REQUEST_AUTHENTICATE_USER:
                     return {...userSession, authenticated:mutations.AUTHENTICATING}; //tells app we are in the process of authenticating
                 case mutations.PROCESSING_AUTHENTICATE_USER:
-                    return {...userSession, authenticated};
+                    return {...userSession, authenticated, userToken};
                 default:
-                    return userSession;
+                    return userSession
             }
         },
         ptSchoolColumnsArray( ptSchoolColumnsArray = [], action){
@@ -63,6 +63,13 @@ export const store = createStore(
                 default: return userName
             }
         }
+      /*  userToken (userToken = "", action){
+            switch (action.type) {
+                case mutations.SET_STATE:
+                    return action.state.userToken;
+                default: return userToken
+            }
+        }*/
         /*tasks(tasks = [], action){
             switch (action.type) {
                 case mutations.SET_STATE:

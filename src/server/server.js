@@ -132,10 +132,10 @@ app.post('/', function (req, res) {
 app.use(enableCORS);
 //cors({ origin: true})*/
 
-app.use(
+/*app.use(
     '/server/server',
     proxy({ target: 'http://localhost:3000', changeOrigin: true })
-);
+);*/
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -144,6 +144,7 @@ app.use((req, res, next) => {
     next();
 });
 
+//body parser - aows us to get the data from the body of the requests
 app.use(
     cors(),
     bodyParser.urlencoded({extended:true}),

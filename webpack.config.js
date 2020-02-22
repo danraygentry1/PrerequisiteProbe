@@ -42,7 +42,7 @@ module.exports = {
             'Access-Control-Allow-Headers': '*',
             'Access-Control-Allow-Methods': '*',
         },
-        proxy: {
+        /*proxy: {
             '/server/server': {
                 target: 'http://localhost:3000',
                 secure: false,
@@ -51,10 +51,10 @@ module.exports = {
                 },
                 //pathRewrite: {'^/api': '/'}
             },
-            /*onProxyReq: function onProxyReq(proxyReq, req, res) {
+            /!*onProxyReq: function onProxyReq(proxyReq, req, res) {
                 proxyReq.removeHeader("origin")
-            }*/
-        }
+            }*!/
+        }*/
     },
     devtool: 'source-map',
      //devtool: 'false',

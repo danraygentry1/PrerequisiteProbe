@@ -2,91 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ce02b82-2744-48b5-9601-dadee3ab73ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/modern-business.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/FullColor_IconOnly_10%x10%_72dpi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/FullColor_TextOnly_Menu Version 250x22.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/FullColor_TextOnly_Menu Version.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Prerequiste Probe Croped_1024x1024.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Prerequiste Probe Cropped2_1024x1024.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Prerequiste Probe Cropped3_1024x1024.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Prerequiste Probe Cropped4_1024x1024.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Prerequiste Probe Cropped5_1024x1024.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Prerequiste Probe FullColor_1024x1024.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Prerequiste Probe FullColor_1900x1080.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index-bak.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/contact_me.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jqBootstrapValidation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mail/contact_me.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/About.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/Grid.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/backups/Grid-bak.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/wizard/AccountPayWizard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/wizard/Plugs.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/wizard/Stars.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/wizard/nav.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/wizard/nav.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/wizard/transitions.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/wizard/wizard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/wizard/wizard.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repos/preReqPurchaseRepo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/authenticate-bak.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/connect-db-bak.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/services/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/services/paymentService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/services/postgresService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/authenticate-test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/paymentService-test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/postgresService-test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/css/JQXGrid/jqx.base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/css/JQXGrid/jqx.bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/jquery/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/jquery/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/jquery/jquery.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/jquery/jquery.slim.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/jquery/jquery.slim.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/jquery/jquery.slim.min.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Header.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Nav.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/auth/Auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/auth/VerifyToken.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/auth/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/backups/Dashboard-bak.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/About.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Dashboard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Navigation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Navigation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/TaskDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/TaskDetail.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/TaskList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/TaskList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/mutations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/sagas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/sagas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/authenticate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/authenticate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/connect-db.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/connect-db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/initialize-db.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/initialize-db.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
@@ -122,7 +55,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="LET" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../React Security w AuthO/react-auth0-authentication-security/03/demos/after" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/auth" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -132,22 +65,22 @@
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propDebugger" />
-    <property name="ts.external.directory.path" value="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\app\components" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\app\Server" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\app\components\wizard" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\test" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\tests" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\server\auth" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\app\components\wizard" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\server" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\app\components" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\vendor\bootstrap\css\JQXGrid" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\vendor\bootstrap\css\JQXGrid\images" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\auth" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\server" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\app\components" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\app\Server" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\app\components\wizard" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -298,10 +231,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Mocha.Students.POST /.should get authentication state" />
         <item itemvalue="Mocha.PayPal Order.Should create a single order" />
         <item itemvalue="Mocha.PayPal Order.Should Insert a new user into the database" />
         <item itemvalue="Mocha.PayPal Order.Should Update PayPal order" />
-        <item itemvalue="Mocha.Students.POST /.should get authentication state" />
         <item itemvalue="Mocha.PayPal Order.Should Read a PayPal order from the database" />
       </list>
     </recent_temporary>
@@ -344,6 +277,11 @@
       <workItem from="1580515152483" duration="95994000" />
       <workItem from="1581398886465" duration="662000" />
       <workItem from="1581639866952" duration="19000" />
+      <workItem from="1581644145476" duration="679000" />
+      <workItem from="1581708448723" duration="6031000" />
+      <workItem from="1581963902928" duration="1248000" />
+      <workItem from="1581965220708" duration="40033000" />
+      <workItem from="1582175330041" duration="43473000" />
     </task>
     <servers />
   </component>
@@ -383,7 +321,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/authenticate.js</url>
-          <line>51</line>
+          <line>72</line>
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -398,7 +336,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/sagas.js</url>
-          <line>84</line>
+          <line>85</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -423,7 +361,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>328</line>
+          <line>329</line>
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -433,7 +371,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/sagas.js</url>
-          <line>76</line>
+          <line>77</line>
           <option name="timeStamp" value="91" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -443,33 +381,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/Main.jsx</url>
-          <line>45</line>
+          <line>69</line>
           <option name="timeStamp" value="93" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/sagas.js</url>
-          <line>87</line>
+          <line>88</line>
           <option name="timeStamp" value="95" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/authenticate.js</url>
-          <line>27</line>
-          <option name="timeStamp" value="98" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/authenticate-test.js</url>
           <line>11</line>
           <option name="timeStamp" value="114" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/authenticate.js</url>
-          <line>11</line>
-          <option name="timeStamp" value="115" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/authenticate.js</url>
-          <line>13</line>
-          <option name="timeStamp" value="116" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/services/paymentService.js</url>
@@ -508,7 +431,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/Login.jsx</url>
-          <line>43</line>
+          <line>50</line>
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -523,18 +446,29 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>131</line>
-          <option name="timeStamp" value="137" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>305</line>
+          <line>306</line>
           <option name="timeStamp" value="146" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>296</line>
+          <line>297</line>
           <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/server/authenticate.js</url>
+          <line>45</line>
+          <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/auth/Auth.js</url>
+          <line>9</line>
+          <option name="timeStamp" value="149" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/auth/Auth.js</url>
+          <line>11</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="150" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -542,7 +476,7 @@
       <configuration name="mocha-javascript-test-runner">
         <watch expression="app.cors" language="JavaScript" />
         <watch expression="res.header" language="JavaScript" />
-        <watch expression="res.re" language="JavaScript" />
+        <watch expression="res" language="JavaScript" />
       </configuration>
     </watches-manager>
   </component>

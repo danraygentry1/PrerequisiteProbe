@@ -3,14 +3,23 @@ import { connect } from 'react-redux'; //imports connect method
 import { ConnectedTaskList } from './TaskList'
 import Grid from './Grid'
 import {generatedata} from "../../sampledata/generatedata";
+import { NavComponent } from "./Nav";
+
 
 export const Dashboard = ({ptSchoolColumnsArray, ptSchoolRowsArray, ptSchoolCourseRowsArray})=>(
+
     <div>
-        {
+            <NavComponent/>
             <Grid columns={ptSchoolColumnsArray} rows={ptSchoolRowsArray} innerRows ={ptSchoolCourseRowsArray}  />
-            //<Grid/>
-        }
     </div>
+    /*<div>
+            {
+        <NavComponent/>
+        <Grid columns={ptSchoolColumnsArray} rows={ptSchoolRowsArray} innerRows ={ptSchoolCourseRowsArray}  />
+        //<Grid/>
+        }
+    </div>*/
+
 )
 
 function mapStateToProps(state){
