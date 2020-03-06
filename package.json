@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "proxy": "http://localhost:9229",
   "scripts": {
     "build": "webpack -p",
     "test": "./node_modules/.bin/mocha --require @babel/register src/test/*.js",
@@ -15,6 +16,8 @@
     "pg-test": "babel-node src/server/connect-db",
     "generate-data-test": "babel-node src/sampledata/generatedata_JavaScript.js",
     "react-test": "riteway src/test/react-test.js"
+
+
   },
   "keywords": [],
   "author": "",

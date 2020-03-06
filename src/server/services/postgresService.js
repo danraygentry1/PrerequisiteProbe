@@ -21,7 +21,7 @@ import {connectDB} from "../connect-db";
     });
   };*/ //postgresService object aka our module.exports object
 
-  postgresService.Create = async (colName, orderObj, cb)=>{
+  postgresService.create_pt_user_order_on_buy = async (colName, orderObj, cb)=>{
       const pool = await connectDB.connectDB();
       const text = 'INSERT INTO pt_user_order(pt_user_id, order_type, purchase_name, purchase_price, tax_price, "desc") VALUES($1, $2, $3, $4, $5, $6) RETURNING *'
       const values = [1, orderObj.orderType, orderObj.purchaseName, orderObj.purchasePrice, orderObj.taxPrice, orderObj.description]
@@ -40,14 +40,6 @@ import {connectDB} from "../connect-db";
 
 
 
-/*  postgresService.Update = (colName, findObj, updateObj, cb)=>{
-    Connect((err, db, close)=>{
-      db.collection(colName).update(findObj, { $set: updateObj }, (err, results)=>{
-        cb(err, results);
-        return close();
-      });
-    });
-  };*/
 
   postgresService.get_pt_user_order = async (tableName, payId, cb)=>{
     const pool = await connectDB.connectDB();
@@ -64,7 +56,7 @@ import {connectDB} from "../connect-db";
     }
   };
 
-  postgresService.Update = async (colName, ptUserId, payId, cb)=>{
+  postgresService.update_pt_user_order_on_buy = async (colName, ptUserId, payId, cb)=>{
     const pool = await connectDB.connectDB();
     const text = 'UPDATE pt_user_order set pay_id = $1 where pt_user_order_id = $2 RETURNING *'
     const values = [payId, ptUserId]
@@ -97,8 +89,8 @@ import {connectDB} from "../connect-db";
 
   postgresService.createPTUser = async (tableName, userObj, cb)=>{
     const pool = await connectDB.connectDB();
-    const text = 'INSERT INTO pt_user(first_name, last_name, user_name, password_hash, email_address) VALUES($1, $2, $3, $4, $5) RETURNING *'
-    const values = [userObj.first_name, userObj.last_name, userObj.user_name, userObj.password_hash, userObj.email_address]
+    const text = 'INSERT INTO pt_user(first_name, last_name, user_name, password_hash, email_address, subscribed) VALUES($1, $2, $3, $4, $5, $6) RETURNING *'
+    const values = [userObj.first_name, userObj.last_name, userObj.user_name, userObj.password_hash, userObj.email_address, userObj.subscribed]
     try {
       const res = await pool.query(text, values)
       console.log(res.rows[0])

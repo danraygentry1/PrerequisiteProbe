@@ -28,7 +28,6 @@ function mapStateToProps(state){
         ptSchoolRowsArray:state.ptSchoolRowsArray,
         ptSchoolCourseRowsArray:state.ptSchoolCourseRowsArray
     }
-    console.log(state.ptSchoolCourseRowsArray)
 } //connects groups.  Returns props of dashboard
 
 

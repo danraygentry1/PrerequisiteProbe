@@ -70,7 +70,7 @@
       CreateTime: "",
       Transactions: ""
     };*/
-    postgresService.Create('paypal_orders', orderObj, (results)=>{
+    postgresService.create_pt_user_order_on_buy('paypal_orders', orderObj, (results)=>{
       let paymentObj = {
         "intent": "sale",
         "payer": {
@@ -94,7 +94,7 @@
             CreateTime: response.create_time,
             Transactions: response.transactions
           };*/
-          postgresService.Update('paypal_orders', results[0].pt_user_order_id, response.id, (err, results)=>{
+          postgresService.update_pt_user_order_on_buy('paypal_orders', results[0].pt_user_order_id, response.id, (err, results)=>{
             for(let i = 0; i < response.links.length; i++){
               if(response.links[i].rel == "approval_url"){
                 return cb(null, response.links[i].href);

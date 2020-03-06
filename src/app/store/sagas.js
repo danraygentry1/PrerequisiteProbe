@@ -4,6 +4,7 @@ import axios from 'axios';
 import * as mutations from './mutations';
 import { history } from './history'
 import  Cookies  from 'js-cookie'
+import { store } from '../store'
 import {REQUEST_PURCHASE_PRODUCT} from "./mutations";
 
 /*const url = process.env.NODE_ENV == 'production' ? '' : "http://localhost:8080"; //url used to communicate to the server*/
@@ -67,12 +68,12 @@ export function* userAuthenticationSaga(){
 
             yield put(mutations.setState(data.state));
             yield put(mutations.processAuthenticateUser(mutations.AUTHENTICATED, data.state.session.userToken))
-            Cookies.set("auth", data.state.session.userToken)
-            //history.push('/dashboard?' + data.state.userName);
-            history.push('/dashboard');
-            //history.push('./wizard');
 
-            //yield axios.post(url + '/buysingle');
+            //set authentication cookie to be alive during a user's session
+            Cookies.set("auth", data.state.session.userToken)
+
+            history.push('/dashboard');
+
 
         } catch (e) {
             console.log("can't authenticate");
@@ -83,18 +84,19 @@ export function* userAuthenticationSaga(){
 } //use yield with async functions
 export function* purchaseProductSaga() {
     while (true) {
-        const type = yield take(mutations.REQUEST_PURCHASE_PRODUCT);
+        yield take(mutations.REQUEST_PURCHASE_PRODUCT);
         try {
-            //yield axios.post(url + '/');
-            //yield put(mutations.requestPurchaseProduct())
 
-            //history.push('./wizard');
-            //history.push('/dashboard');
-            //history.push('../buysingle');
-            //axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
-            //axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-            yield axios.post(url + '/buysingle');
+            const userObj = store.getState().userObj
 
+            const paypalUrl = yield axios.post(url + '/buysingle',userObj);
+            history.push("/buysingle?" + paypalUrl.data);
+
+
+
+            /*yield axios.post(url + '/buysingle',  { params: {
+                    "wenis": "wenis"
+                }})*/
         } catch (e) {
             console.log(e.toString());
         }
@@ -114,6 +116,21 @@ export function* createAccountSaga() {
             //axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
             //axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
             //yield axios.post(url + '/buysingle');
+
+        } catch (e) {
+            console.log(e.toString());
+        }
+    }
+}
+export function* createUserSaga() {
+    while (true) {
+        const userObj = yield take(mutations.CREATE_USER);
+        try {
+            //add userObj to state
+            let state = store.getState()
+            state["userObj"] = userObj
+
+            yield put(mutations.setState(state));
 
         } catch (e) {
             console.log(e.toString());

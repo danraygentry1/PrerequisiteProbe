@@ -59,8 +59,8 @@ import * as mutations from "../../store/mutations";
                                 nav={<Nav />}
                                 instance={this.setInstance}
                             >
-                                <First hashKey={'FirstStep'} update={this.updateForm} />
-                                <Second form={this.state.form} purchaseProduct={this.props.purchaseProduct} />
+                                <First hashKey={'FirstStep'} update={this.updateForm} createUser={this.props.createUser} />
+                                <Second hashKey={'SecondStep'} form={this.state.form} purchaseProduct={this.props.purchaseProduct} />
                                {/* <Progress />
                                 <Last hashKey={'TheEnd!'} />*/}
                             </StepWizard>
@@ -97,13 +97,17 @@ const Stats = ({
                    totalSteps,
                    step,
                    purchaseProduct,
+                   createUser,
+                   userObj,
                    isValid
                }) => (
     <div>
         <hr />
 
         { step < totalSteps ?
-            <button className='btn btn-primary btn-block' onClick={nextStep}>Continue</button>
+            //onClick={nextStep}
+            //onClick={createUser(userObj)}
+            <button className='btn btn-primary btn-block' onClick={nextStep} >Continue</button>
             :
             <div className="container">
                 <button onClick={purchaseProduct}>
@@ -133,6 +137,7 @@ const initialState = {
     username: "",
     password: "",
     email: "",
+    userObj: {},
     isValid: false,
 
     userNameError: "",
@@ -169,7 +174,7 @@ const initialState = {
     }
 }*/
 
-class First extends Component {
+export class First extends Component {
     state = initialState;
 
     handleChange = event => {
@@ -208,6 +213,7 @@ class First extends Component {
     handleValidate = () => {
         const isValid = this.validate();
         if (isValid) {
+            this.props.createUser(this.state)
             console.log(this.state);
             // clear form
             this.setState(initialState);
@@ -234,7 +240,7 @@ class First extends Component {
                             <label>First Name</label>
                             <input
                                 className='form-control'
-                                name="First Name"
+                                name="firstname"
                                 placeholder="First Name"
                                 value={this.state.firstname}
                                 onChange={this.handleChange}
@@ -249,7 +255,7 @@ class First extends Component {
                             <label>Last Name</label>
                             <input
                                 className='form-control'
-                                name="Last Name"
+                                name="lastname"
                                 placeholder="Last Name"
                                 value={this.state.lastname}
                                 onChange={this.handleChange}
@@ -359,7 +365,7 @@ class Last extends Component {
     }
 }
 
-const AccountPayWizardComponent = ({authenticated, purchaseProduct})=>{
+const AccountPayWizardComponent = ({authenticated, purchaseProduct, createUser})=>{
 
  /*   return <div className="card border-0 flex-grow-0 flex align-items-center justify-content-center">
         <div className="card-body">
@@ -369,20 +375,23 @@ const AccountPayWizardComponent = ({authenticated, purchaseProduct})=>{
     </div>*/
 
  return <div>
-     <Wizard purchaseProduct={purchaseProduct} />
+     <Wizard purchaseProduct={purchaseProduct} createUser={createUser} />
  </div>
 
 };  //authenticateUser is a destructed argument.
     //component, store, saga, back to component
     //bootstrap - col-6 is column width of 6
 
-const mapStateToProps = ({session})=>({
-    authenticated:session.authenticated
+const mapStateToProps = ()=>({
+
 });
 const mapDispatchToProps = (dispatch)=>({
     purchaseProduct(e){
         e.preventDefault();
         dispatch(mutations.requestPurchaseProduct());
+    },
+    createUser(userObj) {
+        dispatch(mutations.createUser(userObj))
     }
 });
 

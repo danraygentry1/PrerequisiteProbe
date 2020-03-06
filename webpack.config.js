@@ -4,13 +4,13 @@ const path = require("path");
 //const NodemonPlugin = require('nodemon-webpack-plugin'); // Ding
 const proxy = require('http-proxy-middleware');
 
-const onProxyRes = function(proxyRes, req, res) {
+/*const onProxyRes = function(proxyRes, req, res) {
     // add new header to response
     proxyRes.headers['x-added'] = 'foobar';
 
     // remove header from response
     delete proxyRes.headers['x-removed'];
-};
+};*/
 
 // export default {
 module.exports = {
@@ -36,25 +36,21 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,  //needed for react router in later module
-        //port: 8080,
+        port: 8080,
         headers: {
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Headers': '*',
             'Access-Control-Allow-Methods': '*',
         },
-        /*proxy: {
-            '/server/server': {
-                target: 'http://localhost:3000',
-                secure: false,
-                onProxyRes: response => {
-                    response.headers['access-control-allow-origin'] = '*';
-                },
+        proxy: {
+            //target: "http://localhost:9229/",
+            "/dashboard": {
+                target: "http://localhost:9229/",
+                //changeOrigin: true,
+                //secure:false,
                 //pathRewrite: {'^/api': '/'}
-            },
-            /!*onProxyReq: function onProxyReq(proxyReq, req, res) {
-                proxyReq.removeHeader("origin")
-            }*!/
-        }*/
+             },
+        }
     },
     devtool: 'source-map',
      //devtool: 'false',

@@ -7,7 +7,8 @@ export const SET_TASK_NAME = 'SET_TASK_NAME';
 export const REQUEST_AUTHENTICATE_USER = 'REQUEST_AUTHENTICATE_USER';
 export const PROCESSING_AUTHENTICATE_USER = 'PROCESSING_AUTHENTICATE_USER';
 export const REQUEST_PURCHASE_PRODUCT = 'REQUEST_PURCHASE_PRODUCT';
-export const CREATE_ACCOUNT =  'CREATE_ACCOUNT';
+export const CREATE_ACCOUNT =  'CREATE_ACCOUNT'
+export const CREATE_USER =  'CREATE_USER';
 export const AUTHENTICATING = 'AUTHENTICATING';
 export const AUTHENTICATED = 'AUTHENTICATED';
 export const NOT_AUTHENTICATED = 'NOT_AUTHENTICATED';
@@ -56,12 +57,18 @@ export const processAuthenticateUser = (status = AUTHENTICATING, userToken, sess
     userToken: userToken,
     authenticated: status
 });
-export const requestPurchaseProduct = ()=>({
-    type:  REQUEST_PURCHASE_PRODUCT
+export const requestPurchaseProduct = (userObj = {})=>({
+    type:  REQUEST_PURCHASE_PRODUCT,
+    userObj
+
+
 });
-export const createAccount = (username)=>({
+export const createAccount = ()=>({
     type:  CREATE_ACCOUNT,
-    username
+});
+export const createUser = (userObj = {})=>({
+    type:  CREATE_USER,
+    userObj
 });
 
 

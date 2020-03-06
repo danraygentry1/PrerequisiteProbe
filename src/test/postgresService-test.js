@@ -31,7 +31,8 @@ describe("PayPal Order", function () {
         last_name: "Pinturo",
         user_name: "danny",
         password_hash: md5("jeffery"),
-        email_address: "danny@gmail.com"
+        email_address: "danny@gmail.com",
+        subscribed: "false"
     }
 
     beforeEach(function() {
@@ -45,7 +46,7 @@ describe("PayPal Order", function () {
     });
 
     it("Should Insert a PayPal order into the database", function (done) {
-        postgresService.Create('pt_user_order', orderObj, (results) => {
+        postgresService.create_pt_user_order_on_buy('pt_user_order', orderObj, (results) => {
             should.exist(results)
             done()
         })
@@ -65,7 +66,5 @@ describe("PayPal Order", function () {
             done()
         })
     });
-
-
 
 })

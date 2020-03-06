@@ -8,7 +8,6 @@ import path from 'path';
 import request from 'request'
 import {Router} from "react-router";
 let paymentService = require('../server/services/paymentService')
-let postgresService = require('../server/services/postgresService')
 let preReqPurchaseRepo = require('../repos/preReqPurchaseRepo')
 let proxy = require('http-proxy-middleware');
 
@@ -17,11 +16,14 @@ let port = 9229
 let app = express();
 
 //body parser - aows us to get the data from the body of the requests
-app.use(
+app.use((req, res, next) => {
     cors(),
     bodyParser.urlencoded({extended: true}),
     bodyParser.json(),
-) //anything in here is considered a plugin,  BodyParsers use post requests instead of get requests. //anything in here is considered a plugin,  BodyParsers use post requests instead of get requests.
+    res.header('Access-Control-Allow-Origin', '*');
+    next()
+
+}) //anything in here is considered a plugin,  BodyParsers use post requests instead of get requests.
 
 
 
@@ -35,47 +37,51 @@ if (process.env.NODE_ENV == `production`) {
 }
 
 
-app.post('/saveUser', (req, res)=> {
-    postgresService.createPTUser("pt_user", req.userObj, (err, results)=>{
-        if(err){
-            res.json(err);
-        } else {
-            //res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-            //res.redirect(url);
-            //paypalUrl = url
 
-            console.log("USER SAVED")
-            return res.send()
-        }
-    })
-})
 
 
 
 app.post('/buysingle', (req, res)=>{
-    let userObj = req.body
-    const orderObj = {
-        orderID: "",
-        orderType: "PayPal",
-        createTime: "",
-        transactions: "",
-        quantity: 1,
-        purchaseName: "Prerequisite Probe Access",
-        purchasePrice: 10.00,
-        taxPrice: 0.00,
-        shippingPrice: 0.00,
-        description: "Prerequisite Probe Access"
-    };
-    preReqPurchaseRepo.BuySingle(orderObj, (err, url)=>{
-        if(err){
-            res.json(err);
-        } else {
-            console.log("AFTER BUYSINGLE" + url)
-            console.log("CREATE USER OBJECT SUCCESSFUL" + userObj.toString())
-            return res.send(url)
-        }
-    });
+/*res.header("Access-Control-Allow-Origin", "*");
+res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+res.set("Access-Control-Allow-Origin", '*');
+res.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");*/
+// let orderObj = req.body.orderObj;
+/*request(
+    { url: 'http://localhost:8080/' },
+    (error, response, body) => {
+        if (error || response.statusCode !== 200) {
+            return res.status(500).json({type: 'error', message: err.message});
+        }*/
+        const orderObj = {
+            orderID: "",
+            orderType: "PayPal",
+            createTime: "",
+            transactions: "",
+            quantity: 1,
+            purchaseName: "Prerequisite Probe Access",
+            purchasePrice: 10.00,
+            taxPrice: 0.00,
+            shippingPrice: 0.00,
+            description: "Prerequisite Probe Access"
+        };
+        preReqPurchaseRepo.BuySingle(orderObj, (err, url)=>{
+            /* res.header("Access-Control-Allow-Origin", '*');
+              res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+              res.set("Access-Control-Allow-Origin", '*');
+              res.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");*/
+            if(err){
+                res.json(err);
+            } else {
+                console.log("BEFORE REDIRECT")
+                res.header('Access-Control-Allow-Origin', '*');
+                //res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+                res.redirect(url);
+                console.log("AFTER REDIRECT")
+            }
+        });
 
+    /*})*/
 });
 
 
@@ -92,7 +98,6 @@ app.get('/cancel/:orderID', (req, res)=>{
 });
 
 app.get('/success/:orderID', (req, res)=>{
-    console.log("Now in Paypal Buy Success")
     //res.header("Access-Control-Allow-Origin", "*");
     //res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     let orderID = req.params.orderID;
@@ -108,8 +113,6 @@ app.get('/success/:orderID', (req, res)=>{
             //res.send('<h1>Order Placed</h1>Please save your order confirmation number : <h3>' + successID + '</h3>');
         }
     });
-    //res.send('Order Placed')
-    res.redirect('http://localhost:8080/')
 }) ;
 
 app.get('/refund/:orderID', (req, res)=>{

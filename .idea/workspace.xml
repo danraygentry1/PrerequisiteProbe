@@ -2,25 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ce02b82-2744-48b5-9601-dadee3ab73ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/components/Header.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/Nav.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/auth/Auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/auth/VerifyToken.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/auth/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/backups/Practice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/backup/Practice Horseshit.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/backup/server-bak.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/backup/server-orig.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/About.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Dashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/wizard/wizard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/wizard/wizard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/mutations.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/sagas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/sagas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/authenticate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/authenticate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repos/preReqPurchaseRepo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repos/preReqPurchaseRepo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/services/paymentService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/services/paymentService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/services/postgresService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/services/postgresService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/postgresService-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/postgresService-test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,7 +53,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="LET" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/auth" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/server/backup" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -68,19 +66,19 @@
     <property name="ts.external.directory.path" value="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\server\backup" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\auth" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\server" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\app\components" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\app\Server" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\server\auth" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\app\components\wizard" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\server" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\app\components" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\auth" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\server" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\app\components" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\app\Server" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\app\components\wizard" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -95,7 +93,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.Server">
+  <component name="RunManager" selected="Node.js.API">
     <configuration name="Server JavaScript" type="JavascriptDebugType" uri="http://localhost:8080/" useFirstLineBreakpoints="true">
       <mapping url="webpack:///src/app" local-file="$PROJECT_DIR$/src/app" />
       <mapping url="webpack:///src" local-file="$PROJECT_DIR$/src" />
@@ -105,6 +103,19 @@
           <command value="run" />
           <scripts>
             <script value="start-dev" />
+          </scripts>
+          <node-interpreter value="project" />
+          <envs />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="API" type="NodeJSConfigurationType" path-to-js-file="src/server/server.js" working-dir="$PROJECT_DIR$">
+      <method v="2">
+        <option name="NpmBeforeRunTask" enabled="true">
+          <package-json value="$PROJECT_DIR$/package.json" />
+          <command value="run" />
+          <scripts>
+            <script value="server" />
           </scripts>
           <node-interpreter value="project" />
           <envs />
@@ -228,6 +239,7 @@
       <item itemvalue="Mocha.PayPal Order.Should Update PayPal order" />
       <item itemvalue="Mocha.PayPal Order.Should Insert a new user into the database" />
       <item itemvalue="Node.js.Server" />
+      <item itemvalue="Node.js.API" />
     </list>
     <recent_temporary>
       <list>
@@ -281,7 +293,8 @@
       <workItem from="1581708448723" duration="6031000" />
       <workItem from="1581963902928" duration="1248000" />
       <workItem from="1581965220708" duration="40033000" />
-      <workItem from="1582175330041" duration="43473000" />
+      <workItem from="1582175330041" duration="71593000" />
+      <workItem from="1582665084504" duration="62323000" />
     </task>
     <servers />
   </component>
@@ -326,7 +339,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/postgresService-test.js</url>
-          <line>54</line>
+          <line>55</line>
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -336,17 +349,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/sagas.js</url>
-          <line>85</line>
+          <line>86</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/wizard/wizard.jsx</url>
-          <line>382</line>
+          <line>388</line>
           <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/wizard/wizard.jsx</url>
-          <line>371</line>
+          <line>377</line>
           <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -360,34 +373,24 @@
           <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>329</line>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/sagas.js</url>
-          <line>54</line>
+          <line>55</line>
           <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/sagas.js</url>
-          <line>77</line>
+          <line>78</line>
           <option name="timeStamp" value="91" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/wizard/wizard.jsx</url>
-          <line>383</line>
+          <line>389</line>
           <option name="timeStamp" value="92" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/Main.jsx</url>
           <line>69</line>
           <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/app/store/sagas.js</url>
-          <line>88</line>
-          <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/authenticate-test.js</url>
@@ -401,32 +404,32 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/postgresService-test.js</url>
-          <line>59</line>
+          <line>60</line>
           <option name="timeStamp" value="119" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/postgresService-test.js</url>
-          <line>62</line>
+          <line>63</line>
           <option name="timeStamp" value="120" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/services/postgresService.js</url>
-          <line>84</line>
+          <line>76</line>
           <option name="timeStamp" value="123" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/postgresService-test.js</url>
-          <line>63</line>
+          <line>64</line>
           <option name="timeStamp" value="124" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/services/postgresService.js</url>
-          <line>98</line>
+          <line>90</line>
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/wizard/wizard.jsx</url>
-          <line>320</line>
+          <line>326</line>
           <option name="timeStamp" value="126" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -445,16 +448,6 @@
           <option name="timeStamp" value="130" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>306</line>
-          <option name="timeStamp" value="146" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>297</line>
-          <option name="timeStamp" value="147" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/authenticate.js</url>
           <line>45</line>
           <option name="timeStamp" value="148" />
@@ -467,8 +460,23 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/auth/Auth.js</url>
           <line>11</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/store/sagas.js</url>
+          <line>87</line>
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/server/server.js</url>
+          <line>56</line>
+          <option name="timeStamp" value="162" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/server/server.js</url>
+          <line>97</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="163" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

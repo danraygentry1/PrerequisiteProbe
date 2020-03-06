@@ -27,7 +27,7 @@ const RouteGuard = Component =>({match}) =>{
     //if (!store.getState().session.authenticated &&  match.url != "/wizard")
     //if(verifyToken(store.getState().session.userToken))
     //let tokenVerified = verifyToken(Cookies.get('auth'))
-    if(!isTokenVerified(Cookies.get('auth')))
+    if(!isTokenVerified(Cookies.get('auth')) && match.url != "/wizard")
     {
         return <Redirect to="/"/>}
     else {
@@ -70,19 +70,18 @@ export const Main = ()=>(
                     path="/dashboard"
                     render={RouteGuard(ConnectedDashboard)}
                 />
-                <Route
-                    exact
-                    path="/task/:id"
-                    render={RouteGuard(ConnectTaskDetail)}
-                    //render={({match})=>(<ConnectTaskDetail match={match}/>)}
-                />
+                <Route path='/buysingle' component={() => {
+                    let url = window.location.href
+                    let paypalUrl = ""
+                    let hashes = url.split("?")
+                    for (let i = 1; i < hashes.length; i++) {
+                        paypalUrl += hashes[i]
+                    }
+                    window.location.href = paypalUrl.toString();
+                    return null;
+                }}/>
             </div>
         </Provider>
     </Router>
 
 )
-/*const mapStateToProps = ({state})=>({
-    session:state.session
-});*/
-
-//export const ConnectedMain = connect(mapStateToProps)(Main);
