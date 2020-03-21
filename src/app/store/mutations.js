@@ -66,7 +66,7 @@ export const requestPurchaseProduct = (userObj = {})=>({
 export const createAccount = ()=>({
     type:  CREATE_ACCOUNT,
 });
-export const createUser = (userObj = {})=>({
+export const createUser = (userObj)=>({
     type:  CREATE_USER,
     userObj
 });

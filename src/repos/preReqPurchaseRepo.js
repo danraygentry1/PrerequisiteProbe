@@ -28,6 +28,7 @@
   }; //when user hits cancel button on paypal
 
   squatchPurchaseRepo.ExecuteOrder = (payerID, orderID, payID, cb)=>{
+    console.log("EXECUTE ORDER FUNCTION" + orderID)
     paymentService.ExecutePayment(payerID, orderID, payID, (err, response)=>{
       return cb(err, response);
     });

@@ -54,7 +54,7 @@ export const store = createStore(
                 default: return ptSchoolCourseRowsArray
             }
         },
-        userObj (userObj = {}, action){
+        userObj (userObj = "", action){
             switch (action.type) {
                 case mutations.SET_STATE:
                     return action.state.userObj;

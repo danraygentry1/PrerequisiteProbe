@@ -39,7 +39,7 @@ describe("PayPal Order", function () {
 
     });
     it("Should Insert a new user into the database", function (done) {
-        postgresService.createPTUser('pt_user', userObj, (results) => {
+        postgresService.create_pt_user('pt_user', userObj, (results) => {
             should.exist(results)
             done()
         })

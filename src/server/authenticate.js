@@ -61,6 +61,8 @@ export const authenticationRoute = app => {
         console.log(state)
         state["ptSchoolCourseRowsArray"] = await getPTSchoolCourseInfo(pool);
         state["userName"] = username;
+        state["userObj"] = "";
+
         state["session"] = {authenticated:'AUTHENTICATED', id:user["pt_user_id"], userToken:userToken}
         //res.cookie('auth', userToken)
 

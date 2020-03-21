@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import StepWizard from 'react-step-wizard';
 import { connect } from 'react-redux';
+import md5 from 'md5';
 
 import Nav from './nav';
 import Plugs from './Plugs';
@@ -132,12 +133,13 @@ const Stats = ({
     </div>
 );
 const initialState = {
-    firstname: "",
-    lastname: "",
-    username: "",
+    first_name: "",
+    last_name: "",
+    user_name: "",
     password: "",
-    email: "",
-    userObj: {},
+    password_hash: "",
+    subscribed: false,
+    email_address: "",
     isValid: false,
 
     userNameError: "",
@@ -194,11 +196,11 @@ export class First extends Component {
         // let passwordError = "";
 
 
-        if (!this.state.username) {
+        if (!this.state.user_name) {
             userNameError = "name cannot be blank";
         }
 
-        if (!this.state.email.includes("@")) {
+        if (!this.state.email_address.includes("@")) {
             emailError = "invalid email";
         }
 
@@ -240,9 +242,9 @@ export class First extends Component {
                             <label>First Name</label>
                             <input
                                 className='form-control'
-                                name="firstname"
+                                name="first_name"
                                 placeholder="First Name"
-                                value={this.state.firstname}
+                                value={this.state.first_name}
                                 onChange={this.handleChange}
                             />
                             <div style={{ fontSize: 12, color: "red" }}>
@@ -255,9 +257,9 @@ export class First extends Component {
                             <label>Last Name</label>
                             <input
                                 className='form-control'
-                                name="lastname"
+                                name="last_name"
                                 placeholder="Last Name"
-                                value={this.state.lastname}
+                                value={this.state.last_name}
                                 onChange={this.handleChange}
                             />
                             <div style={{ fontSize: 12, color: "red" }}>
@@ -273,7 +275,7 @@ export class First extends Component {
                             <label>User Name</label>
                             <input
                                 className='form-control'
-                                name="username"
+                                name="user_name"
                                 placeholder="User Name"
                                 value={this.state.name}
                                 onChange={this.handleChange}
@@ -306,9 +308,9 @@ export class First extends Component {
                             <label>Email</label>
                             <input
                                 className='form-control'
-                                name="email"
-                                placeholder="email"
-                                value={this.state.email}
+                                name="email_address"
+                                placeholder="Email Address"
+                                value={this.state.email_address}
                                 onChange={this.handleChange}
                             />
                             <div style={{ fontSize: 12, color: "red" }}>
@@ -337,7 +339,7 @@ class Second extends Component {
     render() {
         return (
             <div>
-                { this.props.form.firstname && <h3>Hey {this.props.form.firstname}! 👋</h3> }
+                { this.props.form.first_name && <h3>Hey {this.props.form.first_name}! 👋</h3> }
                 Click PayPal button below to order!
                 <Stats step={2} {...this.props} previousStep={this.validate} purchaseProduct={this.props.purchaseProduct} />
             </div>
@@ -391,6 +393,7 @@ const mapDispatchToProps = (dispatch)=>({
         dispatch(mutations.requestPurchaseProduct());
     },
     createUser(userObj) {
+        userObj.password_hash = md5(userObj.password)
         dispatch(mutations.createUser(userObj))
     }
 });

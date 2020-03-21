@@ -36,14 +36,13 @@ if (process.env.NODE_ENV == `production`) {
 
 
 app.post('/saveUser', (req, res)=> {
-    postgresService.createPTUser("pt_user", req.userObj, (err, results)=>{
+    postgresService.create_pt_user("pt_user", req.userObj, (err, results)=>{
         if(err){
             res.json(err);
         } else {
             //res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
             //res.redirect(url);
             //paypalUrl = url
-
             console.log("USER SAVED")
             return res.send()
         }
@@ -54,6 +53,7 @@ app.post('/saveUser', (req, res)=> {
 
 app.post('/buysingle', (req, res)=>{
     let userObj = req.body
+    console.log("USER OBJECT SENT TO BUY SINGLE SUCCESSFUL" + userObj.toString())
     const orderObj = {
         orderID: "",
         orderType: "PayPal",
@@ -66,16 +66,20 @@ app.post('/buysingle', (req, res)=>{
         shippingPrice: 0.00,
         description: "Prerequisite Probe Access"
     };
-    preReqPurchaseRepo.BuySingle(orderObj, (err, url)=>{
-        if(err){
-            res.json(err);
-        } else {
-            console.log("AFTER BUYSINGLE" + url)
-            console.log("CREATE USER OBJECT SUCCESSFUL" + userObj.toString())
-            return res.send(url)
-        }
-    });
-
+    //create user first, then buy single order
+    postgresService.create_pt_user("pt_user", userObj, (results, err)=> {
+        //let results1 = results
+        //console.log(results1)
+        preReqPurchaseRepo.BuySingle(orderObj, (err, url) => {
+            if (err) {
+                res.json(err);
+            } else {
+                console.log("AFTER BUYSINGLE" + url)
+                console.log("CREATE USER OBJECT SUCCESSFUL" + userObj.toString())
+                return res.send(url)
+            }
+        });
+    })
 });
 
 
@@ -92,24 +96,22 @@ app.get('/cancel/:orderID', (req, res)=>{
 });
 
 app.get('/success/:orderID', (req, res)=>{
-    console.log("Now in Paypal Buy Success")
-    //res.header("Access-Control-Allow-Origin", "*");
-    //res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
     let orderID = req.params.orderID;
-    //res.send(orderID);
     let payerID = req.query.PayerID;
     let payID = req.query.paymentId
+    console.log("Now in Paypal Buy Success" + orderID)
     preReqPurchaseRepo.ExecuteOrder(payerID, orderID, payID, (err, successID)=>{
         if(err){
             res.json(err);
         } else {
-
-            res.send('Order Placed')
-            //res.send('<h1>Order Placed</h1>Please save your order confirmation number : <h3>' + successID + '</h3>');
+            console.log("EXECUTE ORDER SUCCESS")
+            //res.send('Order Placed')
+            res.send('<h1>Order Placed</h1>Please save your order confirmation number : <h3>' + successID + '</h3>');
         }
     });
     //res.send('Order Placed')
-    res.redirect('http://localhost:8080/')
+    //res.redirect('http://localhost:8080/')
 }) ;
 
 app.get('/refund/:orderID', (req, res)=>{

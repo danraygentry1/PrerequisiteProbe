@@ -82,18 +82,15 @@
         },
         "transactions": transactionsArray
       };
-      console.log('BEFORE PAYMENT')
+      console.log('BEFORE CREATE PAYMENT')
+
+      //creates payment and returns PayId
       paypal.payment.create(paymentObj, (err, response)=>{
         if (err) {
-          console.log('AFTER PAYMENT' + err)
+          console.log('AFTER CREATE PAYMENT' + err)
           return cb(err);
         } else {
-          console.log('AFTER PAYMENT SUCCESS')
-          /*let dbObj = {
-            OrderID: response.id,
-            CreateTime: response.create_time,
-            Transactions: response.transactions
-          };*/
+          console.log('AFTER CREATE PAYMENT SUCCESS')
           postgresService.update_pt_user_order_on_buy('paypal_orders', results[0].pt_user_order_id, response.id, (err, results)=>{
             for(let i = 0; i < response.links.length; i++){
               if(response.links[i].rel == "approval_url"){
@@ -121,8 +118,11 @@
 
       let payerObj = { payer_id : payerID };
 
+      console.log("EXECUTE PAYMENT" + "payerID:" + payerID, "orderID:" + orderID, "payID:" + payID)
+
     postgresService.get_pt_user_order('pt_user_order', payID, (err, results)=>{
         if(results){
+          console.log("PAY ID" + results[0].pay_id)
           paypal.payment.execute(results[0].pay_id, payerObj, {}, (err, response)=>{
             if(err){
               return cb(err);
@@ -130,18 +130,13 @@
             console.log('AFTER EXECUTE SUCCESS')
 
             if(response){
-              let updateObj = {
-                OrderDetails: response
-              };
-              /*postgresService.update_pt_user_order_on_execute('pt_user_order', payerID, orderID, payID, (err, rows)=>{
-                return cb(null, rows);
-              });*/
-              postgresService.update_pt_user_order_on_execute('pt_user_order', payerID, orderID, payID)
-                  .then(results => {console.log('AFTER Update_pt_user_order SUCCESS')});
+              postgresService.update_pt_user_order_on_execute('pt_user_order', payerID, orderID, payID, (err, results)=>{
+                return cb(null, orderID);
+              });
             }
           });
         } else {
-            return cb("no order found for this id");
+            return cb("no pay_id found for this user order");
         }
       });
   };

@@ -67,6 +67,7 @@ export function* userAuthenticationSaga(){
             console.log(url);
 
             yield put(mutations.setState(data.state));
+            let tempState = store.getState()
             yield put(mutations.processAuthenticateUser(mutations.AUTHENTICATED, data.state.session.userToken))
 
             //set authentication cookie to be alive during a user's session
@@ -128,7 +129,7 @@ export function* createUserSaga() {
         try {
             //add userObj to state
             let state = store.getState()
-            state["userObj"] = userObj
+            state["userObj"] = userObj.userObj
 
             yield put(mutations.setState(state));
 
