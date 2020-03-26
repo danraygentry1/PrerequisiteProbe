@@ -80,6 +80,8 @@ export const Main = ()=>(
                     window.location.href = paypalUrl.toString();
                     return null;
                 }}/>
+
+
             </div>
         </Provider>
     </Router>

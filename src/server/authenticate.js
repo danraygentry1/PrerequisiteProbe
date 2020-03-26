@@ -14,7 +14,7 @@ export const authenticationRoute = app => {
         //let password = 'TUPLES'
         const pool = await connectDB();
 
-        console.log("Username!!!")
+        console.log("UsernameWangs!!!")
         console.log(username)
 
         console.log("Password!!!")

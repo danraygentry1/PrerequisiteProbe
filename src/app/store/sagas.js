@@ -61,7 +61,7 @@ export function* userAuthenticationSaga(){
                 throw new Error();
             }
 
-            console.log("Authenticated!",data);
+            console.log("AuthenticatedSSSS!",data);
             console.log("State Data");
             console.log(data.state.ptSchoolColumnsArray);
             console.log(url);

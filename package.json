@@ -15,9 +15,8 @@
     "start-dev": "concurrently \"npm run server\" \"npm run dev\"",
     "pg-test": "babel-node src/server/connect-db",
     "generate-data-test": "babel-node src/sampledata/generatedata_JavaScript.js",
-    "react-test": "riteway src/test/react-test.js"
-
-
+    "react-test": "riteway src/test/react-test.js",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
@@ -42,6 +41,12 @@
     "concurrently": "^4.0.1",
     "create-jqwidgets-react-tsx-app": "^1.0.0",
     "del": "^5.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
     "gulp": "^4.0.2",
     "http-proxy-middleware": "^0.20.0",
     "jqwidgets-framework": "^8.3.2",

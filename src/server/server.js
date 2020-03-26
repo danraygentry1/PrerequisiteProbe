@@ -16,7 +16,8 @@ let proxy = require('http-proxy-middleware');
 let port = 9229
 let app = express();
 
-//body parser - aows us to get the data from the body of the requests
+//body parser - allows us to get the data from the body of the request and
+//used to parse incoming request bodies
 app.use(
     cors(),
     bodyParser.urlencoded({extended: true}),
@@ -28,6 +29,7 @@ app.use(
 authenticationRoute(app);
 
 if (process.env.NODE_ENV == `production`) {
+    //serve anything in the /dist folder without putting /dist in front of it
     app.use(express.static(path.resolve(__dirname, '../../dist'))); //everything will be served from this url
     app.get('/*', (req, res) => {
         res.sendFile(path.resolve('index.html')); //allows us to not use webpack dev server in production.
@@ -136,6 +138,8 @@ app.get('/orderdetails/:orderID', (req, res)=>{
 
     });
 });
+
+
 
 app.listen(port, console.log("Server listening on port", port));
 
