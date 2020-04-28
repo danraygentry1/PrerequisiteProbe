@@ -1,0 +1,18 @@
+{
+    "extends": "airbnb",
+    "plugins": ["jest"],
+    //says to ignore globals like "it", and "describe" in test files
+    "env": {
+            "jest/globals": true,
+            //tells ESLint not to complain about globals like "window", "document" ect.
+            "browser": true,
+            "node": true
+        },
+    "rules": {
+        "no-unused-vars": ["error", {"argsIgnorePattern":"next"}]
+        //ignores type checking (make sure a number is a number, not a bool)
+        "react/prop-types": [0]
+        //enables us to use dev dependencies in our code without eslint complaining
+        "import/no-extraneous-dependencies": ["error", { "devDependencies":  true}]
+    }
+}

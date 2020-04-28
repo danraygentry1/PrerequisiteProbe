@@ -58,8 +58,8 @@ export function* userAuthenticationSaga(){
         try {
             const {data} = yield axios.post(url + '/authenticate', {username, password});
             if (!data) {
-                throw new Error();
-            }
+        throw new Error();
+      }
 
             console.log("AuthenticatedSSSS!",data);
             console.log("State Data");
