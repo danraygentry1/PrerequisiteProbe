@@ -21,7 +21,7 @@ export class ChangePasswordPageContainer extends React.Component {
   sendPassword(password) {
     const { dispatch } = this.props;
     const data = {
-      hash: this.props.match.params.hash,
+      passwordResetHash: this.props.match.params.hash,
       password,
     };
     dispatch(savePassword(data));

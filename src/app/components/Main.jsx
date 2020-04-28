@@ -9,6 +9,7 @@ import { ConnectedNavigation } from './Navigation';
 import Cookies from 'js-cookie';
 import { connect, Provider } from 'react-redux';
 import DevTools from './DevTools';
+import ErrorBox from './ErrorBoxContainer';
 import { HeaderComponent } from './Header';
 import { history } from '../store/history';
 import { isTokenVerified, logout } from '../../auth/Auth';
@@ -48,6 +49,7 @@ export const Main = () => (
         <ConnectedNavigation />
         <NavComponent />
         <HeaderComponent />
+        <ErrorBox />
         <Route exact path="/" component={ConnectedLogin} />
         <Route exact path="/about" component={AboutComponent} />
         <Route exact path="/change-password/:hash" component={ChangePasswordPage} />

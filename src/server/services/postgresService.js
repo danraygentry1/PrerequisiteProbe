@@ -92,24 +92,25 @@ import { connectDB } from '../connect-db';
     try {
       const res = await pool.query(text, values);
       console.log(res.rows[0]);
-      cb(res.rows);
+      cb(res.rows, null);
       // { name: 'brianc', email: 'brian.m.carlson@gmail.com' }
     } catch (err) {
-      cb(err);
+      cb(null, err);
       console.log(err.stack);
     }
   };
-  postgresService.update_pt_user = async (paramUpdateName1, paramUpdateValue1, paramSearchName2, paramSearchValue2, cb) => {
+  postgresService.update_pt_user_password = async (passwordHash, passwordReset, cb) => {
     const pool = await connectDB.connectDB();
-    const text = 'UPDATE pt_user set $1 = $2 where $3 = $4 RETURNING *';
-    const values = [paramUpdateName1, paramUpdateValue1, paramSearchName2, paramSearchValue2];
+    const text = 'UPDATE pt_user set password_hash = $1 where password_reset = $2 RETURNING *';
+    const values = [passwordHash, passwordReset];
     try {
       const res = await pool.query(text, values);
-      console.log(res.rows[0]);
-      cb(res.rows);
+      if (res.rows[0]) {
+        cb(res.rows, null);
+      } else cb(null, null);
       // { name: 'brianc', email: 'brian.m.carlson@gmail.com' }
     } catch (err) {
-      cb(err);
+      cb(null, err);
       console.log(err.stack);
     }
   };

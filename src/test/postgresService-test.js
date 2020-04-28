@@ -80,11 +80,9 @@ describe('PT User Transactions', () => {
   });
 
   it('Should Update PT_User table with newly reset password', (done) => {
-    const paramUpdateName1 = 'email_address';
-    const paramUpdateValue1 = 'wangus@homo.com';
-    const paramSearchName2 = 'email_address';
-    const paramSearchValue2 = 'wangus@homo.com';
-    postgresService.update_pt_user_password_reset(paramUpdateName1, paramUpdateValue1, paramSearchName2, paramSearchValue2, (results) => {
+    const paramUpdateValue1 = 'ddsseeefff';
+    const paramSearchValue2 = '1a3e96c5af23620951dbc6498f28bdd494e4c3e655e4a2f4cf4839bb8c77ceb6';
+    postgresService.update_pt_user_password(paramUpdateValue1, paramSearchValue2, (results) => {
       should.exist(results);
       done();
     });

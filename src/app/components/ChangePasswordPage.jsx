@@ -51,7 +51,7 @@ export default class ChangePasswordPage extends React.Component {
             <div className="col-10 col-sm-7 col-md-5 col-lg-4">
               <p>
                 Your changes have been saved, and you can
-                now <Link to="/account/login">log in</Link> with
+                now <Link to="/">log in</Link> with
                 the new password.
               </p>
             </div>

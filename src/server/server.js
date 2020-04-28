@@ -112,45 +112,32 @@ app.post('/saveresethash', async (req, res) => {
 app.post('/savepassword', async (req, res) => {
   let result;
   try {
-    // look up user in the DB based on reset hash
+    // look up user in the DB based on password reset hash
     const pool = await connectDB();
-    const foundUser = await getPTUserByHash(pool, 'password_reset', req.body.hash);
-
+    const foundUser = await getPTUserByHash(pool, 'password_reset', req.body.passwordResetHash);
 
     // If the user exists save their new password
     if (foundUser) {
-
-      const temp = await postgresService.update_pt_user('reset_hash', req.body.hash, 'password_hash', req.body.password, (results) => {
+      // eslint-disable-next-line max-len
+      await postgresService.update_pt_user_password(req.body.password, req.body.passwordResetHash, (results, err) => {
         if (results) {
-          result = res.send(JSON.stringify({ error: 'Password Update Successful' }));
-        }
-      });
-
-      // user passport's built-in password set method
-      foundUser.setPassword(req.body.password, (err) => {
-        if (err) {
-          result = res.send(JSON.stringify({ error: 'Password could not be saved. Please try again' }));
+          result = res.send(JSON.stringify({ success: 'Password Update Successful' }));
+          console.log('Success Result' + result);
         } else {
-          // once the password's set, save the user object
-          foundUser.save((error) => {
-            if (error) {
-              result = res.send(JSON.stringify({ error: 'Password could not be saved. Please try again' }));
-            } else {
-              // Send a success message
-              result = res.send(JSON.stringify({ success: true }));
-            }
-          });
+          console.log('error' + err);
+          result = res.send(JSON.stringify({ error: 'Password Update Failed.  Please re-click the password reset link sent to your email' }));
         }
       });
     }
   } catch (err) {
     // if the hash didn't bring up a user, error out
-    result = res.send(JSON.stringify({ error: 'Reset hash not found in database' }));
+    console.log('Error Result' + err);
+    result = res.send(JSON.stringify({ error: 'Password Update Failed.  Please re-click the password reset link sent to your email' }));
   }
   return result;
 });
 
-//***Authentication Section*****************************************************************************************************
+//***End of Authentication Section*****************************************************************************************************
 
 //***PayPal Section*************************************************************************************************************
 app.post('/buysingle', (req, res) => {

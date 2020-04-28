@@ -25,7 +25,7 @@ describe('Database Transactions', () => {
     should.exist(user);
   });
 
-  it('Should get PT user from databases', async () => {
+  it('Should get PT user from database based on password reset hash', async () => {
     const pool = await connectDB();
     const parameterName = 'password_reset'
     const parameterValue = 'danny';
