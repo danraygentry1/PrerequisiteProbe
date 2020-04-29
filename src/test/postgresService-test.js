@@ -72,7 +72,7 @@ describe('PayPal Order', () => {
 describe('PT User Transactions', () => {
   it('Should Update PT_User table with password_reset hash', (done) => {
     const passwordReset = 'ORxb144gsafg555444';
-    const emailAddress = 'danny@gmail.com';
+    const emailAddress = 'prerequisiteprobetest@gmail.com';
     postgresService.update_pt_user_password_reset('pt_user_order', passwordReset, emailAddress, (results) => {
       should.exist(results);
       done();
@@ -80,9 +80,9 @@ describe('PT User Transactions', () => {
   });
 
   it('Should Update PT_User table with newly reset password', (done) => {
-    const paramUpdateValue1 = 'ddsseeefff';
-    const paramSearchValue2 = '1a3e96c5af23620951dbc6498f28bdd494e4c3e655e4a2f4cf4839bb8c77ceb6';
-    postgresService.update_pt_user_password(paramUpdateValue1, paramSearchValue2, (results) => {
+    const passwordHash = 'ddsseeefff';
+    const passwordReset = '7a9fdffff8e9a540b4e3a242d923abc4b227c3dc399db31f0d33bdc15ba7d651';
+    postgresService.update_pt_user_password(passwordHash, passwordReset, (results) => {
       should.exist(results);
       done();
     });

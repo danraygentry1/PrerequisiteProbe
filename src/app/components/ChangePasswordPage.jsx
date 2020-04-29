@@ -47,15 +47,31 @@ export default class ChangePasswordPage extends React.Component {
     // If they just changed a password and AREN'T logged in
     if (isPasswordChanged && !isLoggedIn) {
       return (
-          <div className="row justify-content-center">
-            <div className="col-10 col-sm-7 col-md-5 col-lg-4">
-              <p>
-                Your changes have been saved, and you can
-                now <Link to="/">log in</Link> with
-                the new password.
-              </p>
-            </div>
+        <div className="row justify-content-center">
+          <div className="col-10 col-sm-7 col-md-5 col-lg-4">
+            <p>
+              Your changes have been saved, and you can
+              now
+              {' '}
+              <Link to="/">log in</Link>
+              {' '}
+              with
+              the new password.
+            </p>
           </div>
+        </div>
+      );
+    }
+    // If they just changed a password and ARE logged in
+    if (isPasswordChanged && isLoggedIn) {
+      return (
+        <div className="row justify-content-center">
+          <div className="col-10 col-sm-7 col-md-5 col-lg-4">
+            <p>
+              Your new password has been saved.
+            </p>
+          </div>
+        </div>
       );
     }
 

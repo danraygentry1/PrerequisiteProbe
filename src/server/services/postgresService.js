@@ -92,7 +92,9 @@ import { connectDB } from '../connect-db';
     try {
       const res = await pool.query(text, values);
       console.log(res.rows[0]);
-      cb(res.rows, null);
+      if (res.rows[0]) {
+        cb(res.rows, null);
+      } else throw new Error('Something went wrong with creating password reset hash');
       // { name: 'brianc', email: 'brian.m.carlson@gmail.com' }
     } catch (err) {
       cb(null, err);
@@ -107,7 +109,7 @@ import { connectDB } from '../connect-db';
       const res = await pool.query(text, values);
       if (res.rows[0]) {
         cb(res.rows, null);
-      } else cb(null, null);
+      } else throw new Error('Password Update Failed.  Please re-click the password reset link sent to your email');
       // { name: 'brianc', email: 'brian.m.carlson@gmail.com' }
     } catch (err) {
       cb(null, err);
@@ -118,3 +120,20 @@ import { connectDB } from '../connect-db';
   module.exports, // use so other files can have access to the objects or methods we attach to module.exports
   require('../connect-db'),
 );
+
+//DELETE
+function myApiFunc(callback) {
+  /*
+   * This pattern does NOT work!
+   */
+  try {
+    doSomeAsynchronousOperation((err) => {
+      if (err) {
+        throw (err);
+      }
+      /* continue as normal */
+    });
+  } catch (ex) {
+    callback(ex);
+  }
+}
