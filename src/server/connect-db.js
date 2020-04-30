@@ -203,13 +203,13 @@ export async function getPTUserByEmail(pool, email) {
 
   return ptUserRows;
 }
-export async function getPTUserByHash(pool, parameterName, parameterValue) {
+export async function getPTUserByHash(pool, passwordResetHash) {
   const ptUserRows = {};
   const ptUserColumns = [];
 
   const ptUserSelect = {
-    text: 'SELECT * FROM pt_user WHERE $1 = $2',
-    values: [parameterName, parameterValue],
+    text: 'SELECT * FROM pt_user WHERE password_reset = $1',
+    values: [passwordResetHash],
     rowMode: 'array',
   };
 

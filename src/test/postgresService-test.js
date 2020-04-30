@@ -81,7 +81,7 @@ describe('PT User Transactions', () => {
 
   it('Should Update PT_User table with newly reset password', (done) => {
     const passwordHash = 'ddsseeefff';
-    const passwordReset = '7a9fdffff8e9a540b4e3a242d923abc4b227c3dc399db31f0d33bdc15ba7d651';
+    const passwordReset = '7a9fdffff8e9a540b4e3a242d923abc4b227c3dc399db31f0d33bdc15ba7d65s1';
     postgresService.update_pt_user_password(passwordHash, passwordReset, (results) => {
       should.exist(results);
       done();

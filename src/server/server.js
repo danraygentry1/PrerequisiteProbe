@@ -69,7 +69,7 @@ app.post('/saveresethash', async (req, res) => {
     const foundUser = await getPTUserByEmail(pool, req.body.emailAddress);
 
     // If the user exists, save their password hash
-    if (foundUser) {
+    if (Object.keys(foundUser).length !== 0) {
       const timeInMs = Date.now();
       const hashString = `${req.body.email}${timeInMs}`;
       const { secret } = appConfig.crypto;
@@ -79,31 +79,31 @@ app.post('/saveresethash', async (req, res) => {
 
       await postgresService.update_pt_user_password_reset('pt_user', passwordResetHash, foundUser.email_address, (results, err) => {
         if (err) {
-          result = res.send(JSON.stringify({ error: err }));
+          result = res.send(JSON.stringify({ error: err.message }));
         }
-      });
 
-      // Put together the email
-      const emailData = {
-        from: `PrerequisiteProbe <postmaster@${appConfig.mailgun.domain}>`,
-        to: foundUser.email_address,
-        subject: 'Reset Your Password',
-        text: `A password reset has been requested for the PrerequisiteProbe account connected to this email address. If you made this request, please click the following link: http://localhost:8080/change-password/${passwordResetHash} ... if you didn't make this request, feel free to ignore it!`,
-        html: `<p>A password reset has been requested for the Prerequisite Probe account connected to this email address. If you made this request, please click the following link: <a href="http://localhost:8080/change-password/${passwordResetHash}" target="_blank">http://localhost:8080/change-password/${passwordResetHash}</a>.</p><p>If you didn't make this request, feel free to ignore it!</p>`,
-      };
+        // Put together the email
+        const emailData = {
+          from: `PrerequisiteProbe <postmaster@${appConfig.mailgun.domain}>`,
+          to: foundUser.email_address,
+          subject: 'Reset Your Password',
+          text: `A password reset has been requested for the PrerequisiteProbe account connected to this email address. If you made this request, please click the following link: http://localhost:8080/change-password/${passwordResetHash} ... if you didn't make this request, feel free to ignore it!`,
+          html: `<p>A password reset has been requested for the Prerequisite Probe account connected to this email address. If you made this request, please click the following link: <a href="http://localhost:8080/change-password/${passwordResetHash}" target="_blank">http://localhost:8080/change-password/${passwordResetHash}</a>.</p><p>If you didn't make this request, feel free to ignore it!</p>`,
+        };
 
-      // Send it
-      mailgun.messages().send(emailData, (error, body) => {
-        if (error || !body) {
-          result = res.send(JSON.stringify({ error: 'Something went wrong while attempting to send the email. Please try again.' }));
-        } else {
-          result = res.send(JSON.stringify({ success: true }));
-        }
+        // Send it
+        mailgun.messages().send(emailData, (error, body) => {
+          if (error || !body) {
+            result = res.send(JSON.stringify({ error: 'Something went wrong while attempting to send password reset email. Please try again.' }));
+          } else {
+            result = res.send(JSON.stringify({ success: true }));
+          }
+        });
       });
-    }
+    } else result = res.send(JSON.stringify({ error: 'Something went wrong while attempting to send password reset email. Please try again.' }));
   } catch (err) {
     // if the user doesn't exist, error out
-    result = res.send(JSON.stringify({ error: 'Something went wrong while attempting to reset your password. Please Try again' }));
+    result = res.send(JSON.stringify({ error: 'Something went wrong while attempting to send password reset email. Please try again.' }));
   }
   return result;
 });
@@ -114,20 +114,20 @@ app.post('/savepassword', async (req, res) => {
   try {
     // look up user in the DB based on password reset hash
     const pool = await connectDB();
-    const foundUser = await getPTUserByHash(pool, 'password_reset', req.body.passwordResetHash);
+    const foundUser = await getPTUserByHash(pool, req.body.passwordResetHash);
     const passwordHash = md5(req.body.password);
 
     // If the user exists save their new password
-    if (foundUser) {
+    if (Object.keys(foundUser).length !== 0) {
       // eslint-disable-next-line max-len
       await postgresService.update_pt_user_password(passwordHash, req.body.passwordResetHash, (results, err) => {
         if (results) {
           result = res.send(JSON.stringify({ success: 'Password Update Successful' }));
         } else {
-          result = res.send(JSON.stringify({ error: err }));
+          result = res.send(JSON.stringify({ error: err.message }));
         }
       });
-    }
+    } else result = res.send(JSON.stringify({ error: 'Password Update Failed.  Please re-click the password reset link sent to your email' }));
   } catch (err) {
     // if the hash didn't bring up a user, error out
     result = res.send(JSON.stringify({ error: 'Password Update Failed.  Please re-click the password reset link sent to your email' }));

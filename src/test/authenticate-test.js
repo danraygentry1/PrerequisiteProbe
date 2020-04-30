@@ -27,11 +27,11 @@ describe('Login tests', () => {
 describe('Password Tests', () => {
   describe('POST /', () => {
     // Test to get all students record
-    it('should save password reset hash based on email Address', (done) => {
+    it('should save password reset hash based on email address', (done) => {
       chai.request(app2)
         .post('/saveresethash')
         .send({
-          emailAddress: 'prerequisiteprobetest@gmail.com',
+          emailAddress: 'prerequisiteprobetest@gmail.coms',
         })
         .end((err, res) => {
           // res.should.have.status(200);
@@ -43,8 +43,8 @@ describe('Password Tests', () => {
       chai.request(app2)
         .post('/savepassword')
         .send({
-          passwordResetHash: '1a3e96c5af23620951dbc6498f28bdd494e4c3e655e4a2f4cf4839bb8c77ceb6',
-          password: '3ddwenisa',
+          passwordResetHash: 'fcc1c12d27a5a61920c8304190d63ae7ea88989d5b48a24df39007eb7f83f172',
+          password: '3ddwenisabc',
         })
         .end((err, res) => {
           // res.should.have.status(200);

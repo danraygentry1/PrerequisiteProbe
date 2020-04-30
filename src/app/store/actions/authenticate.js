@@ -46,9 +46,9 @@ export function createHash(emailAddress) {
         if (json.success) {
           return dispatch(passwordResetHashCreated(json));
         }
-        return dispatch(passwordResetHashFailure(new Error('Something went wrong. Please try again.')));
+        return dispatch(passwordSaveFailure(new Error(json.error.message ? 'Something went wrong. Please try again' : json.error)));
       })
-      .catch((error) => dispatch(passwordResetHashFailure(error)));
+      .catch((error) => dispatch(passwordSaveFailure(new Error(error.message || 'There was an error saving the password. Please try again.'))));
 
     // turn off spinner
     return dispatch(decrementProgress());
