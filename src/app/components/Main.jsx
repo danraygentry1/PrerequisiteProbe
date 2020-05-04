@@ -15,6 +15,7 @@ import { history } from '../store/history';
 import { isTokenVerified, logout } from '../../auth/Auth';
 import { NavComponent } from './Nav';
 import ResetPasswordPage from './ResetPasswordPageContainer';
+import RegistrationPageContainer from "./RegistrationPageContainer";
 // Router - parent component that all routes have to be inside
 // Router - component that displays different depending what the URL is
 import { Router, Route } from 'react-router-dom';
@@ -69,6 +70,7 @@ export const Main = () => (
         <Route exact path="/dashboard" render={RouteGuard(ConnectedDashboard)} />
         <Route exact path="/reset-password" component={ResetPasswordPage} />
         <Route exact path="/wizard" render={RouteGuard(ConnectedAccountPayWizard)} />
+        <Route exact path="/register-user" component={RegistrationPageContainer} />
         <DevTools />
       </div>
         {/* // call spinner if app is running slow

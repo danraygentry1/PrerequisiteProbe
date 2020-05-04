@@ -62,7 +62,7 @@ import * as mutations from "../../store/mutations";
                             >
                                 <First hashKey={'FirstStep'} update={this.updateForm} createUser={this.props.createUser} />
                                 <Second hashKey={'SecondStep'} form={this.state.form} purchaseProduct={this.props.purchaseProduct} />
-                               {/* <Progress />
+                                {/* <Progress />
                                 <Last hashKey={'TheEnd!'} />*/}
                             </StepWizard>
                         </div>
@@ -104,22 +104,23 @@ const Stats = ({
                }) => (
     <div>
         <hr />
-
         { step < totalSteps ?
             //onClick={nextStep}
             //onClick={createUser(userObj)}
-            <button className='btn btn-primary btn-block' onClick={nextStep} >Continue</button>
+            <button className='form-control mt2 btn btn-primary' onClick={nextStep} >Continue</button>
             :
-            <div className="container">
-                <button onClick={purchaseProduct}>
-                    <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-large.png" alt="Check out with PayPal" />
-                </button>
+            <div className="card border-0 flex-grow-0 flex align-items-center justify-content-center wizard-background">
+                <div className="card-body">
+                    <button onClick={purchaseProduct}>
+                        <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_200x51.png" alt="PayPal" />
+                    </button>
+                </div>
             </div>
 
         }
         <hr />
         { step > 1 &&
-        <button className='btn btn-default btn-block' onClick={previousStep}>Go Back</button>
+        <button className="form-control mt2 btn btn-primary flex-grow-0 flex align-items-center justify-content-center" onClick={previousStep}>Go Back</button>
         }
         {/*<hr />
         <div style={{ fontSize: '21px', fontWeight: '200' }}>
@@ -212,10 +213,10 @@ export class First extends Component {
         return true;
     };
 
-    handleValidate = () => {
-        const isValid = this.validate();
+    handleValidate = async () => {
+         const isValid = this.validate();
         if (isValid) {
-            this.props.createUser(this.state)
+            await this.props.createUser(this.state)
             console.log(this.state);
             // clear form
             this.setState(initialState);
@@ -225,13 +226,6 @@ export class First extends Component {
     };
 
     render() {
-        /*let nextButton
-        if (this.state.isValid){
-            nextButton = <Stats step={1} {...this.props} />
-        } else {
-                nextButton = <button onClick={this.handleValidate}>Continue</button>
-            }*/
-
         return (
             <div>
                 <h3 className='text-center'>Create Account</h3>
@@ -338,10 +332,14 @@ class Second extends Component {
 
     render() {
         return (
-            <div>
-                { this.props.form.first_name && <h3>Hey {this.props.form.first_name}! 👋</h3> }
-                Click PayPal button below to order!
-                <Stats step={2} {...this.props} previousStep={this.validate} purchaseProduct={this.props.purchaseProduct} />
+            <div className="card border-0 flex-grow-0 flex align-items-center justify-content-center wizard-background">
+                <div className="card-body">
+                    { this.props.form.first_name && <h3>Hey {this.props.form.first_name}! 👋</h3> }
+                    <div className="card border-0 flex-grow-0 flex align-items-center justify-content-center wizard-background">
+                        Click PayPal button below to order!
+                    </div>
+                    <Stats step={2} {...this.props} previousStep={this.validate} purchaseProduct={this.props.purchaseProduct} />
+                </div>
             </div>
         );
     }
@@ -369,13 +367,6 @@ class Last extends Component {
 
 const AccountPayWizardComponent = ({authenticated, purchaseProduct, createUser})=>{
 
- /*   return <div className="card border-0 flex-grow-0 flex align-items-center justify-content-center">
-        <div className="card-body">
-            <h5 className="card-title">Create Account</h5>
-            <Wizard/>
-        </div>
-    </div>*/
-
  return <div>
      <Wizard purchaseProduct={purchaseProduct} createUser={createUser} />
  </div>
@@ -392,9 +383,10 @@ const mapDispatchToProps = (dispatch)=>({
         e.preventDefault();
         dispatch(mutations.requestPurchaseProduct());
     },
-    createUser(userObj) {
+    async createUser (userObj) {
+        let isFoundUser
         userObj.password_hash = md5(userObj.password)
-        dispatch(mutations.createUser(userObj))
+         isFoundUser = dispatch(mutations.createUser(userObj))
     }
 });
 

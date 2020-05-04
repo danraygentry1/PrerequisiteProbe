@@ -59,6 +59,24 @@ app.post('/saveUser', (req, res) => {
   });
 });
 
+app.post('/getuser', async (req, res) => {
+  let result
+  const pool = await connectDB();
+  const userByUserName = await getPTUser(pool, req.body.userObj.user_name);
+  const userByEmailAddress = await getPTUserByEmail(pool, req.body.userObj.email_address);
+  try {
+    if (Object.keys(userByUserName).length !== 0 || Object.keys(userByEmailAddress).length !== 0){
+      result = res.send(JSON.stringify({ error: 'The user name and/or email address already exists, please choose another user name and/or email address' }));
+    }else result = res.send(JSON.stringify({ success: true }));
+  }
+  catch {
+    result = res.send(JSON.stringify({ error: 'Something went wrong while attempting to create the user. Please try again.' }));
+  }
+  return result
+});
+
+
+
 // POST to saveresethash
 // use result variable so we can use try/catch blocks with async functions.
 app.post('/saveresethash', async (req, res) => {

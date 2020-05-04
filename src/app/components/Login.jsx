@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import * as mutations from '../store/mutations'
 import { connect } from 'react-redux';
+import * as mutations from '../store/mutations';
 import { NavComponent } from "./Nav";
 import { isTokenVerified, logout } from "../../auth/Auth"
 
@@ -12,23 +12,27 @@ export const LoginComponent = ({authenticateUser, createAccount, authenticated})
   return <div>
         <NavComponent/>
         <div className="card border-0 flex-grow-0 flex align-items-center justify-content-center">
-          <div className="card-body">
-                <h5 className="card-title">Please Login</h5>
-                <form onSubmit={authenticateUser}>
-                    <input type="text" placeholder="username" name="username"
-                           className="form-control"/>
-                    <input type = "password" placeholder="password" name = "password"
-                          defaultValue = "" className="form-control mt-2" />
-                    {authenticated === mutations.NOT_AUTHENTICATED ? <p>
-                        Login incorrect</p> : null}
-                    <br/>
-                    <button type="submit" className="form-control mt2 btn btn-primary">Login</button>
-                    <span><Link to="/reset-password">Forgot your password?</Link></span>
-                    <br/><br/>
-                    New to Prerequisite Probe?
-                    <br/>
-                    <button className="form-control mt2" onClick={createAccount}>Create Account</button>
-                </form>
+            <div className="row p-3">
+              <div className="card-body border-dark card border-1 m-1">
+                    <h5 className="card-title">Please Login</h5>
+                    <form onSubmit={authenticateUser}>
+                        <input type="text" placeholder="username" name="username"
+                               className="form-control"/>
+                        <input type = "password" placeholder="password" name = "password"
+                              defaultValue = "" className="form-control mt-2" />
+                        {authenticated === mutations.NOT_AUTHENTICATED ? <p>
+                            Login incorrect</p> : null}
+                        <br/>
+                        <button type="submit" className="form-control mt2 btn btn-primary">Login</button>
+                        <span><Link to="/reset-password">Forgot your password?</Link></span>
+                        <br/><br/>
+                        <br/>
+                    </form>
+              </div>
+              <div className="card-body border-dark card border-1 m-1">
+                    <h5 className="card-title">New to Prerequisite Probe?</h5>
+                    <button className="form-control mt2 btn btn-primary" onClick={createAccount}>Create Account</button>
+              </div>
             </div>
         </div>
     </div>

@@ -2,13 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ce02b82-2744-48b5-9601-dadee3ab73ad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/components/OrderPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/OrderPageContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/RegistrationPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/RegistrationPageContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Grid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/wizard/wizard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/wizard/wizard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/actions/authenticate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/actions/authenticate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/connect-db.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/connect-db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/reducers/authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/reducers/authentication.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/sagas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/sagas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/services/postgresService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/services/postgresService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/authenticate-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/authenticate-test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/postgresService-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/postgresService-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +54,7 @@
     <property name="js.last.introduce.type" value="LET" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../paypal_demo2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -89,7 +97,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.Password Tests.POST /.should save password based on password reset hash">
+  <component name="RunManager" selected="Mocha.User Account Tests.POST /.should get user object if exists">
     <configuration name="Server JavaScript" type="JavascriptDebugType" uri="http://localhost:8080/" useFirstLineBreakpoints="true">
       <mapping url="webpack:///src/app" local-file="$PROJECT_DIR$/src/app" />
       <mapping url="webpack:///src" local-file="$PROJECT_DIR$/src" />
@@ -133,38 +141,6 @@
           <envs />
         </option>
       </method>
-    </configuration>
-    <configuration name="Database Transactions.Should get PT user from databases" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <ui>bdd</ui>
-      <extra-mocha-options>--require @babel/register</extra-mocha-options>
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/src/test/connect-db-test.js</test-file>
-      <test-names>
-        <name value="Database Transactions" />
-        <name value="Should get PT user from databases" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="PT User Transactions.Should Update PT_User table with newly reset password" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <ui>bdd</ui>
-      <extra-mocha-options>--require @babel/register</extra-mocha-options>
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/src/test/postgresService-test.js</test-file>
-      <test-names>
-        <name value="PT User Transactions" />
-        <name value="Should Update PT_User table with newly reset password" />
-      </test-names>
-      <method v="2" />
     </configuration>
     <configuration name="PT User Transactions.Should Update PT_User table with password_reset hash" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
@@ -216,6 +192,40 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="User Account Tests.POST /.should get authentication state" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options>--require @babel/register</extra-mocha-options>
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/src/test/authenticate-test.js</test-file>
+      <test-names>
+        <name value="User Account Tests" />
+        <name value="POST /" />
+        <name value="should get authentication state" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="User Account Tests.POST /.should get user object if exists" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options>--require @babel/register</extra-mocha-options>
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/src/test/authenticate-test.js</test-file>
+      <test-names>
+        <name value="User Account Tests" />
+        <name value="POST /" />
+        <name value="should get user object if exists" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="mocha-javascript-test-runner">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -232,19 +242,19 @@
       <item itemvalue="JavaScript Debug.Server JavaScript" />
       <item itemvalue="Node.js.Server" />
       <item itemvalue="Node.js.API" />
-      <item itemvalue="Mocha.Database Transactions.Should get PT user from databases" />
-      <item itemvalue="Mocha.PT User Transactions.Should Update PT_User table with newly reset password" />
       <item itemvalue="Mocha.Password Tests.POST /.should save password based on password reset hash" />
       <item itemvalue="Mocha.PT User Transactions.Should Update PT_User table with password_reset hash" />
       <item itemvalue="Mocha.Password Tests.POST /.should save password reset hash based on email Address" />
+      <item itemvalue="Mocha.User Account Tests.POST /.should get authentication state" />
+      <item itemvalue="Mocha.User Account Tests.POST /.should get user object if exists" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Mocha.User Account Tests.POST /.should get user object if exists" />
+        <item itemvalue="Mocha.User Account Tests.POST /.should get authentication state" />
         <item itemvalue="Mocha.Password Tests.POST /.should save password based on password reset hash" />
         <item itemvalue="Mocha.Password Tests.POST /.should save password reset hash based on email Address" />
         <item itemvalue="Mocha.PT User Transactions.Should Update PT_User table with password_reset hash" />
-        <item itemvalue="Mocha.PT User Transactions.Should Update PT_User table with newly reset password" />
-        <item itemvalue="Mocha.Database Transactions.Should get PT user from databases" />
       </list>
     </recent_temporary>
   </component>
@@ -300,7 +310,7 @@
       <workItem from="1585593578270" duration="5687000" />
       <workItem from="1585939619002" duration="615000" />
       <workItem from="1586127690758" duration="9291000" />
-      <workItem from="1587404502786" duration="123292000" />
+      <workItem from="1587404502786" duration="166690000" />
     </task>
     <servers />
   </component>
@@ -325,7 +335,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/authenticate-test.js</url>
-          <line>19</line>
+          <line>20</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -355,12 +365,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/wizard/wizard.jsx</url>
-          <line>390</line>
+          <line>381</line>
           <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/wizard/wizard.jsx</url>
-          <line>379</line>
+          <line>370</line>
           <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -385,12 +395,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/wizard/wizard.jsx</url>
-          <line>391</line>
+          <line>382</line>
           <option name="timeStamp" value="92" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/Main.jsx</url>
-          <line>70</line>
+          <line>71</line>
           <option name="timeStamp" value="93" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -400,12 +410,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/wizard/wizard.jsx</url>
-          <line>328</line>
+          <line>322</line>
           <option name="timeStamp" value="126" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/Login.jsx</url>
-          <line>50</line>
+          <line>54</line>
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -435,7 +445,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>84</line>
+          <line>102</line>
           <option name="timeStamp" value="163" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -463,67 +473,67 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/authenticate-test.js</url>
-          <line>11</line>
+          <line>12</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="180" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/authenticate-test.js</url>
-          <line>13</line>
+          <line>14</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="181" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/authenticate-test.js</url>
-          <line>31</line>
+          <line>32</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="182" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>107</line>
+          <line>125</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="199" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/authenticate-test.js</url>
-          <line>37</line>
+          <line>38</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="201" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>87</line>
+          <line>105</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="203" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>98</line>
+          <line>116</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="207" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>100</line>
+          <line>118</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="208" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/actions/authenticate.js</url>
-          <line>39</line>
+          <line>87</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="210" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/actions/authenticate.js</url>
-          <line>45</line>
+          <line>93</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="211" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/actions/authenticate.js</url>
-          <line>53</line>
+          <line>101</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="212" />
         </line-breakpoint>
@@ -553,7 +563,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>136</line>
+          <line>154</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="226" />
         </line-breakpoint>
@@ -595,55 +605,55 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>105</line>
+          <line>123</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="241" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>81</line>
+          <line>99</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="242" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>96</line>
+          <line>114</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="243" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>71</line>
+          <line>89</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="244" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>126</line>
+          <line>144</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="245" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>124</line>
+          <line>142</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="246" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>132</line>
+          <line>150</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="247" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>129</line>
+          <line>147</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="248" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>117</line>
+          <line>135</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="250" />
         </line-breakpoint>
@@ -658,6 +668,42 @@
           <line>107</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="255" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/server/server.js</url>
+          <line>63</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="256" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/test/authenticate-test.js</url>
+          <line>76</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="257" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/server/server.js</url>
+          <line>74</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="258" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/server/server.js</url>
+          <line>72</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="259" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/server/server.js</url>
+          <line>68</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="260" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/server/server.js</url>
+          <line>69</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="261" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

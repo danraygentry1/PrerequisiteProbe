@@ -8,6 +8,7 @@ const initialState = {
   lastName: '',
   registrationSucceeded: false,
   username: '',
+  userObj: {},
 };
 
 // should always return new objects in your reducers to avoid corrupting the state.
@@ -63,6 +64,13 @@ export default function reducer(state = initialState, action) {
     case 'AUTHENTICATION_REGISTRATION_SUCCESS': {
       const newState = Object.assign({}, state);
       newState.registrationSucceeded = true;
+      newState.userObj = action.userObj;
+      return newState;
+    }
+    case 'AUTHENTICATION_REGISTRATION_CLEAR': {
+      const newState = Object.assign({}, state);
+      newState.registrationSucceeded = false;
+      newState.userObj = {};
       return newState;
     }
     case 'AUTHENTICATION_REGISTRATION_SUCCESS_VIEWED': {

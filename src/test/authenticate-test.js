@@ -2,6 +2,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import { app2 } from '../server/server';
+import md5 from "md5";
 // Configure chai
 chai.use(chaiHttp);
 chai.should();
@@ -45,6 +46,31 @@ describe('Password Tests', () => {
         .send({
           passwordResetHash: 'fcc1c12d27a5a61920c8304190d63ae7ea88989d5b48a24df39007eb7f83f172',
           password: '3ddwenisabc',
+        })
+        .end((err, res) => {
+          // res.should.have.status(200);
+          res.body.should.be.a('object');
+          done();
+        });
+    });
+  });
+});
+describe('User Account Tests', () => {
+  describe('POST /', () => {
+    // Test to get all students record
+    it('should get user object if exists', (done) => {
+      const userObj = {
+        first_name: 'Danny',
+        last_name: 'Pinturo',
+        user_name: 'danny',
+        password_hash: md5('jeffery'),
+        email_address: 'danny@gmail.com',
+        subscribed: 'false',
+      };
+      chai.request(app2)
+        .post('/getuser')
+        .send({
+          userObj,
         })
         .end((err, res) => {
           // res.should.have.status(200);

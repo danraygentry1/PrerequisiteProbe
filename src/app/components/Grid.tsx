@@ -274,13 +274,8 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-
             </div>
-
-
         );
     }
     private clearFiltering(): void {

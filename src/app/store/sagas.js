@@ -6,6 +6,7 @@ import * as mutations from './mutations';
 import { history } from './history';
 import { store } from '.';
 import { REQUEST_PURCHASE_PRODUCT } from './mutations';
+import { passwordSaveFailure, passwordSaveSuccess } from './actions/authenticate';
 
 /* const url = process.env.NODE_ENV == 'production' ? '' : "http://localhost:8080"; //url used to communicate to the server */
 const url = 'http://localhost:9229'; // url used to communicate to the server
@@ -104,7 +105,7 @@ export function* createAccountSaga() {
       // yield axios.post(url + '/');
       yield put(mutations.createAccount());
 
-      history.push('./wizard');
+      history.push('./register-user');
       // history.push('/dashboard');
       // history.push('../buysingle');
       // axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
@@ -115,17 +116,38 @@ export function* createAccountSaga() {
     }
   }
 }
+//DELETE
 export function* createUserSaga() {
   while (true) {
     const userObj = yield take(mutations.CREATE_USER);
-    try {
-      // add userObj to state
+    let isFoundUser = true;
+    yield axios.post(`${url}/getuser`,
+      { userObj })
+      .then((response) => {
+        if (response.status === 200) {
+          return response;
+        }
+        return null;
+      })
+      .then(async (json) => {
+        if (json && json.data.success) {
+          isFoundUser = false;
+        } else {
+          console.log('CreateUserSaga Else block');
+          // dispatch(passwordSaveFailure(new Error(json.error.message ? 'There was an error saving the password. Please try again' : json.error)));
+        }
+      })
+      .catch((error) => {
+        console.log('CreateUserSaga Catch block');
+        // dispatch(passwordSaveFailure(new Error(error.message || 'There was an error saving the password. Please try again.')));
+      });
+
+    // add userObj to state
+    if (!isFoundUser) {
       const state = store.getState();
       state.userObj = userObj.userObj;
-
       yield put(mutations.setState(state));
-    } catch (e) {
-      console.log(e.toString());
     }
+    return isFoundUser;
   }
 }
