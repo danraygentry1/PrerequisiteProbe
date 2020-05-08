@@ -3,10 +3,10 @@ import { connectDB } from '../connect-db';
 ((postgresService, connectDB) => {
   // ------pt_user_order table----------------------------------------------------------------------------------------------------------------------------------------
 
-  postgresService.create_pt_user_order_on_buy = async (colName, orderObj, cb) => {
+  postgresService.create_pt_user_order_on_buy = async (colName, orderObj, userObj, cb) => {
     const pool = await connectDB.connectDB();
     const text = 'INSERT INTO pt_user_order(pt_user_id, order_type, purchase_name, purchase_price, tax_price, "desc") VALUES($1, $2, $3, $4, $5, $6) RETURNING *';
-    const values = [1, orderObj.orderType, orderObj.purchaseName, orderObj.purchasePrice, orderObj.taxPrice, orderObj.description];
+    const values = [userObj.pt_user_id, orderObj.orderType, orderObj.purchaseName, orderObj.purchasePrice, orderObj.taxPrice, orderObj.description];
     try {
       const res = await pool.query(text, values);
       console.log(res.rows[0]);
@@ -35,10 +35,10 @@ import { connectDB } from '../connect-db';
     }
   };
 
-  postgresService.update_pt_user_order_on_buy = async (colName, ptUserId, payId, cb) => {
+  postgresService.update_pt_user_order_on_buy = async (colName, ptUserOrderId, payId, cb) => {
     const pool = await connectDB.connectDB();
     const text = 'UPDATE pt_user_order set pay_id = $1 where pt_user_order_id = $2 RETURNING *';
-    const values = [payId, ptUserId];
+    const values = [payId, ptUserOrderId];
     try {
       const res = await pool.query(text, values);
       // const res = await pool.query('UPDATE pt_user_order set order_id = ($1) where pt_user_id = ($2)', [orderId, ptUserId]);
@@ -85,6 +85,22 @@ import { connectDB } from '../connect-db';
     }
   };
 
+  postgresService.update_pt_user_on_execute_subscribed = async (ptUserId, isSubscribed, cb) => {
+    const pool = await connectDB.connectDB();
+    console.log('NOW IN UPDATE PAYPAL ORDER ON EXECUTE');
+    const text = 'UPDATE pt_user set subscribed = $2 where pt_user_id = $1 RETURNING *';
+    const values = [ptUserId, isSubscribed];
+
+    const res = await pool.query(text, values);
+    // const res = await pool.query('UPDATE pt_user_order set order_id = ($1) where pt_user_id = ($2)', [orderId, ptUserId]);
+    console.log(res.rows[0]);
+    if (res.rows[0]) {
+      cb(res.rows, null);
+    } else cb(null, new Error('Something went wrong with with updating subscribed field in pt_user table'));
+    // return res.rows;
+    // { name: 'brianc', email: 'brian.m.carlson@gmail.com' }
+  };
+
   postgresService.update_pt_user_password_reset = async (tableName, passwordReset, emailAddress, cb) => {
     const pool = await connectDB.connectDB();
     const text = 'UPDATE pt_user set password_reset = $1 where email_address = $2 RETURNING *';
@@ -113,4 +129,3 @@ import { connectDB } from '../connect-db';
   module.exports, // use so other files can have access to the objects or methods we attach to module.exports
   require('../connect-db'),
 );
-

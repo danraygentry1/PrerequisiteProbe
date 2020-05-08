@@ -64,13 +64,13 @@
   //--------------------------------------------------------
   // Single Purchases
 
-  paymentService.CreateWithPaypal = (transactionsArray, orderObj, returnUrl, cancelUrl, cb) => {
+  paymentService.CreateWithPaypal = (transactionsArray, orderObj, userObj, returnUrl, cancelUrl, cb) => {
   /*  let dbObj = {
       OrderID: "",
       CreateTime: "",
       Transactions: ""
     }; */
-    postgresService.create_pt_user_order_on_buy('paypal_orders', orderObj, (results) => {
+    postgresService.create_pt_user_order_on_buy('paypal_orders', orderObj, userObj, (results) => {
       const paymentObj = {
         intent: 'sale',
         payer: {

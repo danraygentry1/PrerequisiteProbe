@@ -5,7 +5,7 @@ import {
 } from 'availity-reactstrap-validation';
 import { Button, Label } from 'reactstrap';
 
-export default class ChangePasswordPage extends React.Component {
+export default class OrderPage extends React.Component {
   constructor(props) {
     super(props);
 
@@ -14,11 +14,6 @@ export default class ChangePasswordPage extends React.Component {
     this.handleKeyPress = this.handleKeyPress.bind(this);
     this.handleValidSubmit = this.handleValidSubmit.bind(this);
 
-    // component state
-    this.state = {
-      password: '',
-      passwordCheck: '',
-    };
   }
 
   // Handle input changes
@@ -36,93 +31,29 @@ export default class ChangePasswordPage extends React.Component {
 
   // Handle submission once all form data is valid
   handleValidSubmit() {
-    const formData = this.state;
-    const { sendPasswordFunction } = this.props;
-    sendPasswordFunction(formData.password);
+    const { sendOrderFunction } = this.props;
+    sendOrderFunction();
   }
 
   render() {
-    const { isPasswordChanged, isLoggedIn } = this.props.authentication;
-
-    // If they just changed a password and AREN'T logged in
-    if (isPasswordChanged && !isLoggedIn) {
-      return (
-        <div className="row justify-content-center">
-          <div className="col-10 col-sm-7 col-md-5 col-lg-4">
-            <p>
-              Your changes have been saved, and you can
-              now
-              {' '}
-              <Link to="/">log in</Link>
-              {' '}
-              with
-              the new password.
-            </p>
-          </div>
-        </div>
-      );
-    }
-    // If they just changed a password and ARE logged in
-    if (isPasswordChanged && isLoggedIn) {
-      return (
-        <div className="row justify-content-center">
-          <div className="col-10 col-sm-7 col-md-5 col-lg-4">
-            <p>
-              Your new password has been saved.
-            </p>
-          </div>
-        </div>
-      );
-    }
-
     return (
-      <div className="row justify-content-center">
-        <div className="col-10 col-sm-7 col-md-5 col-lg-4">
-          <p>
-            Please enter and confirm a new password below to change the
-            password associated with this email address.
-          </p>
-
-          <AvForm onValidSubmit={this.handleValidSubmit}>
-
-            <AvGroup>
-              <Label for="password">Password</Label>
-              <AvInput
-                id="password"
-                minLength="8"
-                name="password"
-                onChange={this.handleInputChange}
-                onKeyPress={this.handleKeyPress}
-                placeholder="password"
-                required
-                type="password"
-                value={this.state.password}
-              />
-              <AvFeedback>Passwords must be at least eight characters in length</AvFeedback>
-            </AvGroup>
-
-            <AvGroup>
-              <Label for="password">Confirm Password</Label>
-              <AvInput
-                id="passwordCheck"
-                minLength="8"
-                name="passwordCheck"
-                onChange={this.handleInputChange}
-                onKeyPress={this.handleKeyPress}
-                placeholder="password again"
-                required
-                type="password"
-                validate={{ match: { value: 'password' } }}
-                value={this.state.passwordCheck}
-              />
-              <AvFeedback>Passwords must match</AvFeedback>
-            </AvGroup>
-
-            <Button color="primary">Change Password</Button>
-
-          </AvForm>
+      <AvForm onValidSubmit={this.handleValidSubmit}>
+        <AvGroup />
+        <div className="card border-0 flex-grow-0 flex align-items-center justify-content-center wizard-background">
+          <div className="card-body">
+            <div className="card border-0 flex-grow-0 flex align-items-center justify-content-center wizard-background">
+              Click PayPal button below to order!
+              <br/>
+              <br/>
+              <button>
+                <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_200x51.png" alt="PayPal" />
+              </button>
+              <br />
+            </div>
+            <Button href="/register-user" color="primary" className="form-control mt2 btn btn-primary ">Go Back</Button>
+          </div>
         </div>
-      </div>
+      </AvForm>
     );
   }
 }

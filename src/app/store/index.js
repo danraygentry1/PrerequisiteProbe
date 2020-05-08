@@ -1,5 +1,7 @@
 // This file holds the redux store
-import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
+import {
+  createStore, applyMiddleware, combineReducers, compose,
+} from 'redux';
 import { createLogger } from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import thunkMiddleware from 'redux-thunk';
@@ -21,7 +23,7 @@ const reducers = {
   progress: ProgressReducer,
 };
 
-const loggerMiddleware = createLogger()
+const loggerMiddleware = createLogger();
 
 const sagaMiddleware = createSagaMiddleware({
   onError: () => {
@@ -41,9 +43,9 @@ const enhancer = compose(
 
 export const store = createStore(
   combineReducers({
-      authentication: AuthenticationReducer,
-      error: ErrorReducer,
-      progress: ProgressReducer,
+    authentication: AuthenticationReducer,
+    error: ErrorReducer,
+    progress: ProgressReducer,
     session(userSession = defaultState.session || {}, action) {
       const { type, authenticated, userToken } = action;
       switch (type) {
@@ -78,13 +80,13 @@ export const store = createStore(
         default: return ptSchoolCourseRowsArray;
       }
     },
-    userObj(userObj = '', action) {
+    /*    userObj(userObj = {}, action) {
       switch (action.type) {
         case mutations.SET_STATE:
           return action.state.userObj;
         default: return userObj;
       }
-    },
+    }, */
     userName(userName = '', action) {
       switch (action.type) {
         case mutations.SET_STATE:
@@ -92,6 +94,15 @@ export const store = createStore(
         case mutations.CREATE_ACCOUNT:
           return userName;
         default: return userName;
+      }
+    },
+    firstName(firstName = '', action) {
+      switch (action.type) {
+        case mutations.SET_STATE:
+          return action.state.firstName;
+        case mutations.CREATE_ACCOUNT:
+          return firstName;
+        default: return firstName;
       }
     },
     /*  userToken (userToken = "", action){

@@ -5,14 +5,43 @@ import {
 } from 'availity-reactstrap-validation';
 import { Button, Label } from 'reactstrap';
 
+
 export default class RegistrationPage extends React.Component {
   constructor(props) {
     super(props);
+    const { userObj } = props.authentication.userObj;
+
+    /* if user click "go back button" on the order page, the users data
+    will be preserved; thus they won't have to re-enter their data' */
+    //DELETE
+    if (userObj) {
+      this.state({
+        firstName: userObj.first_name,
+        lastName: userObj.last_name,
+        userName: userObj.user_name,
+        emailAddress: userObj.email_address,
+        password: userObj.password,
+      });
+    }
 
     // bound functions
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
     this.handleValidSubmit = this.handleValidSubmit.bind(this);
+
+
+    /* componentDidMount() {
+      const { userObj } = this.props.authentication.userObj;
+      userObj.first_name, userObj.last_name, userObj.user_name, userObj.password_hash, userObj.email_address,
+      this.setState({
+        firstName: userObj.first_name,
+            lastName: userObj.last_name,
+            userName: userObj.user_name,
+            emailAddress: userObj.email_address
+            password: userObj.password
+
+      })
+    } */
 
     // component state
     this.state = {

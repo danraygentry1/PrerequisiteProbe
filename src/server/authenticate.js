@@ -73,8 +73,17 @@ export const authenticationRoute = (app) => {
     console.log(state);
     state.ptSchoolCourseRowsArray = await getPTSchoolCourseInfo(pool);
     state.userName = username;
-    state.userObj = '';
+    state.firstName = user.first_name
 
+    const userObj = {
+      first_name: user.first_name,
+      last_name: user.last_name,
+      user_name: user.user_name,
+      email_address: user.email_address,
+      subscribed: user.subscribed,
+    };
+    state.authentication = {};
+    state.authentication.userObj = userObj;
     state.session = { authenticated: 'AUTHENTICATED', id: user.pt_user_id, userToken };
     // res.cookie('auth', userToken)
 

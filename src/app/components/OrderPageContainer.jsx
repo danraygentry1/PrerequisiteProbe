@@ -1,39 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { passwordSaveClear, savePassword } from '../store/actions/authenticate';
+import { orderProduct } from '../store/actions/order';
 
-import ChangePasswordPage from './ChangePasswordPage';
+import OrderPage from './OrderPage';
 
-export class ChangePasswordPageContainer extends React.Component {
+export class OrderPageContainer extends React.Component {
   constructor(props) {
     super(props);
 
     // bound functions
-    this.sendPassword = this.sendPassword.bind(this);
+    this.sendOrder = this.sendOrder.bind(this);
   }
 
-  // Clear password changed state on unmount: when app is not displaying it
-  componentwillUnmount() {
-    const { dispatch } = this.props;
-    dispatch(passwordSaveClear());
-  }
 
-  sendPassword(password) {
+  sendOrder() {
     const { dispatch } = this.props;
-    const data = {
-      passwordResetHash: this.props.match.params.hash,
-      password,
-    };
-    dispatch(savePassword(data));
+    dispatch(orderProduct());
   }
 
   render() {
     const { authentication } = this.props;
     return (
 
-      <ChangePasswordPage
+      <OrderPage
         authentication={authentication}
-        sendPasswordFunction={this.sendPassword}
+        sendOrderFunction={this.sendOrder}
       />
     );
   }
@@ -41,4 +32,4 @@ export class ChangePasswordPageContainer extends React.Component {
 
 const mapStateToProps = (state) => ({ authentication: state.authentication });
 
-export default connect(mapStateToProps)(ChangePasswordPageContainer);
+export default connect(mapStateToProps)(OrderPageContainer);

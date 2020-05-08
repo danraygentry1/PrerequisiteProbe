@@ -9,7 +9,7 @@ import { Router } from 'react-router';
 import md5 from 'md5';
 import { authenticationRoute } from './authenticate';
 import {
-  connectDB, getPTUser, getPTUserByEmail, getPTUserByHash,
+  connectDB, getPTUser, getPTUserByEmail, getPTUserByHash, getPTUserOrderByPayId
 } from './connect-db';
 
 const crypto = require('crypto');
@@ -66,7 +66,7 @@ app.post('/getuser', async (req, res) => {
   const userByEmailAddress = await getPTUserByEmail(pool, req.body.userObj.email_address);
   try {
     if (Object.keys(userByUserName).length !== 0 || Object.keys(userByEmailAddress).length !== 0){
-      result = res.send(JSON.stringify({ error: 'The user name and/or email address already exists, please choose another user name and/or email address' }));
+      result = res.send(JSON.stringify({ error: 'The user name and/or email address already exists.  Please choose another user name and/or email address' }));
     }else result = res.send(JSON.stringify({ success: true }));
   }
   catch {
@@ -157,7 +157,8 @@ app.post('/savepassword', async (req, res) => {
 
 //* **PayPal Section*************************************************************************************************************
 app.post('/buysingle', (req, res) => {
-  const userObj = req.body;
+  let userObj = req.body;
+  let result;
   console.log(`USER OBJECT SENT TO BUY SINGLE SUCCESSFUL${userObj.toString()}`);
   const orderObj = {
     orderID: '',
@@ -171,20 +172,40 @@ app.post('/buysingle', (req, res) => {
     shippingPrice: 0.00,
     description: 'Prerequisite Probe Access',
   };
+  try {
     // create user first, then buy single order
-  postgresService.create_pt_user('pt_user', userObj, (results, err) => {
-    // let results1 = results
-    // console.log(results1)
-    preReqPurchaseRepo.BuySingle(orderObj, (err, url) => {
+    postgresService.create_pt_user('pt_user', userObj, (results, err) => {
+      // let results1 = results
+      // console.log(results1)
       if (err) {
-        res.json(err);
-      } else {
-        console.log(`AFTER BUYSINGLE${url}`);
-        console.log(`CREATE USER OBJECT SUCCESSFUL${userObj.toString()}`);
-        return res.send(url);
+        result = res.send(JSON.stringify({ error: 'Order Failed.  Failed to create user' }))
+      }
+      else {
+        Object.defineProperty(userObj, 'pt_user_id', {
+          value: results[0].pt_user_id,
+        });
+        preReqPurchaseRepo.BuySingle(orderObj,userObj, (err, url) => {
+          /*if (err) {
+            res.json(err);
+          } else {
+            console.log(`AFTER BUYSINGLE${url}`);
+            console.log(`CREATE USER OBJECT SUCCESSFUL${userObj.toString()}`);
+            return res.send(url);
+          }*/
+          if (err) {
+            result = res.send(JSON.stringify({error: err.message}));
+          } else {
+            result = res.send(JSON.stringify({ success: 'Order Created', url }));
+          }
+        });
       }
     });
-  });
+  }
+  catch(err)
+  {
+    result = res.send(JSON.stringify({ error: 'Order Failed.  Please Try again' }));
+  }
+  return result;
 });
 
 app.get('/cancel/:orderID', (req, res) => {
@@ -198,22 +219,29 @@ app.get('/cancel/:orderID', (req, res) => {
   });
 });
 
-app.get('/success/:orderID', (req, res) => {
+app.get('/success/:orderID', async (req, res) => {
   const { orderID } = req.params;
   const payerID = req.query.PayerID;
   const payID = req.query.paymentId;
+  const pool = await connectDB();
+  const userOrder = await getPTUserOrderByPayId(pool, payID);
+  const isSubscribed = true
+
   console.log(`Now in Paypal Buy Success${orderID}`);
   preReqPurchaseRepo.ExecuteOrder(payerID, orderID, payID, (err, successID) => {
     if (err) {
       res.json(err);
     } else {
       console.log('EXECUTE ORDER SUCCESS');
-      // res.send('Order Placed')
-      res.send(`<h1>Order Placed</h1>Please save your order confirmation number : <h3>${successID}</h3>`);
+      postgresService.update_pt_user_on_execute_subscribed( userOrder.pt_user_id, isSubscribed, (results, err) => {
+        // res.send('Order Placed')
+        if (err){
+          res.send('Something went wrong with with updating subscribed field in pt_user table');
+        }
+        res.send(`<h1>Order Placed</h1>Please save your order confirmation number : <h3>${successID}</h3>`);
+      })
     }
   });
-  // res.send('Order Placed')
-  // res.redirect('http://localhost:8080/')
 });
 
 app.get('/refund/:orderID', (req, res) => {

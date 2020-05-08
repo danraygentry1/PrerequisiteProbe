@@ -1,6 +1,7 @@
 import 'whatwg-fetch'; // import polyfill so that fetch works in most browsers
 import { decrementProgress, incrementProgress } from './progress';
 import { clearError } from './error';
+import { history } from '../history';
 
 export const passwordResetClear = () => ({ type: 'AUTHENTICATION_PASSWORD_RESET_CLEAR' });
 export const passwordSaveFailure = (error) => ({ type: 'AUTHENTICATION_PASSWORD_SAVE_FAILURE', error });
@@ -45,6 +46,7 @@ export function registerUser(userObj) {
       })
       .then((json) => {
         if (json.success) {
+            history.push('/order');
           return dispatch(registrationSuccess(userObj));
         }
         return dispatch(registrationFailure(new Error(json.error.message ? 'Something went wrong while attempting to create the user. Please try again.' : json.error)));

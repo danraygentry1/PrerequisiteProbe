@@ -123,6 +123,8 @@ export async function getPTSchoolCourseInfo(pool) {
 
   return ptSchoolCourseRowsArray;
 }
+
+//---pt_user table section---------------------------------------------------------------------------------------------------------------------------------
 export async function getPTUser(pool, username) {
   const ptUserRows = {};
   const ptUserColumns = [];
@@ -243,6 +245,48 @@ export async function getPTUserByHash(pool, passwordResetHash) {
 
   return ptUserRows;
 }
+//---END pt_user table section---------------------------------------------------------------------------------------------------------------------------------
+
+//---pt_user_order table section-------------------------------------------------------------------------------------------------------------------------------
+export async function getPTUserOrderByPayId(pool, PayId) {
+  const ptUserOrderRows = {};
+  const ptUserOrderColumns = [];
+
+  const ptUserOrderSelect = {
+    text: 'SELECT * FROM pt_user_order WHERE pay_id = $1',
+    values: [PayId],
+    rowMode: 'array',
+  };
+
+  // async/await - check out a client
+  await (async () => {
+    const client = await pool.connect();
+    try {
+      const resUser = await client.query(ptUserOrderSelect);
+      let i = 0;
+      resUser.fields.map((key) => {
+        ptUserOrderColumns.push({ key: key.name });
+      });
+      resUser.rows.map((rowkey) => {
+        ptUserOrderColumns.map((columnkey) => {
+          ptUserOrderRows[columnkey.key] = rowkey[i];
+          i += 1;
+        });
+        i = 0;
+      });
+      // console.log("Res Fields!!!")
+      // console.log(resUser.fields)
+    } finally {
+      // Make sure to release the client before any error handling,
+      // just in case the error handling itself throws an error.
+      client.release();
+    }
+  })().catch((e) => console.log(e.stack));
+
+
+  return ptUserOrderRows;
+}
+//---END pt_user_order table section-------------------------------------------------------------------------------------------------------------------------------
 
 
 

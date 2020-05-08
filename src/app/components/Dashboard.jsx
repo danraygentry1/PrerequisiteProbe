@@ -9,7 +9,7 @@ import { NavComponent } from "./Nav";
 export const Dashboard = ({ptSchoolColumnsArray, ptSchoolRowsArray, ptSchoolCourseRowsArray})=>(
 
     <div>
-            <NavComponent/>
+           {/* <NavComponent/>*/}
             <Grid columns={ptSchoolColumnsArray} rows={ptSchoolRowsArray} innerRows ={ptSchoolCourseRowsArray}  />
     </div>
     /*<div>

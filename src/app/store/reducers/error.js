@@ -7,9 +7,10 @@ export default function reducer(state = initialState, action) {
   switch (action.type) {
     case 'AUTHENTICATION_LOGIN_FAILURE':
     case 'AUTHENTICATION_LOGOUT_FAILURE':
-    case 'AUTHENTICATION_REGISTRATION_FAILURE':
+    case 'AUTHENTICATION_ORDER_FAILURE':
     case 'AUTHENTICATION_PASSWORD_RESET_HASH_FAILURE':
     case 'AUTHENTICATION_PASSWORD_SAVE_FAILURE':
+    case 'AUTHENTICATION_REGISTRATION_FAILURE':
     case 'USER_LOOKUP_FAILURE': {
       const newState = Object.assign({}, initialState);
       newState.isError = true;

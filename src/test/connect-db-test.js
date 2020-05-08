@@ -3,7 +3,7 @@ import sinon from 'sinon';
 import md5 from 'md5';
 import { describe } from 'mocha';
 import {
-  connectDB, getPTSchoolCourseInfo, getPTSchoolInfo, getPTUser, getPTUserByHash,
+  connectDB, getPTSchoolCourseInfo, getPTSchoolInfo, getPTUser, getPTUserByHash, getPTUserOrderByPayId
 } from '../server/connect-db';
 // import postgresService from '../server/services/postgresService'
 
@@ -27,10 +27,15 @@ describe('Database Transactions', () => {
 
   it('Should get PT user from database based on password reset hash', async () => {
     const pool = await connectDB();
-    const parameterName = 'password_reset'
-    const parameterValue = 'danny';
-    const user = await getPTUserByHash(pool, parameterName, parameterValue);
+    const passwordResetHash = 'seeefffsss'
+    const user = await getPTUserByHash(pool, passwordResetHash);
     should.exist(user);
+  });
+  it('Should get PT user order from database based on payId', async () => {
+    const pool = await connectDB();
+    const payId = 'PAYID-L222P6Y48480965U3241125N'
+    const userOrder = await getPTUserOrderByPayId(pool, payId);
+    should.exist(userOrder);
   });
 
 });

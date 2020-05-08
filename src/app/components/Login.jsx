@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as mutations from '../store/mutations';
-import { NavComponent } from "./Nav";
+import { NavComponent } from './Nav';
 import { isTokenVerified, logout } from "../../auth/Auth"
 
 export const LoginComponent = ({authenticateUser, createAccount, authenticated})=>{
@@ -10,7 +10,7 @@ export const LoginComponent = ({authenticateUser, createAccount, authenticated})
         logout()
     } */
   return <div>
-        <NavComponent/>
+       {/* <NavComponent/>*/}
         <div className="card border-0 flex-grow-0 flex align-items-center justify-content-center">
             <div className="row p-3">
               <div className="card-body border-dark card border-1 m-1">

@@ -5,6 +5,7 @@ import { registrationClear, registerUser } from '../store/actions/authenticate';
 import RegistrationPage from './RegistrationPage';
 import md5 from "md5";
 
+
 export class RegistrationPageContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -14,10 +15,10 @@ export class RegistrationPageContainer extends React.Component {
   }
 
   // Clear password changed state on unmount: when app is not displaying it
-  componentwillUnmount() {
+  /*componentwillUnmount() {
     const { dispatch } = this.props;
     dispatch(registrationClear());
-  }
+  }*/
 
   sendUser(formData) {
     const { dispatch } = this.props;

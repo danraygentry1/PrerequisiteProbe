@@ -62,9 +62,9 @@ describe('User Account Tests', () => {
       const userObj = {
         first_name: 'Danny',
         last_name: 'Pinturo',
-        user_name: 'danny',
+        user_name: 'Dev',
         password_hash: md5('jeffery'),
-        email_address: 'danny@gmail.com',
+        email_address: 'danraygentry@hotmail.com',
         subscribed: 'false',
       };
       chai.request(app2)
