@@ -12,7 +12,7 @@ export const HeaderComponent = ()=>{
                 <div className="carousel-inner" role="listbox">
                     <div className="carousel-item active">
                         <div className="parent d-flex justify-content-center flex align-items-center">
-                            <img src="../../../images/Prerequiste Probe Cropped5_1024x1024.png" alt="" width={200} />
+                            <img src="../../../images/Prerequiste Probe Cropped6_1024x1024.png" alt="" width={200} />
                         </div>
                     </div>
                 </div>

@@ -5,14 +5,16 @@ import { connect, Provider } from 'react-redux';
 import { Router, Route } from 'react-router-dom';
 import { Redirect } from 'react-router';
 import { AboutComponent } from './About';
-import ChangePasswordPage from './ChangePasswordPageContainer';
+import ChangePasswordPageContainer from './ChangePasswordPageContainer';
 import { ConnectedDashboard } from './Dashboard';
 import { ConnectedLogin } from './Login';
 import { ConnectedAccountPayWizard } from './wizard/wizard';
 import { ConnectedNavigation } from './Navigation';
-import { NavComponent } from './Nav';
+// import { NavComponent } from './Nav';
+import { ConnectedNav } from './Nav';
 import DevTools from './DevTools';
 import ErrorBox from './ErrorBoxContainer';
+import { HomeComponent } from './Home';
 import { HeaderComponent } from './Header';
 import { history } from '../store/history';
 import { isTokenVerified, logout } from '../../auth/Auth';
@@ -29,18 +31,26 @@ import { store } from '../store';
 // want the property of the object know as match.
 const RouteGuard = (Component) => ({ match }) => {
   console.info('Route guard', match);
+
   //! verifyToken(store.getState().session.userToken) &&
   // if(!verifyToken(Cookies.get('auth')))
   // if (!store.getState().session.authenticated &&  match.url != "/wizard")
   // if(verifyToken(store.getState().session.userToken))
   // let tokenVerified = verifyToken(Cookies.get('auth'))
-  if (!isTokenVerified(Cookies.get('auth')) && match.url != '/wizard') {
-    return <Redirect to="/" />;
+
+  /*if (!isTokenVerified(Cookies.get('auth'))) {
+    return <Redirect to="/login" />;
+  }*/
+
+  if (isTokenVerified(Cookies.get('auth')) && (match.url != '/dashboard' && match.url != '/' && match.url != '/about')) {
+    logout();
+    return <Redirect to="/login" />;
   }
-  if (match.url === '/') {
+
+ /* if (match.url === '/') {
     logout();
     return <Component match={match} />;
-  }
+  }*/
   return <Component match={match} />;
 };
 
@@ -49,13 +59,14 @@ export const Main = () => (
     <Provider store={store}>
       <div>
         <ConnectedNavigation />
-        <NavComponent />
+        <ConnectedNav />
         <HeaderComponent />
         <section className="page-content container-fluid">
           <ErrorBox />
-          <Route exact path="/" component={ConnectedLogin} />
-          <Route exact path="/about" component={AboutComponent} />
-          <Route exact path="/change-password/:hash" component={ChangePasswordPage} />
+          <Route exact path="/" render={RouteGuard(HomeComponent)} />
+          <Route exact path="/login" component={ConnectedLogin} />
+          <Route exact path="/about" render={RouteGuard(AboutComponent)} />
+          <Route exact path="/change-password/:hash" render={RouteGuard(ChangePasswordPageContainer)} />
           <Route
             path="/buysingle"
             component={() => {
@@ -70,10 +81,11 @@ export const Main = () => (
             }}
           />
           <Route exact path="/dashboard" render={RouteGuard(ConnectedDashboard)} />
-          <Route exact path="/reset-password" component={ResetPasswordPage} />
+          <Route exact path="/reset-password" render={RouteGuard(ResetPasswordPage)} />
           <Route exact path="/wizard" render={RouteGuard(ConnectedAccountPayWizard)} />
-          <Route exact path="/register-user" component={RegistrationPageContainer} />
-          <Route exact path="/order" component={OrderPageContainer} />
+          <Route exact path="/register-user" render={RouteGuard(RegistrationPageContainer)} />
+          <Route exact path="/order" render={RouteGuard(OrderPageContainer)} />
+
         </section>
         <DevTools />
       </div>

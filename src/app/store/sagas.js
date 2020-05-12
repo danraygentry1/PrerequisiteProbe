@@ -73,6 +73,8 @@ export function* userAuthenticationSaga() {
       Cookies.set('auth', data.state.session.userToken);
 
       history.push('/dashboard');
+
+
     } catch (e) {
       console.log("can't authenticate");
       yield put(mutations.processAuthenticateUser(mutations.NOT_AUTHENTICATED));

@@ -123,7 +123,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                     tooltip = 'Interview Required?';
                     break;
                 case 'LOR':
-                    tooltip = 'Letters off Recommendation';
+                    tooltip = 'Letters of Recommendation';
                     break;
                 case 'Program Start Dt':
                     tooltip = 'PT Program Start Date';
@@ -185,7 +185,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 { text: 'Obs Hrs', datafield: 'hours_min', filtertype: 'number', cellsalign: 'right', columngroup: 'school', width: '5%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'In State', datafield: 'tuition_in_state_full',  filtertype: 'number', cellsalign: 'right', cellsformat: 'c2', columngroup: 'tuition', width: '8%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Out of State', datafield: 'tuition_out_state_full',  filtertype: 'number', cellsalign: 'right', cellsformat: 'c2', columngroup: 'tuition', width: '8%', enabletooltips:true, rendered: tooltiprenderer },
-                { text: 'PreReq Min', datafield: 'gpa_prereq_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '7%', enabletooltips:true, rendered: tooltiprenderer },
+                { text: 'Prereq Min', datafield: 'gpa_prereq_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '7%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Cum Min', datafield: 'gpa_overall_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '5%', enabletooltips:true, rendered: tooltiprenderer  },
                 { text: 'Verb Min', datafield: 'score_verbal_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '5%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Quant Min', datafield: 'score_quant_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '6%', enabletooltips:true, rendered: tooltiprenderer },
@@ -200,7 +200,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 { label: 'Obs Hrs Min', value: 'hours_min', checked: true },
                 { label: 'Tuition (In State)', value: 'tuition_in_state_full', checked: true },
                 { label: 'Tuition (Out State)', value: 'tuition_out_state_full', checked: true },
-                { label: 'GPA PreReq Min', value: 'gpa_prereq_min', checked: true },
+                { label: 'GPA Prereq Min', value: 'gpa_prereq_min', checked: true },
                 { label: 'GPA Cumulative Min', value: 'gpa_overall_min', checked: true },
                 { label: 'GRE Verb Min', value: 'score_verbal_min', checked: true },
                 { label: 'GRE Quant Min', value: 'score_quant_min', checked: true },

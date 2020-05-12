@@ -2,32 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ce02b82-2744-48b5-9601-dadee3ab73ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/store/actions/order.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/store/reducers/order.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Prerequiste Probe FullColor_1024x1024.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Prerequiste Probe FullColor_1024x1024.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/About.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Grid-Nested-bak.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Grid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Main.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Nav.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/OrderPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/OrderPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/OrderPageContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/OrderPageContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/RegistrationPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/RegistrationPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/RegistrationPageContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/RegistrationPageContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/actions/authenticate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/actions/authenticate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/reducers/error.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/reducers/error.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/sagas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/sagas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repos/preReqPurchaseRepo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repos/preReqPurchaseRepo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/authenticate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/authenticate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/connect-db.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/connect-db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/services/paymentService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/services/paymentService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/services/postgresService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/services/postgresService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/authenticate-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/authenticate-test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/connect-db-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/connect-db-test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/paymentService-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/paymentService-test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/postgresService-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/postgresService-test.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +51,7 @@
     <property name="js.last.introduce.type" value="LET" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/store/reducers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -89,9 +75,9 @@
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\React and NodeJS\preReqFinder\src\server" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\app\components" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\app\store\reducers" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\app\store\actions" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\app\components" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\test\actions" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe" />
     </key>
@@ -317,7 +303,7 @@
       <workItem from="1585593578270" duration="5687000" />
       <workItem from="1585939619002" duration="615000" />
       <workItem from="1586127690758" duration="9291000" />
-      <workItem from="1587404502786" duration="222421000" />
+      <workItem from="1587404502786" duration="245820000" />
     </task>
     <servers />
   </component>
@@ -357,7 +343,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/sagas.js</url>
-          <line>82</line>
+          <line>84</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -392,7 +378,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/Main.jsx</url>
-          <line>73</line>
+          <line>84</line>
           <option name="timeStamp" value="93" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -407,7 +393,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/Login.jsx</url>
-          <line>54</line>
+          <line>56</line>
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -427,7 +413,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/sagas.js</url>
-          <line>83</line>
+          <line>85</line>
           <option name="timeStamp" value="153" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -775,6 +761,30 @@
           <line>74</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="310" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/components/Main.jsx</url>
+          <line>82</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="311" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/components/Main.jsx</url>
+          <line>85</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="312" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/components/Main.jsx</url>
+          <line>86</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="313" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/components/Nav.jsx</url>
+          <line>5</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="314" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
