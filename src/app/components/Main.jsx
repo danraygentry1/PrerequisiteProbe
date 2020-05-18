@@ -10,7 +10,7 @@ import ChangePasswordPageContainer from './ChangePasswordPageContainer';
 import { ConnectedDashboard } from './Dashboard';
 import { ConnectedLogin } from './Login';
 import { ConnectedAccountPayWizard } from './wizard/wizard';
-import { ConnectedNavigation } from './Navigation';
+
 // import { NavComponent } from './Nav';
 import { ConnectedNav } from './Nav';
 import DevTools from './DevTools';
@@ -59,7 +59,6 @@ export const Main = () => (
   <Router history={history}>
     <Provider store={store}>
       <div>
-        <ConnectedNavigation />
         <ConnectedNav />
         <HeaderComponent />
         <section className="page-content container-fluid">
