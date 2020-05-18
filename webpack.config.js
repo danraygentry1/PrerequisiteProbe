@@ -1,23 +1,23 @@
 // import path from 'path';
 const webpack = require('webpack');
 const path = require('path');
-// const NodemonPlugin = require('nodemon-webpack-plugin'); // Ding
-const proxy = require('http-proxy-middleware');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const { resolve } = require('path');
 
-/* const onProxyRes = function(proxyRes, req, res) {
-    // add new header to response
-    proxyRes.headers['x-added'] = 'foobar';
-
-    // remove header from response
-    delete proxyRes.headers['x-removed'];
-}; */
-
+const cssOutputLocation = process.env.NODE_ENV === 'production'
+  ? 'public/stylesheets/style-prod.css'
+  : 'stylesheets/style.css';
 // export default {
 module.exports = {
   target: 'web',
   mode: 'development',
 
-  entry: path.resolve(__dirname, 'src', 'app'), // index.jsx has special designation, always looked for
+  /* entry: path.resolve(__dirname, 'src', 'app'), // index.jsx has special designation, always looked for */
+  context: resolve(__dirname, 'src', 'app'),
+  entry: [
+    './index.jsx',
+  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -25,46 +25,22 @@ module.exports = {
     sourceMapFilename: '[name].js.map',
     // crossOriginLoading: 'anonymous',
 
-    // devtoolModuleFilenameTemplate: '[absolute-resource-path]'
-    devtoolModuleFilenameTemplate: (info) => `${info.resourcePath}`,
 
   },
   resolve: {
     extensions: ['.js', '.jsx', '.tsx', '.ts'],
   },
-  devServer: {
-    historyApiFallback: true, // needed for react router in later module
-    port: 8080,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Headers': '*',
-      'Access-Control-Allow-Methods': '*',
-    },
-    proxy: {
-      // target: "http://localhost:9229/",
-      '/dashboard': {
-        target: 'http://localhost:9229/',
-        // changeOrigin: true,
-        // secure:false,
-        // pathRewrite: {'^/api': '/'}
-      },
-    },
-  },
   devtool: 'source-map',
   // devtool: 'false',
   plugins: [
-    // new webpack.SourceMapDevToolPlugin({
-    // filename:'[name].js.map',
-    // sourceRoot: '/',
-    // noSources: true,
-
-    // devtoolModuleFilenameTemplate: info => {
-    // return `webpack:///${info.resourcePath}?${info.loaders}`;
-    // 'webpack://[namespace]/
-    // devtoolModuleFilenameTemplate: '[absolute-resource-path]',
-    // fallbackModuleFilenameTemplate: '[absolute-resource-path]',
-    // }),
-    // new NodemonPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new MiniCssExtractPlugin({
+      filename: cssOutputLocation,
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    }),
   ],
   module: {
     rules: [
@@ -82,7 +58,9 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          { loader: 'style-loader' },
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
           { loader: 'css-loader' },
         ],
       },
@@ -99,3 +77,51 @@ module.exports = {
     ],
   },
 };
+if (process.env.NODE_ENV === 'production') {
+  /*  module.exports.plugins.push(new UglifyJsPlugin({
+      compress: {
+        warnings: false,
+        screw_ie8: true,
+        conditionals: true,
+        unused: true,
+        comparisons: true,
+        sequences: true,
+        dead_code: true,
+        evaluate: true,
+        if_return: true,
+        join_vars: true,
+      },
+      output: {
+        comments: false,
+      },
+    })); */
+  module.exports.plugins.push(new webpack.HashedModuleIdsPlugin());
+  // Enables scope hoisting: gives preference to imports while using javascript, which as speed up diplay times
+  module.exports.plugins.push(new webpack.optimize.ModuleConcatenationPlugin());
+  // tells webpack that we are always in production mode, which
+  // will cause it to eliminate a few extra thing it would otherwise output
+  module.exports.plugins.push(
+    new webpack.DefinePlugin(
+      { 'process.env.NODE_ENV': JSON.stringify('development') },
+    ),
+  );
+  module.exports.plugins.push(
+    new CompressionPlugin({
+      filename: '[path].gz[query]',
+      algorithm: 'gzip',
+      test: /\.js$|\.css$|\.html$|\.eot?.+$|\.ttf?.+$|\.woff?.+$|\.svg?.+$/,
+      threshold: 10240,
+      minRatio: 0.8,
+    }),
+  );
+}
+if (process.env.NODE_ENV !== 'production') {
+  // array.unshift sticks stuff at the beginning of an array
+  // as opposed to array.push, which puts stuff at the end
+  module.exports.entry.unshift(
+    'react-hot-loader/patch',
+    'react-hot-loader/babel',
+    'webpack-hot-middleware/client',
+  );
+  module.exports.plugins.unshift(new webpack.HotModuleReplacementPlugin());
+}

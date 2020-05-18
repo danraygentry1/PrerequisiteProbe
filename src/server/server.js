@@ -11,20 +11,32 @@ import { authenticationRoute } from './authenticate';
 import {
   connectDB, getPTUser, getPTUserByEmail, getPTUserByHash, getPTUserOrderByPayId
 } from './connect-db';
-
+const http = require('http');
 const crypto = require('crypto');
 const mailgun = require('mailgun-js')({
   apiKey: appConfig.mailgun.apiKey,
   domain: appConfig.mailgun.domain,
 });
-const proxy = require('http-proxy-middleware');
+const helmet = require('helmet');
 const paymentService = require('./services/paymentService');
 const postgresService = require('./services/postgresService');
 const preReqPurchaseRepo = require('../repos/preReqPurchaseRepo');
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
+const webpackConfig = require('../../webpack.config');
+
+
+
+const app = express();
 
 // let port = process.env.PORT || 8888;  //process.env.PORT is Heroku port
-const port = 9229;
-const app = express();
+//let port = process.env.PORT || 9229;
+
+const port = 3000
+//app.set('port', port);
+app.listen(port, console.log('Server listening on port', port));
+
 
 // body parser - allows us to get the data from the body of the request and
 // used to parse incoming request bodies
@@ -32,11 +44,37 @@ app.use(
   cors(),
   bodyParser.urlencoded({ extended: true }),
   bodyParser.json(),
+
 ); // anything in here is considered a plugin,  BodyParsers use post requests instead of get requests. //anything in here is considered a plugin,  BodyParsers use post requests instead of get requests.
+app.use(helmet());
+app.use('/vendor', express.static('vendor'))
+app.use('/css', express.static('css'))
+app.use('/images', express.static('images'))
+
+// WebpackServer.  logging to node console during development
+// create a virtual javascript file that watches for changes and hot reloads them
+if (process.env.NODE_ENV !== 'production') {
+  const webpackCompiler = webpack(webpackConfig);
+  app.use(webpackDevMiddleware(webpackCompiler, {
+    publicPath: webpackConfig.output.publicPath,
+    stats: {
+      colors: true,
+      chunks: true,
+      'errors-only': true,
+    },
+  }));
+  app.use(webpackHotMiddleware(webpackCompiler, {
+    log: console.log,
+  }));
+
+  console.log("WEBPACK Middleware")
+}
+
 
 //* **Authentication Section*****************************************************************************************************
 authenticationRoute(app);
 
+//FIX
 if (process.env.NODE_ENV == 'production') {
   // serve anything in the /dist folder without putting /dist in front of it
   app.use(express.static(path.resolve(__dirname, '../../dist'))); // everything will be served from this url
@@ -44,6 +82,9 @@ if (process.env.NODE_ENV == 'production') {
     res.sendFile(path.resolve('index.html')); // allows us to not use webpack dev server in production.
   });
 }
+
+
+
 
 app.post('/saveUser', (req, res) => {
   postgresService.create_pt_user('pt_user', req.userObj, (err, results) => {
@@ -105,8 +146,8 @@ app.post('/saveresethash', async (req, res) => {
           from: `PrerequisiteProbe <postmaster@${appConfig.mailgun.domain}>`,
           to: foundUser.email_address,
           subject: 'Reset Your Password',
-          text: `A password reset has been requested for the PrerequisiteProbe account connected to this email address. If you made this request, please click the following link: http://localhost:8080/change-password/${passwordResetHash} ... if you didn't make this request, feel free to ignore it!`,
-          html: `<p>A password reset has been requested for the Prerequisite Probe account connected to this email address. If you made this request, please click the following link: <a href="http://localhost:8080/change-password/${passwordResetHash}" target="_blank">http://localhost:8080/change-password/${passwordResetHash}</a>.</p><p>If you didn't make this request, feel free to ignore it!</p>`,
+          text: `A password reset has been requested for the PrerequisiteProbe account connected to this email address. If you made this request, please click the following link: http://localhost:3000/change-password/${passwordResetHash} ... if you didn't make this request, feel free to ignore it!`,
+          html: `<p>A password reset has been requested for the Prerequisite Probe account connected to this email address. If you made this request, please click the following link: <a href="http://localhost:3000/change-password/${passwordResetHash}" target="_blank">http://localhost:3000/change-password/${passwordResetHash}</a>.</p><p>If you didn't make this request, feel free to ignore it!</p>`,
         };
 
         // Send it
@@ -185,17 +226,14 @@ app.post('/buysingle', (req, res) => {
           value: results[0].pt_user_id,
         });
         preReqPurchaseRepo.BuySingle(orderObj,userObj, (err, url) => {
-          /*if (err) {
-            res.json(err);
-          } else {
-            console.log(`AFTER BUYSINGLE${url}`);
-            console.log(`CREATE USER OBJECT SUCCESSFUL${userObj.toString()}`);
-            return res.send(url);
-          }*/
+
           if (err) {
+            console.log("Buy Single Error")
             result = res.send(JSON.stringify({error: err.message}));
           } else {
+            console.log("Buy Single Success")
             result = res.send(JSON.stringify({ success: 'Order Created', url }));
+            //res.redirect(url)
           }
         });
       }
@@ -238,7 +276,7 @@ app.get('/success/:orderID', async (req, res) => {
         if (err){
           res.send('Something went wrong with with updating subscribed field in pt_user table');
         }
-        res.send(`<h1>Order Placed</h1>Please save your order confirmation number : <h3>${successID}</h3>`);
+        res.send(`<h1>Order Placed</h1>Please save your order confirmation number : <h3>${successID}</h3> <a href="http://localhost:3000/login">Click Here to Login </a> `);
       })
     }
   });
@@ -266,8 +304,17 @@ app.get('/orderdetails/:orderID', (req, res) => {
   });
 });
 
+// tells app which route files defined above to use for which url path.
+// any request to the top level of the site, use index
+// use "*" to always return to the index page if a defined route is not specified
+// in a hard request to the browser (change the url path)
+// put all other routs above the app.use('/*', index) route so that express will catch
+// any API routes and not send them to the react app
+app.get('/*', (req, res) => {
+  res.sendFile(path.resolve('index.html')); // allows us to not use webpack dev server in production.
+});
 
-app.listen(port, console.log('Server listening on port', port));
+
 
 //* **PayPal Section*************************************************************************************************************
 

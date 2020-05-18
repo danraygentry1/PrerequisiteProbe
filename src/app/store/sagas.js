@@ -9,7 +9,7 @@ import { REQUEST_PURCHASE_PRODUCT } from './mutations';
 import { passwordSaveFailure, passwordSaveSuccess } from './actions/authenticate';
 
 /* const url = process.env.NODE_ENV == 'production' ? '' : "http://localhost:8080"; //url used to communicate to the server */
-const url = 'http://localhost:9229'; // url used to communicate to the server
+const url = 'http://localhost:3000'; // url used to communicate to the server
 // '' is the root (prereqfinder.com)
 export function* taskCreationSaga() {
   while (true) {

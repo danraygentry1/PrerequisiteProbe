@@ -53,7 +53,7 @@ export default class ChangePasswordPage extends React.Component {
               Your changes have been saved, and you can
               now
               {' '}
-              <Link to="/">log in</Link>
+              <Link to="/login">log in</Link>
               {' '}
               with
               the new password.

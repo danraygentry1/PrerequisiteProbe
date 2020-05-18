@@ -9,7 +9,7 @@ export const orderSuccess = () => ({ type: 'AUTHENTICATION_ORDER_SUCCESS' });
 
 export function orderProduct() {
   return async (dispatch) => {
-    const url = 'http://localhost:9229/buysingle';
+    const url = 'http://localhost:3000/buysingle';
     const { authentication } = store.getState()
 
     // clear the error box if it's displayed
@@ -35,6 +35,7 @@ export function orderProduct() {
       .then((response) => {
         if (response.status === 200) {
           return response.json();
+          //response.redirect(response.url);
         }
         return null;
       })
@@ -43,7 +44,10 @@ export function orderProduct() {
           history.push(`/buysingle?${json.url}`);
           dispatch(orderSuccess());
         }
-        return dispatch(orderFailure(new Error(json.error.message ? 'Something went wrong with the order. Please try again.' : json.error)));
+        if (json.error) {
+          return dispatch(orderFailure(new Error(json.error.message ? 'Something went wrong with the order. Please try again.' : json.error)));
+        }
+        return null;
       })
       .catch((error) => dispatch(orderFailure(new Error(error.message || 'Something went wrong with the order. Please try again.'))));
 

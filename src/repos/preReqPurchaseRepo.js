@@ -9,7 +9,7 @@
 
     const transactionItemObj = [paymentService.CreateTransactionObj(orderObj.taxPrice, orderObj.shippingPrice, orderObj.description, transactionArray)];
 
-    paymentService.CreateWithPaypal(transactionItemObj, orderObj, userObj, 'http://localhost:9229/success', 'http://localhost:9229/cancel', (err, results) => {
+    paymentService.CreateWithPaypal(transactionItemObj, orderObj, userObj, 'http://localhost:3000/success', 'http://localhost:3000/cancel', (err, results) => {
       if (err) {
         return cb(err);
       }

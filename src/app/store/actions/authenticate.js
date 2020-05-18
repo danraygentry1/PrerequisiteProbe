@@ -16,7 +16,7 @@ export const registrationClear = () => ({ type: 'AUTHENTICATION_REGISTRATION_CLE
 
 export function registerUser(userObj) {
   return async (dispatch) => {
-    const url = 'http://localhost:9229/getuser';
+    const url = 'http://localhost:3000/getuser';
 
     // clear the error box if it's displayed
     dispatch(clearError());
@@ -62,7 +62,7 @@ export function registerUser(userObj) {
 // Send email to API for hashing
 export function createHash(emailAddress) {
   return async (dispatch) => {
-    const url = 'http://localhost:9229/saveresethash';
+    const url = 'http://localhost:3000/saveresethash';
 
     // clear the error box if it's displayed
     dispatch(clearError());
@@ -107,7 +107,7 @@ export function createHash(emailAddress) {
 // Save a user's password
 export function savePassword(data) {
   return async (dispatch) => {
-    const url = 'http://localhost:9229/savepassword';
+    const url = 'http://localhost:3000/savepassword';
 
     // clear the error box if it's displayed
     dispatch(clearError());

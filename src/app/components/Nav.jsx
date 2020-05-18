@@ -13,11 +13,7 @@ export const NavComponent = ({ firstName }) => (
 
   <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div className="container">
-      {/*<img src="../../../images/FullColor_IconOnly_10%25x10%25_72dpi.png" alt="" />*/}
-      <Link className="collapse navbar-collapse" to="/">Home</Link>
-      {/*<button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon" />
-      </button>*/}
+      <a href="/"><img src="../../../images/FullColor_TextOnly_Menu%20Version%20250x22.png" alt="" /></a>
       <div className="collapse navbar-collapse" id="navbarResponsive">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
@@ -30,6 +26,12 @@ export const NavComponent = ({ firstName }) => (
             {isTokenVerified(Cookies.get('auth'))
               ? (
                 <Link className="nav-link" to="/dashboard">Dashboard</Link>
+              ) : ''}
+          </li>
+          <li className="nav-item">
+            {!isTokenVerified(Cookies.get('auth'))
+              ? (
+                <Link className="nav-link" to="/register-user">Create Account</Link>
               ) : ''}
           </li>
           <li className="nav-item">

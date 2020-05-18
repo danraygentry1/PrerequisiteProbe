@@ -1,5 +1,6 @@
 // parent of Dashboard
 import React from 'react';
+import { BuySingleComponent } from './BuySingle';
 import Cookies from 'js-cookie';
 import { connect, Provider } from 'react-redux';
 import { Router, Route } from 'react-router-dom';
@@ -38,19 +39,19 @@ const RouteGuard = (Component) => ({ match }) => {
   // if(verifyToken(store.getState().session.userToken))
   // let tokenVerified = verifyToken(Cookies.get('auth'))
 
-  /*if (!isTokenVerified(Cookies.get('auth'))) {
+  /* if (!isTokenVerified(Cookies.get('auth'))) {
     return <Redirect to="/login" />;
-  }*/
+  } */
 
-  if (isTokenVerified(Cookies.get('auth')) && (match.url != '/dashboard' && match.url != '/' && match.url != '/about')) {
+  if (isTokenVerified(Cookies.get('auth')) && (match.url != '/dashboard' && match.url != '/' && match.url != '/about' && match.url != '/buysingle' && match.url != '/success' && match.url != '/cancel')) {
     logout();
     return <Redirect to="/login" />;
   }
 
- /* if (match.url === '/') {
+  /* if (match.url === '/') {
     logout();
     return <Component match={match} />;
-  }*/
+  } */
   return <Component match={match} />;
 };
 
@@ -67,7 +68,7 @@ export const Main = () => (
           <Route exact path="/login" component={ConnectedLogin} />
           <Route exact path="/about" render={RouteGuard(AboutComponent)} />
           <Route exact path="/change-password/:hash" render={RouteGuard(ChangePasswordPageContainer)} />
-          <Route
+          {/*<Route
             path="/buysingle"
             component={() => {
               const url = window.location.href;
@@ -77,14 +78,15 @@ export const Main = () => (
                 paypalUrl += hashes[i];
               }
               window.location.href = paypalUrl.toString();
-              return null;
+              return <p> Please wait while we redirect you to PayPal </p>;
             }}
-          />
+          />*/}
           <Route exact path="/dashboard" render={RouteGuard(ConnectedDashboard)} />
           <Route exact path="/reset-password" render={RouteGuard(ResetPasswordPage)} />
           <Route exact path="/wizard" render={RouteGuard(ConnectedAccountPayWizard)} />
           <Route exact path="/register-user" render={RouteGuard(RegistrationPageContainer)} />
           <Route exact path="/order" render={RouteGuard(OrderPageContainer)} />
+          <Route exact path="/buysingle" render={RouteGuard(BuySingleComponent)} />
 
         </section>
         <DevTools />
