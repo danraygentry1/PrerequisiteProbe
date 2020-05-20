@@ -74,14 +74,7 @@ if (process.env.NODE_ENV !== 'production') {
 //* **Authentication Section*****************************************************************************************************
 authenticationRoute(app);
 
-//FIX
-if (process.env.NODE_ENV == 'production') {
-  // serve anything in the /dist folder without putting /dist in front of it
-  app.use(express.static(path.resolve(__dirname, '../../dist'))); // everything will be served from this url
-  app.get('/*', (req, res) => {
-    res.sendFile(path.resolve('index.html')); // allows us to not use webpack dev server in production.
-  });
-}
+
 
 
 
@@ -304,6 +297,10 @@ app.get('/orderdetails/:orderID', (req, res) => {
   });
 });
 
+//* **PayPal Section*************************************************************************************************************
+
+
+
 // tells app which route files defined above to use for which url path.
 // any request to the top level of the site, use index
 // use "*" to always return to the index page if a defined route is not specified
@@ -314,10 +311,14 @@ app.get('/*', (req, res) => {
   res.sendFile(path.resolve('index.html')); // allows us to not use webpack dev server in production.
 });
 
-
-
-//* **PayPal Section*************************************************************************************************************
-
+//FIX
+if (process.env.NODE_ENV == 'production') {
+  // serve anything in the /dist folder without putting /dist in front of it
+  app.use(express.static(path.resolve(__dirname, '../../dist'))); // everything will be served from this url
+  app.get('/*', (req, res) => {
+    res.sendFile(path.resolve('index.html')); // allows us to not use webpack dev server in production.
+  });
+}
 
 // Export our app for testing purposes
 export const app2 = app;

@@ -3,9 +3,51 @@
 // let db = null;
 
 // import { Pool } from 'pg'
+const fs = require('fs');
 const { Pool, Client } = require('pg');
 
-export async function connectDB() {
+/*const config = {
+  database: 'Physical_Therapy',
+  host: 'prerequisitprobe-db-postgresql-nyc1-04154-do-user-7519641-0.a.db.ondigitalocean.com',
+  // this object will be passed to the TLSSocket constructor
+  ssl: {
+    rejectUnauthorized: false,
+    ca: fs.readFileSync('../../webconfig.config.js').toString(),
+  },
+};
+
+
+
+const pool = new Pool(config);
+pool
+  .connect()
+  .then((client) => {
+    console.log('connected');
+    client.release();
+  })
+  .catch((err) => console.error('error connecting', err.stack))
+  .then(() => pool.end());*/
+
+// Digital Ocean postgres
+ export async function connectDB() {
+  const pool = new Pool({
+    user: 'doadmin',
+    host: 'prerequisitprobe-db-postgresql-nyc1-04154-do-user-7519641-0.a.db.ondigitalocean.com',
+    database: 'Physical_Therapy',
+    password: 'ltah1edkek4qnp9l',
+    port: 25060,
+    ssl: true,
+  });
+  // pool.query('SELECT NOW()', (err, res) => {
+  //   console.log(err, res)
+  //  pool.end()
+  // });
+  return pool;
+}
+
+
+// amazon postgress
+/* export async function connectDB() {
   const pool = new Pool({
     user: 'postgres',
     host: 'pt-prerequisite.cbzc8wikqhsi.us-west-2.rds.amazonaws.com',
@@ -18,7 +60,8 @@ export async function connectDB() {
   //  pool.end()
   // });
   return pool;
-}
+} */
+
 export async function getPTSchoolInfo(pool) {
   const ptSchoolColumnsArray = [];
   const ptSchoolRowsArray = [];
@@ -124,7 +167,7 @@ export async function getPTSchoolCourseInfo(pool) {
   return ptSchoolCourseRowsArray;
 }
 
-//---pt_user table section---------------------------------------------------------------------------------------------------------------------------------
+// ---pt_user table section---------------------------------------------------------------------------------------------------------------------------------
 export async function getPTUser(pool, username) {
   const ptUserRows = {};
   const ptUserColumns = [];
@@ -245,9 +288,9 @@ export async function getPTUserByHash(pool, passwordResetHash) {
 
   return ptUserRows;
 }
-//---END pt_user table section---------------------------------------------------------------------------------------------------------------------------------
+// ---END pt_user table section---------------------------------------------------------------------------------------------------------------------------------
 
-//---pt_user_order table section-------------------------------------------------------------------------------------------------------------------------------
+// ---pt_user_order table section-------------------------------------------------------------------------------------------------------------------------------
 export async function getPTUserOrderByPayId(pool, PayId) {
   const ptUserOrderRows = {};
   const ptUserOrderColumns = [];
@@ -286,8 +329,7 @@ export async function getPTUserOrderByPayId(pool, PayId) {
 
   return ptUserOrderRows;
 }
-//---END pt_user_order table section-------------------------------------------------------------------------------------------------------------------------------
-
+// ---END pt_user_order table section-------------------------------------------------------------------------------------------------------------------------------
 
 
 // connectDB()
