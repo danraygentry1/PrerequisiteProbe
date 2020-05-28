@@ -9,7 +9,7 @@ import { AboutComponent } from './About';
 import ChangePasswordPageContainer from './ChangePasswordPageContainer';
 import { ConnectedDashboard } from './Dashboard';
 import { ConnectedLogin } from './Login';
-import { ConnectedAccountPayWizard } from './wizard/wizard';
+
 
 // import { NavComponent } from './Nav';
 import { ConnectedNav } from './Nav';
@@ -65,8 +65,10 @@ export const Main = () => (
           <ErrorBox />
           <Route exact path="/" render={RouteGuard(HomeComponent)} />
           <Route exact path="/login" component={ConnectedLogin} />
-          <Route exact path="/about" render={RouteGuard(AboutComponent)} />
+          {/*<Route exact path="/change-password/" render={RouteGuard(ChangePasswordPageContainer)} />*/}
           <Route exact path="/change-password/:hash" render={RouteGuard(ChangePasswordPageContainer)} />
+          <Route exact path="/about" render={RouteGuard(AboutComponent)} />
+
           {/*<Route
             path="/buysingle"
             component={() => {
@@ -82,7 +84,6 @@ export const Main = () => (
           />*/}
           <Route exact path="/dashboard" render={RouteGuard(ConnectedDashboard)} />
           <Route exact path="/reset-password" render={RouteGuard(ResetPasswordPage)} />
-          <Route exact path="/wizard" render={RouteGuard(ConnectedAccountPayWizard)} />
           <Route exact path="/register-user" render={RouteGuard(RegistrationPageContainer)} />
           <Route exact path="/order" render={RouteGuard(OrderPageContainer)} />
           <Route exact path="/buysingle" render={RouteGuard(BuySingleComponent)} />

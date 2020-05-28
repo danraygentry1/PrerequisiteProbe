@@ -33,9 +33,7 @@ const app = express();
 // let port = process.env.PORT || 8888;  //process.env.PORT is Heroku port
 //let port = process.env.PORT || 9229;
 
-const port = 3000
-//app.set('port', port);
-app.listen(port, console.log('Server listening on port', port));
+app.listen(appConfig.port, console.log('Server listening on port', appConfig.port));
 
 
 // body parser - allows us to get the data from the body of the request and
@@ -63,9 +61,9 @@ if (process.env.NODE_ENV !== 'production') {
       'errors-only': true,
     },
   }));
-  app.use(webpackHotMiddleware(webpackCompiler, {
-    log: console.log,
-  }));
+   app.use(webpackHotMiddleware(webpackCompiler, {
+     log: console.log,
+   }));
 
   console.log("WEBPACK Middleware")
 }
@@ -140,7 +138,7 @@ app.post('/saveresethash', async (req, res) => {
           to: foundUser.email_address,
           subject: 'Reset Your Password',
           text: `A password reset has been requested for the PrerequisiteProbe account connected to this email address. If you made this request, please click the following link: http://localhost:3000/change-password/${passwordResetHash} ... if you didn't make this request, feel free to ignore it!`,
-          html: `<p>A password reset has been requested for the Prerequisite Probe account connected to this email address. If you made this request, please click the following link: <a href="http://localhost:3000/change-password/${passwordResetHash}" target="_blank">http://localhost:3000/change-password/${passwordResetHash}</a>.</p><p>If you didn't make this request, feel free to ignore it!</p>`,
+          html: `<p>Hello ${foundUser.first_name}, your user name is:  ${foundUser.user_name}.  A password reset has been requested for the Prerequisite Probe account connected to this email address. If you made this request, please click the following link: <a href="http://localhost:3000/change-password/${passwordResetHash}" target="_blank">http://localhost:3000/change-password/${passwordResetHash}</a>.</p><p>If you didn't make this request, feel free to ignore it!</p>`,
         };
 
         // Send it
@@ -269,7 +267,7 @@ app.get('/success/:orderID', async (req, res) => {
         if (err){
           res.send('Something went wrong with with updating subscribed field in pt_user table');
         }
-        res.send(`<h1>Order Placed</h1>Please save your order confirmation number : <h3>${successID}</h3> <a href="http://localhost:3000/login">Click Here to Login </a> `);
+        res.send(`<h1>Order Placed</h1>Please save your order confirmation number : <h3>${successID}</h3> <a href="${appConfig.url}/login">Click Here to Login </a> `);
       })
     }
   });
@@ -313,12 +311,13 @@ app.get('/*', (req, res) => {
 
 //FIX
 if (process.env.NODE_ENV == 'production') {
-  // serve anything in the /dist folder without putting /dist in front of it
-  app.use(express.static(path.resolve(__dirname, '../../dist'))); // everything will be served from this url
+  app.use(express.static(path.resolve(__dirname, '../../dist'))); //everthing will be served from this url
   app.get('/*', (req, res) => {
-    res.sendFile(path.resolve('index.html')); // allows us to not use webpack dev server in production.
+    res.sendFile(path.resolve('index.html')); //allows us to not use webpack dev server in production.
   });
 }
 
 // Export our app for testing purposes
 export const app2 = app;
+
+

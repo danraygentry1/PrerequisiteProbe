@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'; // imports connect method
 import { ConnectedTaskList } from './TaskList';
 import { ConnectedNav } from './Nav';
+import { HeaderComponent} from './Header';
 import Grid from './Grid';
 import { generatedata } from '../../sampledata/generatedata';
 /* import { NavComponent } from './Nav'; */
@@ -12,6 +13,8 @@ export const Dashboard = ({ ptSchoolColumnsArray, ptSchoolRowsArray, ptSchoolCou
   <div>
     {/* <NavComponent firstName={firstName} /> */}
     <ConnectedNav />
+    {/*<HeaderComponent />*/}
+
     <Grid columns={ptSchoolColumnsArray} rows={ptSchoolRowsArray} innerRows={ptSchoolCourseRowsArray} />
 
   </div>

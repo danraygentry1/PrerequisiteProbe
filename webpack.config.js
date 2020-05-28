@@ -6,8 +6,8 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const { resolve } = require('path');
 
 const cssOutputLocation = process.env.NODE_ENV === 'production'
-  ? 'public/stylesheets/style-prod.css'
-  : 'stylesheets/style.css';
+  ? 'style.css'
+  : 'style.css';
 // export default {
 module.exports = {
   target: 'web',

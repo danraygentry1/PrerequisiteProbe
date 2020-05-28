@@ -155,5 +155,4 @@
   module.exports,
   require('paypal-rest-sdk'),
   require('./postgresService.js'),
-  require('mongodb').ObjectId,
 );

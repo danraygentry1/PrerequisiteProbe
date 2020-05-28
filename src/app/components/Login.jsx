@@ -7,11 +7,7 @@ import { ConnectedNav } from './Nav';
 import { isTokenVerified, logout } from "../../auth/Auth"
 
 export const LoginComponent = ({authenticateUser, createAccount, authenticated})=>{
-   /* if (isTokenVerified){
-        logout()
-    } */
   return <div>
-       {/*<NavComponent/>*/}
       <ConnectedNav />
         <div className="card border-0 flex-grow-0 flex align-items-center justify-content-center">
             <div className="row p-3">
@@ -26,7 +22,7 @@ export const LoginComponent = ({authenticateUser, createAccount, authenticated})
                             Login incorrect</p> : null}
                         <br/>
                         <button type="submit" className="form-control mt2 btn btn-primary">Login</button>
-                        <span><Link to="/reset-password">Forgot your password?</Link></span>
+                        <span><Link to="/reset-password">Forgot user name or password?</Link></span>
                         <br/><br/>
                         <br/>
                     </form>

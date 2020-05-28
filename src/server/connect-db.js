@@ -69,7 +69,7 @@ export async function getPTSchoolInfo(pool) {
 
   const ptSchoolSelect = {
     text: 'select pt_school.pt_school_id, pt_school.name as school_name, pt_school.state, pt_school.interview_req, pt_school.lor_num,  pt_school.program_start_dt, '
-           + 'pt_deadline.ptcas_deadline_dt, pt_school.class_size, pt_hours.hours_min, pt_school.tuition_in_state_full, pt_school.tuition_out_state_full, pt_gpa.gpa_overall_min, '
+           + 'pt_deadline.ptcas_deadline_dt, pt_school.class_size, pt_hours.required, pt_hours.hours_min, pt_school.tuition_in_state_full, pt_school.tuition_out_state_full, pt_gpa.gpa_overall_min, '
        + 'pt_gpa.gpa_prereq_min, pt_gre_exam.score_verbal_min, pt_gre_exam.score_quant_min, pt_gre_exam.score_total_min ' + ''
        + 'from pt_school '
        + 'Inner Join pt_deadline on pt_school.pt_school_id = pt_deadline.pt_school_id '
@@ -78,7 +78,7 @@ export async function getPTSchoolInfo(pool) {
        + 'Inner Join pt_hours on pt_school.pt_school_id = pt_hours.pt_school_id ' + ''
        // 'Inner Join pt_school_course on pt_school.pt_school_id = pt_school_course.pt_school_id ' +
        // 'Inner Join pt_course on pt_school_course.pt_course_id = pt_course.pt_course_id ' + '' +
-       + 'order by pt_school.pt_school_id',
+       + 'order by pt_school.name',
     rowMode: 'array',
   };
   // async/await - check out a client

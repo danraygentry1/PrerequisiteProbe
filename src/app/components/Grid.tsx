@@ -25,6 +25,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
         this.clearFiltering = this.clearFiltering.bind(this);
         this.myGridOnFilter = this.myGridOnFilter.bind(this);
         this.myListBoxOnCheckChange = this.myListBoxOnCheckChange.bind(this);
+        this.excelBtnOnClick = this.excelBtnOnClick.bind(this)
         //this.state.ready = this.state.ready.bind(this);
         const source: any =
             {
@@ -36,14 +37,15 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                     { name: 'program_start_dt', type: 'date', map: '5' },
                     { name: 'ptcas_deadline_dt', type: 'date', map: '6' },
                     { name: 'class_size', type: 'number', map: '7' },
-                    { name: 'hours_min', type: 'number', map: '8' },
-                    { name: 'tuition_in_state_full', type: 'number', map: '9' },
-                    { name: 'tuition_out_state_full', type: 'number', map: '10' },
-                    { name: 'gpa_prereq_min', type: 'float', map: '11' },
-                    { name: 'gpa_overall_min', type: 'float', map: '12' },
-                    { name: 'score_verbal_min', type: 'number', map: '13' },
-                    { name: 'score_quant_min', type: 'number', map: '14' },
-                    { name: 'score_total_min', type: 'number', map: '15' }
+                    { name: 'required', type: 'bool', map: '8' },
+                    { name: 'hours_min', type: 'number', map: '9' },
+                    { name: 'tuition_in_state_full', type: 'number', map: '10' },
+                    { name: 'tuition_out_state_full', type: 'number', map: '11' },
+                    { name: 'gpa_prereq_min', type: 'float', map: '12' },
+                    { name: 'gpa_overall_min', type: 'float', map: '13' },
+                    { name: 'score_verbal_min', type: 'number', map: '14' },
+                    { name: 'score_quant_min', type: 'number', map: '15' },
+                    { name: 'score_total_min', type: 'number', map: '16' }
                 ],
                 datatype: 'array',
                 localdata: props.rows
@@ -134,7 +136,10 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 case 'Class Size':
                     tooltip = 'Class Size';
                     break;
-                case 'Obs Hrs':
+                case 'Hrs Req?':
+                    tooltip = 'Observation Hours Required?';
+                    break;
+                case 'Hrs Min':
                     tooltip = 'Minimum Observation Hours';
                     break;
                 case 'In State':
@@ -170,6 +175,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
         this.state = {
              columngroups: [
                 { text: 'School', align: 'center', name: 'school' },
+                 { text: 'Observation', align: 'center', name: 'observation' },
                  { text: 'Tuition', align: 'center', name: 'tuition' },
                 { text: 'GRE', align: 'center', name: 'gre' },
                 { text: 'GPA', align: 'center', name: 'gpa' }
@@ -182,14 +188,15 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 { text: 'Program Start Dt', datafield: 'program_start_dt', filtertype: 'range', cellsalign: 'right', cellsformat: 'd', columngroup: 'school', width: '9%', enabletooltips:true, rendered: tooltiprenderer   },
                 { text: 'PTCAS Deadline', datafield: 'ptcas_deadline_dt', filtertype: 'range', cellsalign: 'right', cellsformat: 'd', columngroup: 'school', width: '9%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Class Size', datafield: 'class_size', filtertype: 'number', cellsalign: 'right', columngroup: 'school', width: '6%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
-                { text: 'Obs Hrs', datafield: 'hours_min', filtertype: 'number', cellsalign: 'right', columngroup: 'school', width: '5%', enabletooltips:true, rendered: tooltiprenderer },
+                { text: 'Hrs Req?', datafield: 'required', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'observation',  width: '5%', enabletooltips:true, rendered: tooltiprenderer },
+                { text: 'Hrs Min', datafield: 'hours_min', filtertype: 'number', cellsalign: 'right', columngroup: 'observation', width: '5%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'In State', datafield: 'tuition_in_state_full',  filtertype: 'number', cellsalign: 'right', cellsformat: 'c2', columngroup: 'tuition', width: '8%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Out of State', datafield: 'tuition_out_state_full',  filtertype: 'number', cellsalign: 'right', cellsformat: 'c2', columngroup: 'tuition', width: '8%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Prereq Min', datafield: 'gpa_prereq_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '7%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Cum Min', datafield: 'gpa_overall_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '5%', enabletooltips:true, rendered: tooltiprenderer  },
                 { text: 'Verb Min', datafield: 'score_verbal_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '5%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Quant Min', datafield: 'score_quant_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '6%', enabletooltips:true, rendered: tooltiprenderer },
-                { text: 'Tot Min', datafield: 'score_total_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '5%',  enabletooltips:true, rendered: tooltiprenderer } //, cellsrenderer: renderer
+                { text: 'Tot Min', datafield: 'score_total_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '6%',  enabletooltips:true, rendered: tooltiprenderer } //, cellsrenderer: renderer
             ],
             listBoxSource: [
                 { label: 'Interview?', value: 'interview_req', checked: true },
@@ -197,7 +204,8 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 { label: 'Program Start Date', value: 'program_start_dt', checked: true },
                 { label: 'PTCAS Deadline', value: 'ptcas_deadline_dt', checked: true },
                 { label: 'Class Size', value: 'class_size', checked: false },
-                { label: 'Obs Hrs Min', value: 'hours_min', checked: true },
+                { label: 'Hrs Req', value: 'required', checked: true },
+                { label: 'Hrs Min', value: 'hours_min', checked: true },
                 { label: 'Tuition (In State)', value: 'tuition_in_state_full', checked: true },
                 { label: 'Tuition (Out State)', value: 'tuition_out_state_full', checked: true },
                 { label: 'GPA Prereq Min', value: 'gpa_prereq_min', checked: true },
@@ -272,6 +280,13 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                                     Filters: <JqxPanel ref={this.myPanel} theme={"bootstrap"} width={300} height={120} />
                                 </div>
                             </div>
+                            <div className="card col-md-7 border-0 flex align-items-end ">
+                                <br />
+                                <div className="card-body card border-0">
+                                    <JqxButton onClick={this.excelBtnOnClick}> <img src="../../../images/export-excel icon.png" alt="" /></JqxButton>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -289,22 +304,9 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
             this.myPanel.current!.prepend('<div style="margin-top: 5px;">' + eventData + '</div>');
         }
     };
-  /*  private showCustomToolTip(element: any, pageX: any, pageY: any): void{
-        const cell = this.myGrid.current!.getcellatposition(pageX, pageY)
-        if (cell.column.toString() == "Name") {
-            // update tooltip.
-            let cellValue = cell.value;
-            if (cellValue > availableQuantity) {
-                let tooltipContent = "<div style='color: Blue;'>NutSack</div>";
-                this.myGrid.current  //jqxTooltip({ content: tooltipContent });
-                // open tooltip.
-                $("#jqxgrid").jqxTooltip('open', pageX + 15, pageY + 15);
-            } else {
-                $("#jqxgrid").jqxTooltip('close');
-            };
-        };
-
-    }*/
+    private excelBtnOnClick() {
+        this.myGrid.current!.exportdata('xls', 'jqxGrid');
+    };
     private myListBoxOnCheckChange(event: any): void {
         this.myGrid.current!.beginupdate();
         if (event.args.checked) {

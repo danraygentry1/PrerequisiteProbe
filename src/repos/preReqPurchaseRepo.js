@@ -1,4 +1,4 @@
-((squatchPurchaseRepo, paypal, ObjectID, mongoService, paymentService) => {
+((squatchPurchaseRepo, paypal, ObjectID, paymentService, appConfig) => {
   squatchPurchaseRepo.BuySingle = (orderObj, userObj, cb) => {
     const transactionArray = [];
 
@@ -9,7 +9,7 @@
 
     const transactionItemObj = [paymentService.CreateTransactionObj(orderObj.taxPrice, orderObj.shippingPrice, orderObj.description, transactionArray)];
 
-    paymentService.CreateWithPaypal(transactionItemObj, orderObj, userObj, 'http://localhost:3000/success', 'http://localhost:3000/cancel', (err, results) => {
+    paymentService.CreateWithPaypal(transactionItemObj, orderObj, userObj, `${appConfig.url}/success`, `${appConfig.url}/cancel`, (err, results) => {
       if (err) {
         return cb(err);
       }
@@ -51,7 +51,7 @@
 })(
   module.exports,
   require('paypal-rest-sdk'),
-  require('mongodb').ObjectId,
   require('../server/services/postgresService.js'),
   require('../server/services/paymentService.js'),
+  require('../../config'),
 );
