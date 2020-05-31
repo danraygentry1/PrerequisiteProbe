@@ -30,14 +30,8 @@ const webpackConfig = require('../../webpack.config');
 
 const app = express();
 
-// let port = process.env.PORT || 8888;  //process.env.PORT is Heroku port
-//let port = process.env.PORT || 9229;
-
 app.listen(appConfig.port, console.log('Server listening on port', appConfig.port));
 
-
-// body parser - allows us to get the data from the body of the request and
-// used to parse incoming request bodies
 app.use(
   cors(),
   bodyParser.urlencoded({ extended: true }),
@@ -137,8 +131,8 @@ app.post('/saveresethash', async (req, res) => {
           from: `PrerequisiteProbe <postmaster@${appConfig.mailgun.domain}>`,
           to: foundUser.email_address,
           subject: 'Reset Your Password',
-          text: `A password reset has been requested for the PrerequisiteProbe account connected to this email address. If you made this request, please click the following link: http://localhost:3000/change-password/${passwordResetHash} ... if you didn't make this request, feel free to ignore it!`,
-          html: `<p>Hello ${foundUser.first_name}, your user name is:  ${foundUser.user_name}.  A password reset has been requested for the Prerequisite Probe account connected to this email address. If you made this request, please click the following link: <a href="http://localhost:3000/change-password/${passwordResetHash}" target="_blank">http://localhost:3000/change-password/${passwordResetHash}</a>.</p><p>If you didn't make this request, feel free to ignore it!</p>`,
+          text: `A password reset has been requested for the PrerequisiteProbe account connected to this email address. If you made this request, please click the following link: ${appConfig.url}/change-password/${passwordResetHash} ... if you didn't make this request, feel free to ignore it!`,
+          html: `<p>Hello ${foundUser.first_name}, your user name is:  ${foundUser.user_name}.  A password reset has been requested for the Prerequisite Probe account connected to this email address. If you made this request, please click the following link: <a href="${appConfig.url}/change-password/${passwordResetHash}" target="_blank">${appConfig.url}/change-password/${passwordResetHash}</a>.</p><p>If you didn't make this request, feel free to ignore it!</p>`,
         };
 
         // Send it
@@ -298,19 +292,21 @@ app.get('/orderdetails/:orderID', (req, res) => {
 //* **PayPal Section*************************************************************************************************************
 
 
-
 // tells app which route files defined above to use for which url path.
 // any request to the top level of the site, use index
 // use "*" to always return to the index page if a defined route is not specified
 // in a hard request to the browser (change the url path)
 // put all other routs above the app.use('/*', index) route so that express will catch
 // any API routes and not send them to the react app
-app.get('/*', (req, res) => {
-  res.sendFile(path.resolve('index.html')); // allows us to not use webpack dev server in production.
-});
+
+if (process.env.NODE_ENV !== 'production') {
+  app.get('/*', (req, res) => {
+    res.sendFile(path.resolve('index.html')); // allows us to not use webpack dev server in production.
+  });
+}
 
 //FIX
-if (process.env.NODE_ENV == 'production') {
+if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.resolve(__dirname, '../../dist'))); //everthing will be served from this url
   app.get('/*', (req, res) => {
     res.sendFile(path.resolve('index.html')); //allows us to not use webpack dev server in production.

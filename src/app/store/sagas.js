@@ -1,55 +1,11 @@
 import { take, put, select } from 'redux-saga/effects';
-import uuid from 'uuid';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import * as mutations from './mutations';
 import { history } from './history';
-import { store } from '.';
-import { REQUEST_PURCHASE_PRODUCT } from './mutations';
-import { passwordSaveFailure, passwordSaveSuccess } from './actions/authenticate';
 
-/* const url = process.env.NODE_ENV == 'production' ? '' : "http://localhost:8080"; //url used to communicate to the server */
+
 const url = 'http://localhost:3000'; // url used to communicate to the server
-// '' is the root (prereqfinder.com)
-export function* taskCreationSaga() {
-  while (true) {
-    const { groupID } = yield take(mutations.REQUEST_TASK_CREATION); // when it gets the take it will stop until the specified action is dispatched
-    const ownerID = 'U1';
-    const taskID = uuid();
-    yield put(mutations.createTask(taskID, groupID, ownerID));
-    // createTask mutation can respond to the reducer without the reducer needing to be random in any way
-    // put means what ever action we pass to it, send it into the store,
-    const { res } = yield axios.post(`${url}/task/new`, {
-      task: {
-        id: taskID,
-        group: groupID,
-        owner: ownerID,
-        isComplete: false,
-        name: 'New task',
-      }, // becomes the body property of the post request we're handling on the server
-    });
-
-    console.info('Got response,', res);
-  }
-} // saga to create task
-
-export function* taskModificationSaga() {
-  while (true) {
-    const task = yield take([
-      mutations.SET_TASK_GROUP,
-      mutations.SET_TASK_NAME,
-      mutations.SET_TASK_COMPLETE,
-    ]);
-    axios.post(`${url}/task/update`, {
-      task: {
-        id: task.taskID,
-        group: task.groupID,
-        name: task.name,
-        isComplete: task.isComplete,
-      }, // sends request to the server, which informs it of this user action
-    });
-  }
-} // saga to update task
 
 export function* userAuthenticationSaga() {
   while (true) {
@@ -81,24 +37,7 @@ export function* userAuthenticationSaga() {
     }
   }
 } // use yield with async functions
-export function* purchaseProductSaga() {
-  while (true) {
-    yield take(mutations.REQUEST_PURCHASE_PRODUCT);
-    try {
-      const { userObj } = store.getState();
 
-      const paypalUrl = yield axios.post(`${url}/buysingle`, userObj);
-      history.push(`/buysingle?${paypalUrl.data}`);
-
-
-      /* yield axios.post(url + '/buysingle',  { params: {
-                    "wenis": "wenis"
-                }}) */
-    } catch (e) {
-      console.log(e.toString());
-    }
-  }
-}
 export function* createAccountSaga() {
   while (true) {
     const type = yield take(mutations.CREATE_ACCOUNT);
@@ -117,38 +56,4 @@ export function* createAccountSaga() {
     }
   }
 }
-//DELETE
-export function* createUserSaga() {
-  while (true) {
-    const userObj = yield take(mutations.CREATE_USER);
-    let isFoundUser = true;
-    yield axios.post(`${url}/getuser`,
-      { userObj })
-      .then((response) => {
-        if (response.status === 200) {
-          return response;
-        }
-        return null;
-      })
-      .then(async (json) => {
-        if (json && json.data.success) {
-          isFoundUser = false;
-        } else {
-          console.log('CreateUserSaga Else block');
-          // dispatch(passwordSaveFailure(new Error(json.error.message ? 'There was an error saving the password. Please try again' : json.error)));
-        }
-      })
-      .catch((error) => {
-        console.log('CreateUserSaga Catch block');
-        // dispatch(passwordSaveFailure(new Error(error.message || 'There was an error saving the password. Please try again.')));
-      });
 
-    // add userObj to state
-    if (!isFoundUser) {
-      const state = store.getState();
-      state.userObj = userObj.userObj;
-      yield put(mutations.setState(state));
-    }
-    return isFoundUser;
-  }
-}

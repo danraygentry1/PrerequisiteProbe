@@ -2,12 +2,13 @@ import chai from 'chai';
 import sinon from 'sinon';
 import chaiHttp from 'chai-http';
 import { describe } from 'mocha';
+import md5 from 'md5';
 import { app2 } from '../server/server';
-import md5 from "md5";
 
 // import postgresService from '../server/services/postgresService'
 const stringify = require('json-stringify-safe');
 const paymentService = require('../server/services/paymentService');
+
 const should = chai.should();
 const { expect } = chai;
 chai.use(chaiHttp);
@@ -27,13 +28,13 @@ describe('PayPal Order', () => {
     shippingPrice: 0.00,
     description: 'Prerequisite Probe Access',
   };
-
+  // INSERT INTO pt_user(first_name, last_name, user_name, password_hash, email_address, subscribed) VALUES($1, $2, $3, $4, $5, $6) RETURNING *'
   const userObj = {
     first_name: 'Danny',
     last_name: 'Pinturo',
-    user_name: 'danny5',
+    user_name: 'danny1',
     password_hash: md5('jeffery'),
-    email_address: 'danny@gmails.com',
+    email_address: 'danny2@gmail.com',
     subscribed: 'false',
   };
 
@@ -65,7 +66,7 @@ describe('PayPal Order', () => {
     const transactionArray = [];
     transactionArray.push(transactionItemObj);
   });
-  //TO DO: need to stringify userObj to make test work
+  // TO DO: need to stringify userObj to make test work
   it('Should create a single order', (done) => {
     chai.request(app2)
       .post('/buysingle')
