@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ce02b82-2744-48b5-9601-dadee3ab73ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/prod_bak/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prod_bak/server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prod_bak/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/sagas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/sagas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/auth/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/services/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/services/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/paymentService-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/paymentService-test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -306,7 +298,7 @@
       <workItem from="1589565786836" duration="47396000" />
       <workItem from="1589927848120" duration="37450000" />
       <workItem from="1590432993699" duration="34363000" />
-      <workItem from="1590552197196" duration="23136000" />
+      <workItem from="1590552197196" duration="23421000" />
     </task>
     <servers />
   </component>
