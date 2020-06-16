@@ -336,7 +336,7 @@ class Second extends Component {
                 <div className="card-body">
                     { this.props.form.first_name && <h3>Hey {this.props.form.first_name}! 👋</h3> }
                     <div className="card border-0 flex-grow-0 flex align-items-center justify-content-center wizard-background">
-                        Click PayPal button below to order!
+                        Click PayPal button below to order for $9.99!
                     </div>
                     <Stats step={2} {...this.props} previousStep={this.validate} purchaseProduct={this.props.purchaseProduct} />
                 </div>

@@ -9,7 +9,6 @@ export const orderSuccess = () => ({ type: 'AUTHENTICATION_ORDER_SUCCESS' });
 
 export function orderProduct() {
   return async (dispatch) => {
-    const url = 'http://localhost:3000/buysingle';
     const { authentication } = store.getState()
 
     // clear the error box if it's displayed
@@ -21,7 +20,7 @@ export function orderProduct() {
     // contact the API
     await fetch(
       // where to contact
-      url,
+      '/buysingle',
       // what to send
       {
         method: 'POST',

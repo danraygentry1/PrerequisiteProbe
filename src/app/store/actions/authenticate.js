@@ -3,6 +3,7 @@ import { decrementProgress, incrementProgress } from './progress';
 import { clearError } from './error';
 import { history } from '../history';
 
+
 export const passwordResetClear = () => ({ type: 'AUTHENTICATION_PASSWORD_RESET_CLEAR' });
 export const passwordSaveFailure = (error) => ({ type: 'AUTHENTICATION_PASSWORD_SAVE_FAILURE', error });
 export const passwordSaveSuccess = () => ({ type: 'AUTHENTICATION_PASSWORD_SAVE_SUCCESS' });
@@ -16,7 +17,6 @@ export const registrationClear = () => ({ type: 'AUTHENTICATION_REGISTRATION_CLE
 
 export function registerUser(userObj) {
   return async (dispatch) => {
-    const url = 'http://localhost:3000/getuser';
 
     // clear the error box if it's displayed
     dispatch(clearError());
@@ -27,7 +27,7 @@ export function registerUser(userObj) {
     // contact the API
     await fetch(
       // where to contact
-      url,
+      '/getuser',
       // what to send
       {
         method: 'POST',
@@ -62,7 +62,6 @@ export function registerUser(userObj) {
 // Send email to API for hashing
 export function createHash(emailAddress) {
   return async (dispatch) => {
-    const url = 'http://localhost:3000/saveresethash';
 
     // clear the error box if it's displayed
     dispatch(clearError());
@@ -75,7 +74,7 @@ export function createHash(emailAddress) {
     // contact the API
     await fetch(
       // where to contact
-      url,
+      '/saveresethash',
       // what to send
       {
         method: 'POST',
@@ -107,7 +106,6 @@ export function createHash(emailAddress) {
 // Save a user's password
 export function savePassword(data) {
   return async (dispatch) => {
-    const url = 'http://localhost:3000/savepassword';
 
     // clear the error box if it's displayed
     dispatch(clearError());
@@ -118,7 +116,7 @@ export function savePassword(data) {
     // contact the API
     await fetch(
       // where to contact
-      url,
+      '/savepassword',
       // what to send
       {
         method: 'POST',

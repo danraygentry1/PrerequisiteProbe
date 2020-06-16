@@ -2,7 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ce02b82-2744-48b5-9601-dadee3ab73ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Prerequiste Probe Cropped8_1024x1024.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Prerequiste Probe Cropped9_1024x1024.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Prerequiste Probe FullColor_1024x1024 60%.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Prerequiste Probe FullColor_1024x1024 80%.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Prerequiste Probe FullColor_1024x1024 90%.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Prerequiste Probe FullColor_1024x1024 small%.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/videos/PrerequisiteProbeVideo.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/About.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/ChangePasswordPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/ChangePasswordPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Grid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Nav.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/OrderPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/OrderPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/RegistrationPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/RegistrationPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/RegistrationPageContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/RegistrationPageContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/ResetPasswordPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/ResetPasswordPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/wizard/wizard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/wizard/wizard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/actions/authenticate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/actions/authenticate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/actions/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/actions/order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/sagas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/sagas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/authenticate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/authenticate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/connect-db.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/connect-db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/services/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/services/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/paymentService-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/paymentService-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +75,7 @@
     <property name="js.last.introduce.type" value="LET" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/prod_bak" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/videos" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -66,11 +99,11 @@
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\server\auth" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\prod_bak" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\dist" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\public\videos" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\auth" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\app\store" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\prod_bak" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -85,7 +118,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.PayPal Order.Should create a single order">
+  <component name="RunManager" selected="Mocha.Database Transactions.Should get PT user from database">
     <configuration name="Server JavaScript" type="JavascriptDebugType" uri="http://localhost:8080/" useFirstLineBreakpoints="true">
       <mapping url="webpack:///src/app" local-file="$PROJECT_DIR$/src/app" />
       <mapping url="webpack:///src" local-file="$PROJECT_DIR$/src" />
@@ -130,7 +163,7 @@
         </option>
       </method>
     </configuration>
-    <configuration name="Database Transactions.Should get PT user order from database based on payId" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="Database Transactions.Should get PT user from database" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -142,7 +175,7 @@
       <test-file>$PROJECT_DIR$/src/test/connect-db-test.js</test-file>
       <test-names>
         <name value="Database Transactions" />
-        <name value="Should get PT user order from database based on payId" />
+        <name value="Should get PT user from database" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -225,20 +258,20 @@
     <list>
       <item itemvalue="JavaScript Debug.Server JavaScript" />
       <item itemvalue="Mocha.PayPal Order.Should create a single order" />
-      <item itemvalue="Mocha.Database Transactions.Should get PT user order from database based on payId" />
       <item itemvalue="Mocha.PT User Transactions.Should Update PT_User table with newly reset password" />
       <item itemvalue="Mocha.PT User Transactions.Should Update PT_User subscribed field" />
       <item itemvalue="Mocha.PT User Transactions.Should Update pt_user subscribed field" />
       <item itemvalue="Node.js.Server" />
       <item itemvalue="Node.js.API" />
+      <item itemvalue="Mocha.Database Transactions.Should get PT user from database" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Mocha.Database Transactions.Should get PT user from database" />
         <item itemvalue="Mocha.PayPal Order.Should create a single order" />
         <item itemvalue="Mocha.PT User Transactions.Should Update pt_user subscribed field" />
         <item itemvalue="Mocha.PT User Transactions.Should Update PT_User subscribed field" />
         <item itemvalue="Mocha.PT User Transactions.Should Update PT_User table with newly reset password" />
-        <item itemvalue="Mocha.Database Transactions.Should get PT user order from database based on payId" />
       </list>
     </recent_temporary>
   </component>
@@ -298,7 +331,7 @@
       <workItem from="1589565786836" duration="47396000" />
       <workItem from="1589927848120" duration="37450000" />
       <workItem from="1590432993699" duration="34363000" />
-      <workItem from="1590552197196" duration="23421000" />
+      <workItem from="1590552197196" duration="89059000" />
     </task>
     <servers />
   </component>
@@ -353,12 +386,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/sagas.js</url>
-          <line>10</line>
+          <line>11</line>
           <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/sagas.js</url>
-          <line>27</line>
+          <line>28</line>
           <option name="timeStamp" value="91" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -407,16 +440,6 @@
           <option name="timeStamp" value="165" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/test/connect-db-test.js</url>
-          <line>24</line>
-          <option name="timeStamp" value="176" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/test/connect-db-test.js</url>
-          <line>23</line>
-          <option name="timeStamp" value="177" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/authenticate-test.js</url>
           <line>12</line>
           <option name="timeStamp" value="180" />
@@ -458,17 +481,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/actions/authenticate.js</url>
-          <line>89</line>
+          <line>88</line>
           <option name="timeStamp" value="210" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/actions/authenticate.js</url>
-          <line>95</line>
+          <line>94</line>
           <option name="timeStamp" value="211" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/actions/authenticate.js</url>
-          <line>103</line>
+          <line>102</line>
           <option name="timeStamp" value="212" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -583,27 +606,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/actions/order.js</url>
-          <line>35</line>
+          <line>34</line>
           <option name="timeStamp" value="272" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/actions/order.js</url>
-          <line>36</line>
+          <line>35</line>
           <option name="timeStamp" value="273" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/actions/order.js</url>
-          <line>42</line>
+          <line>41</line>
           <option name="timeStamp" value="274" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/actions/order.js</url>
-          <line>50</line>
+          <line>49</line>
           <option name="timeStamp" value="276" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/connect-db.js</url>
-          <line>265</line>
+          <line>239</line>
           <option name="timeStamp" value="286" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -613,7 +636,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/connect-db.js</url>
-          <line>253</line>
+          <line>227</line>
           <option name="timeStamp" value="288" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -697,6 +720,30 @@
           <line>212</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="325" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/test/connect-db-test.js</url>
+          <line>21</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="327" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/components/Grid.tsx</url>
+          <line>19</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="328" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/components/Grid.tsx</url>
+          <line>27</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="329" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/components/Grid.tsx</url>
+          <line>77</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="330" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

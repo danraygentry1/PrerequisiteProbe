@@ -2,11 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { ConnectedNav } from './Nav';
 import * as mutations from '../store/mutations';
+import {HeaderComponent} from "./Header";
 
 
 export const AboutComponent = () => (
   <div>
     <ConnectedNav />
+    <HeaderComponent/>
     <div className="card border-0 flex-grow-0 flex align-items-center justify-content-center">
       <div className="card-body">
         <h5 className="card-title">About Us:</h5>

@@ -3,16 +3,17 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import * as mutations from './mutations';
 import { history } from './history';
+//import appConfig from '../../server/server';
 
 
-const url = 'http://localhost:3000'; // url used to communicate to the server
+//const url = `http://${appConfig.url}`; // url used to communicate to the server
 
 export function* userAuthenticationSaga() {
   while (true) {
     const { username, password } = yield take(mutations
       .REQUEST_AUTHENTICATE_USER);
     try {
-      const { data } = yield axios.post(`${url}/authenticate`, { username, password });
+      const { data } = yield axios.post('/authenticate', { username, password });
       if (!data) {
         throw new Error();
       }
@@ -20,7 +21,7 @@ export function* userAuthenticationSaga() {
       console.log('AuthenticatedSSSS!', data);
       console.log('State Data');
       console.log(data.state.ptSchoolColumnsArray);
-      console.log(url);
+
 
       yield put(mutations.setState(data.state));
       yield put(mutations.processAuthenticateUser(mutations.AUTHENTICATED, data.state.session.userToken));

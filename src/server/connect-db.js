@@ -1,32 +1,5 @@
-// import { MongoClient } from 'mongodb';
-// const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/myorganizer';
-// let db = null;
-
-// import { Pool } from 'pg'
 const fs = require('fs');
 const { Pool, Client } = require('pg');
-
-/*const config = {
-  database: 'Physical_Therapy',
-  host: 'prerequisitprobe-db-postgresql-nyc1-04154-do-user-7519641-0.a.db.ondigitalocean.com',
-  // this object will be passed to the TLSSocket constructor
-  ssl: {
-    rejectUnauthorized: false,
-    ca: fs.readFileSync('../../webconfig.config.js').toString(),
-  },
-};
-
-
-
-const pool = new Pool(config);
-pool
-  .connect()
-  .then((client) => {
-    console.log('connected');
-    client.release();
-  })
-  .catch((err) => console.error('error connecting', err.stack))
-  .then(() => pool.end());*/
 
 // Digital Ocean postgres
  export async function connectDB() {
@@ -68,17 +41,18 @@ export async function getPTSchoolInfo(pool) {
   let ptSchoolRowsInnerArray = [];
 
   const ptSchoolSelect = {
-    text: 'select pt_school.pt_school_id, pt_school.name as school_name, pt_school.state, pt_school.interview_req, pt_school.lor_num,  pt_school.program_start_dt, '
-           + 'pt_deadline.ptcas_deadline_dt, pt_school.class_size, pt_hours.required, pt_hours.hours_min, pt_school.tuition_in_state_full, pt_school.tuition_out_state_full, pt_gpa.gpa_overall_min, '
-       + 'pt_gpa.gpa_prereq_min, pt_gre_exam.score_verbal_min, pt_gre_exam.score_quant_min, pt_gre_exam.score_total_min ' + ''
-       + 'from pt_school '
-       + 'Inner Join pt_deadline on pt_school.pt_school_id = pt_deadline.pt_school_id '
-       + 'Inner Join pt_gpa on pt_school.pt_school_id = pt_gpa.pt_school_id '
-       + 'Inner Join pt_gre_exam on pt_school.pt_school_id = pt_gre_exam.pt_school_id '
-       + 'Inner Join pt_hours on pt_school.pt_school_id = pt_hours.pt_school_id ' + ''
-       // 'Inner Join pt_school_course on pt_school.pt_school_id = pt_school_course.pt_school_id ' +
-       // 'Inner Join pt_course on pt_school_course.pt_course_id = pt_course.pt_course_id ' + '' +
-       + 'order by pt_school.name',
+    text: 'select pt_school.pt_school_id, pt_school.name as school_name, pt_school.state, pt_school.program_start_dt, pt_deadline.ptcas_deadline_dt, pt_school.interview_req, pt_school.lor_num, pt_deadline.rolling_admission, '
+        + 'pt_school.class_size, pt_school.degree_req, pt_hours.required, pt_hours.hours_min, pt_school.tuition_in_state_full, pt_school.tuition_out_state_full, pt_gpa.gpa_overall_min, pt_gpa.gpa_overall_avg, '
+        + 'pt_gpa.gpa_prereq_min, pt_gpa.gpa_prereq_avg, pt_gre_exam.score_verbal_min, pt_gre_exam.score_verbal_avg, pt_gre_exam.score_quant_min, pt_gre_exam.score_quant_avg, '
+        + 'pt_gre_exam.score_writing_min, pt_gre_exam.score_writing_avg, pt_gre_exam.score_total_min ' + ''
+        + 'from pt_school '
+        + 'Inner Join pt_deadline on pt_school.pt_school_id = pt_deadline.pt_school_id '
+        + 'Inner Join pt_gpa on pt_school.pt_school_id = pt_gpa.pt_school_id '
+        + 'Inner Join pt_gre_exam on pt_school.pt_school_id = pt_gre_exam.pt_school_id '
+        + 'Inner Join pt_hours on pt_school.pt_school_id = pt_hours.pt_school_id ' + ''
+        // 'Inner Join pt_school_course on pt_school.pt_school_id = pt_school_course.pt_school_id ' +
+        // 'Inner Join pt_course on pt_school_course.pt_course_id = pt_course.pt_course_id ' + '' +
+        + 'order by pt_school.name',
     rowMode: 'array',
   };
   // async/await - check out a client
@@ -125,11 +99,11 @@ export async function getPTSchoolCourseInfo(pool) {
   let ptSchoolCourseRowsInnerArray = [];
 
   const ptSchoolCourseSelect = {
-    text: 'select pt_school.pt_school_id, pt_course.name as course_name, pt_school_course.course_level, pt_school_course.lab_req ' + ''
+    text: 'select pt_school.pt_school_id, pt_course.name as course_name, pt_school_course.lab_req ' + ''
             + 'from pt_school '
             + 'Inner Join pt_school_course on pt_school.pt_school_id = pt_school_course.pt_school_id '
             + 'Inner Join pt_course on pt_school_course.pt_course_id = pt_course.pt_course_id ' + ''
-            + 'order by pt_school.pt_school_id',
+            + 'order by pt_school.pt_school_id, pt_course.name',
     rowMode: 'array',
   };
   // async/await - check out a client
@@ -151,12 +125,12 @@ export async function getPTSchoolCourseInfo(pool) {
         ptSchoolCourseRowsInnerArray = [];
         i = 0;
       });
-      console.log('PT School Course Rows!!!');
+      /*console.log('PT School Course Rows!!!');
       console.log(ptSchoolCourseRowsArray);
-      // console.log("PT School Course Columns!!!")
-      // console.log(ptSchoolCourseColumnsArray)
-      // console.log("PT REs!!!")
-      // console.log(resPT)
+       console.log("PT School Course Columns!!!")
+       console.log(ptSchoolCourseColumnsArray)
+       console.log("PT REs!!!")
+       console.log(resPT)*/
     } finally {
       // Make sure to release the client before any error handling,
       // just in case the error handling itself throws an error.
@@ -173,13 +147,13 @@ export async function getPTUser(pool, username) {
   const ptUserColumns = [];
 
   const ptUserSelect = {
-    text: 'SELECT * FROM pt_user WHERE user_name = $1',
+    text: 'SELECT * FROM pt_user WHERE user_name = $1 and subscribed = true',
     values: [username],
     rowMode: 'array',
   };
 
   console.log('PT User Select!!!');
-  console.log(ptUserSelect);
+  //console.log(ptUserSelect);
   // async/await - check out a client
   await (async () => {
     const client = await pool.connect();
@@ -219,7 +193,7 @@ export async function getPTUserByEmail(pool, email) {
   };
 
   console.log('PT User Select!!!');
-  console.log(ptUserSelect);
+  // console.log(ptUserSelect);
   // async/await - check out a client
   await (async () => {
     const client = await pool.connect();
@@ -259,7 +233,7 @@ export async function getPTUserByHash(pool, passwordResetHash) {
   };
 
   console.log('PT User Select!!!');
-  console.log(ptUserSelect);
+  //console.log(ptUserSelect);
   // async/await - check out a client
   await (async () => {
     const client = await pool.connect();

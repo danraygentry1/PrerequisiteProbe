@@ -30,22 +30,32 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
         const source: any =
             {
                 datafields: [
+                    { name: 'pt_school_id', type: 'number', map: '0' },
                     { name: 'school_name', type: 'string', map: '1' },
                     { name: 'state', type: 'string', map: '2' },
-                    { name: 'interview_req', type: 'bool', map: '3' },
-                    { name: 'lor_num', type: 'number', map: '4' },
-                    { name: 'program_start_dt', type: 'date', map: '5' },
-                    { name: 'ptcas_deadline_dt', type: 'date', map: '6' },
-                    { name: 'class_size', type: 'number', map: '7' },
-                    { name: 'required', type: 'bool', map: '8' },
-                    { name: 'hours_min', type: 'number', map: '9' },
-                    { name: 'tuition_in_state_full', type: 'number', map: '10' },
-                    { name: 'tuition_out_state_full', type: 'number', map: '11' },
-                    { name: 'gpa_prereq_min', type: 'float', map: '12' },
-                    { name: 'gpa_overall_min', type: 'float', map: '13' },
-                    { name: 'score_verbal_min', type: 'number', map: '14' },
-                    { name: 'score_quant_min', type: 'number', map: '15' },
-                    { name: 'score_total_min', type: 'number', map: '16' }
+                    { name: 'program_start_dt', type: 'date', map: '3' },
+                    { name: 'ptcas_deadline_dt', type: 'date', map: '4' },
+                    { name: 'interview_req', type: 'bool', map: '5' },
+                    { name: 'lor_num', type: 'number', map: '6' },
+                    { name: 'rolling_admission', type: 'number', map: '7' },
+                    { name: 'class_size', type: 'number', map: '8' },
+                    { name: 'degree_req', type: 'string', map: '9' },
+                    { name: 'required', type: 'bool', map: '10' },
+                    { name: 'hours_min', type: 'number', map: '11' },
+                    { name: 'tuition_in_state_full', type: 'number', map: '12' },
+                    { name: 'tuition_out_state_full', type: 'number', map: '13' },
+                    { name: 'gpa_overall_min', type: 'float', map: '14' },
+                    { name: 'gpa_overall_avg', type: 'float', map: '15' },
+                    { name: 'gpa_prereq_min', type: 'float', map: '16' },
+                    { name: 'gpa_prereq_avg', type: 'float', map: '17' },
+                    { name: 'score_verbal_min', type: 'number', map: '18' },
+                    { name: 'score_verbal_avg', type: 'number', map: '19' },
+                    { name: 'score_quant_min', type: 'number', map: '20' },
+                    { name: 'score_quant_avg', type: 'number', map: '21' },
+                    { name: 'score_writing_min', type: 'number', map: '22' },
+                    { name: 'score_writing_avg', type: 'number', map: '23' },
+                    { name: 'score_total_min', type: 'number', map: '24' },
+
                 ],
                 datatype: 'array',
                 localdata: props.rows
@@ -54,8 +64,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
             datafields: [
                 { name: 'pt_school_id', type: 'number', map: '0' },
                 { name: 'course_name', type: 'string', map: '1' },
-                { name: 'course_level', type: 'string', map: '2' },
-                { name: 'lab_req', type: 'string', map: '3' },
+                { name: 'lab_req', type: 'string', map: '2' },
             ],
             datatype: 'array',
             localdata: props.innerRows
@@ -66,8 +75,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
         }
         const nestedGrids: any[] = [];
         const initrowdetails = (index: number, parentElement: any, gridElement: any, record: any): void => {
-            record.uid += 1
-            const id = record.uid.toString();
+            const id = record.pt_school_id.toString();
             const nestedGridContainer = parentElement.children[0];
             nestedGrids[index] = nestedGridContainer;
             const filtergroup = new jqx.filter();
@@ -87,7 +95,6 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 datafields: [
                     { name: 'pt_school_id', type: 'number' },
                     { name: 'course_name', type: 'string' },
-                    { name: 'course_level', type: 'string' },
                     { name: 'lab_req', type: 'string' }
                 ],
                 id: 'pt_school_id',
@@ -100,8 +107,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 ]
                 const columns: IGridProps['columns'] = [
                     { text: 'Course Name', datafield: 'course_name', columngroup: 'ProgramPrerequisites', width: 200 },
-                    { text: 'Course Level', datafield: 'course_level', columngroup: 'ProgramPrerequisites',  width: 200 },
-                    { text: 'Lab Required', datafield: 'lab_req', columntype: 'checkbox', filtertype: 'bool', columngroup: 'ProgramPrerequisites',  width: 150 }
+                    { text: 'Lab Required', datafield: 'lab_req', columngroup: 'ProgramPrerequisites',  width: 150 }
                 ];
                 ReactDOM.render(
                     <JqxGrid width={600} height={200} theme={'bootstrap'} source={nestedGridAdapter} columns={columns} columngroups={columngroups} />,
@@ -127,6 +133,9 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 case 'LOR':
                     tooltip = 'Letters of Recommendation';
                     break;
+                case 'Roll Admis?':
+                    tooltip = 'Rolling Admission';
+                    break;
                 case 'Program Start Dt':
                     tooltip = 'PT Program Start Date';
                     break;
@@ -135,6 +144,9 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                     break;
                 case 'Class Size':
                     tooltip = 'Class Size';
+                    break;
+                case 'Degree Req?':
+                    tooltip = 'Degree Required';
                     break;
                 case 'Hrs Req?':
                     tooltip = 'Observation Hours Required?';
@@ -148,17 +160,35 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 case 'Out of State':
                     tooltip = 'Out Of State Tuition';
                     break;
+                case 'Cum Min':
+                    tooltip = 'Minimum Cumulative GPA';
+                    break;
+                case 'Cum Avg':
+                    tooltip = 'Average Cumulative GPA';
+                    break;
                 case 'Prq Min':
                     tooltip = 'Minimum Prerequisite GPA';
                     break;
-                case 'Cum Min':
-                    tooltip = 'Minimum Cumulative GPA';
+                case 'Prq Avg':
+                    tooltip = 'Average Prerequisite GPA';
                     break;
                 case 'Verb Min':
                     tooltip = 'Minimum Verbal GRE Score';
                     break;
+                case 'Verb Avg':
+                    tooltip = 'Average Verbal GRE Score';
+                    break;
                 case 'Quant Min':
                     tooltip = 'Minimum Quantitative GRE Score';
+                    break;
+                case 'Quant Avg':
+                    tooltip = 'Average Quantitative GRE Score';
+                    break;
+                case 'Write Min':
+                    tooltip = 'Minimum Writing GRE Score';
+                    break;
+                case 'Write Avg':
+                    tooltip = 'Average Writing GRE Score';
                     break;
                 case 'Tot Min':
                     tooltip = 'Minimum Total GRE Score';
@@ -181,37 +211,54 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 { text: 'GPA', align: 'center', name: 'gpa' }
             ],
             columns: [
+                { text: 'Pt School Id', datafield: 'pt_school_id', filtertype: 'number', cellsalign: 'right', columngroup: 'school', width: '6%',  enabletooltips:true, hidden:true },
                 { text: 'Name',  datafield: 'school_name', columntype: 'textbox', filtertype: 'input', width: '15%', columngroup: 'school', enabletooltips:true, rendered: tooltiprenderer }, //pinned: true
                 { text: 'State',  datafield: 'state', filtertype: 'checkedlist', width: '7%', columngroup: 'school', enabletooltips:true, rendered: tooltiprenderer }, //pinned: true
-                { text: 'Interview?', datafield: 'interview_req', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'school',  width: '6%', enabletooltips:true, rendered: tooltiprenderer },
-                { text: 'LOR', datafield: 'lor_num', filtertype: 'number', columngroup: 'school', width: '5%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Program Start Dt', datafield: 'program_start_dt', filtertype: 'range', cellsalign: 'right', cellsformat: 'd', columngroup: 'school', width: '9%', enabletooltips:true, rendered: tooltiprenderer   },
                 { text: 'PTCAS Deadline', datafield: 'ptcas_deadline_dt', filtertype: 'range', cellsalign: 'right', cellsformat: 'd', columngroup: 'school', width: '9%', enabletooltips:true, rendered: tooltiprenderer },
+                { text: 'Interview?', datafield: 'interview_req', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'school',  width: '6%', enabletooltips:true, rendered: tooltiprenderer },
+                { text: 'LOR', datafield: 'lor_num', filtertype: 'number', columngroup: 'school', width: '5%', enabletooltips:true, rendered: tooltiprenderer },
+                { text: 'Roll Admis?', datafield: 'rolling_admission', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'school',  width: '6%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
                 { text: 'Class Size', datafield: 'class_size', filtertype: 'number', cellsalign: 'right', columngroup: 'school', width: '6%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
+                { text: 'Degree Req?', datafield: 'degree_req', columntype: 'textbox', filtertype: 'input', columngroup: 'school', width: '6%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
                 { text: 'Hrs Req?', datafield: 'required', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'observation',  width: '5%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Hrs Min', datafield: 'hours_min', filtertype: 'number', cellsalign: 'right', columngroup: 'observation', width: '5%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'In State', datafield: 'tuition_in_state_full',  filtertype: 'number', cellsalign: 'right', cellsformat: 'c2', columngroup: 'tuition', width: '8%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Out of State', datafield: 'tuition_out_state_full',  filtertype: 'number', cellsalign: 'right', cellsformat: 'c2', columngroup: 'tuition', width: '8%', enabletooltips:true, rendered: tooltiprenderer },
-                { text: 'Prereq Min', datafield: 'gpa_prereq_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '7%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Cum Min', datafield: 'gpa_overall_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '5%', enabletooltips:true, rendered: tooltiprenderer  },
+                { text: 'Cum Avg', datafield: 'gpa_overall_avg', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '5%', enabletooltips:true, hidden:true, rendered: tooltiprenderer  },
+                { text: 'Prereq Min', datafield: 'gpa_prereq_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '7%', enabletooltips:true, rendered: tooltiprenderer },
+                { text: 'Prereq Avg', datafield: 'gpa_prereq_avg', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '7%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
                 { text: 'Verb Min', datafield: 'score_verbal_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '5%', enabletooltips:true, rendered: tooltiprenderer },
+                { text: 'Verb Avg', datafield: 'score_verbal_avg', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '5%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
                 { text: 'Quant Min', datafield: 'score_quant_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '6%', enabletooltips:true, rendered: tooltiprenderer },
-                { text: 'Tot Min', datafield: 'score_total_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '6%',  enabletooltips:true, rendered: tooltiprenderer } //, cellsrenderer: renderer
+                { text: 'Quant Avg', datafield: 'score_quant_avg', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '6%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
+                { text: 'Write Min', datafield: 'score_writing_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '6%',  enabletooltips:true, rendered: tooltiprenderer },
+                { text: 'Write Avg', datafield: 'score_writing_avg', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '6%',  enabletooltips:true, hidden:true, rendered: tooltiprenderer },
+                { text: 'Tot Min', datafield: 'score_total_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '5%',  enabletooltips:true, rendered: tooltiprenderer }, //, cellsrenderer: renderer
             ],
             listBoxSource: [
-                { label: 'Interview?', value: 'interview_req', checked: true },
-                { label: 'LOR', value: 'lor_num', checked: true },
                 { label: 'Program Start Date', value: 'program_start_dt', checked: true },
                 { label: 'PTCAS Deadline', value: 'ptcas_deadline_dt', checked: true },
+                { label: 'Interview?', value: 'interview_req', checked: true },
+                { label: 'LOR', value: 'lor_num', checked: true },
+                { label: 'Roll Admis?', value: 'rolling_admission', checked: false },
                 { label: 'Class Size', value: 'class_size', checked: false },
+                { label: 'Degree Req?', value: 'degree_req', checked: false },
                 { label: 'Hrs Req', value: 'required', checked: true },
                 { label: 'Hrs Min', value: 'hours_min', checked: true },
                 { label: 'Tuition (In State)', value: 'tuition_in_state_full', checked: true },
                 { label: 'Tuition (Out State)', value: 'tuition_out_state_full', checked: true },
-                { label: 'GPA Prereq Min', value: 'gpa_prereq_min', checked: true },
                 { label: 'GPA Cumulative Min', value: 'gpa_overall_min', checked: true },
+                { label: 'GPA Cumulative Avg', value: 'gpa_overall_avg', checked: false },
+                { label: 'GPA Prereq Min', value: 'gpa_prereq_min', checked: true },
+                { label: 'GPA Prereq Avg', value: 'gpa_prereq_avg', checked: false },
                 { label: 'GRE Verb Min', value: 'score_verbal_min', checked: true },
+                { label: 'GRE Verb Avg', value: 'score_verbal_avg', checked: false },
                 { label: 'GRE Quant Min', value: 'score_quant_min', checked: true },
+                { label: 'GRE Quant Avg', value: 'score_quant_avg', checked: false },
+                { label: 'GRE Write Min', value: 'score_writing_min', checked: true },
+                { label: 'GRE Write Avg', value: 'score_writing_avg', checked: false },
                 { label: 'GRE Total Min', value: 'score_total_min', checked: true }
             ],
             initrowdetails,
@@ -231,6 +278,12 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
         console.log(this.myGrid);
         return (
             <div className="container-fluid">
+                <br/>
+                *Tutition data reflects our best efforts to calculate based on criteria presented on each pt school's website.
+                <br/>
+                *GPA, GRE, and Observation minimums and averages display "0" if no data was found for that data field, i.e., Cum Min = 0
+                <br/>
+                <br/>
                 <div className="row">
                     <div className="card p-0 col-md-2 border-dark">
                         <div className="card-body">
@@ -267,7 +320,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                           </div>
                         </div>
                         {/*</div>*/}
-                        <div className="row p-3">
+                        <div className="row p-2">
                         {/*flex align-items-center justify-content-center*/}
                             <div className="card col-md-2 border-0 flex align-items-center justify-content-center">
                                 <div className="card-body card col-md-2 border-0 flex align-items-center" >

@@ -13,7 +13,7 @@ export const NavComponent = ({ firstName }) => (
 
   <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div className="container">
-      <a href="/"><img src="../../../images/FullColor_TextOnly_Menu%20Version%20250x22.png" alt="" /></a>
+      <Link className="nav-link" to="/"><img src="../../../images/FullColor_TextOnly_Menu%20Version%20250x22.png" alt="" /></Link>
       <div className="collapse navbar-collapse" id="navbarResponsive">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
@@ -25,7 +25,7 @@ export const NavComponent = ({ firstName }) => (
           <li className="nav-item">
             {isTokenVerified(Cookies.get('auth'))
               ? (
-                <Link className="nav-link" to="/dashboard">Dashboard</Link>
+             <Link className="nav-link" to="/dashboard">Dashboard</Link>
               ) : ''}
           </li>
           <li className="nav-item">
@@ -38,11 +38,11 @@ export const NavComponent = ({ firstName }) => (
             {isTokenVerified(Cookies.get('auth'))
               ? (
                 <Link className="nav-link" onClick={logout} to="/login">
-                  Welcome,
+                   Welcome,
                   {' '}
-                  {firstName}
-                  {' '}
-                  | Logout
+                   {firstName}
+                   {' '}
+                   | Logout
                 </Link>
               )
               : <Link className="nav-link" to="/login">Login</Link>}

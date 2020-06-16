@@ -4,6 +4,7 @@ import { registrationClear, registerUser } from '../store/actions/authenticate';
 
 import RegistrationPage from './RegistrationPage';
 import md5 from "md5";
+import {HeaderComponent} from './Header';
 
 
 export class RegistrationPageContainer extends React.Component {
@@ -36,7 +37,6 @@ export class RegistrationPageContainer extends React.Component {
   render() {
     const { authentication } = this.props;
     return (
-
       <RegistrationPage
         authentication={authentication}
         sendUserFunction={this.sendUser}

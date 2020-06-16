@@ -4,6 +4,7 @@ import {
 } from 'availity-reactstrap-validation';
 import { Button, Label } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import {HeaderComponent} from "./Header";
 
 export default class ResetPasswordPage extends React.Component {
   constructor(props) {
@@ -63,44 +64,50 @@ export default class ResetPasswordPage extends React.Component {
 
     if (isPasswordReset) {
       return (
-          <div className="row justify-content-center">
-            <div className="col-10 col-sm-7 col-md-5 col-lg-4">
-              <p>
-                An email has been sent to the address you provided containing a link to reset
-                your password. Please click that link to proceed with setting a new password.
-              </p>
-              <p>
-                <a href="/account/reset-password" onClick={this.clearPasswordReset}>Re-send Email</a>
-              </p>
+          <div>
+            <HeaderComponent/>
+            <div className="row justify-content-center">
+              <div className="col-10 col-sm-7 col-md-5 col-lg-4">
+                <p>
+                  An email has been sent to the address you provided containing a link to reset
+                  your password. Please click that link to proceed with setting a new password.
+                </p>
+                <p>
+                  <a href="/account/reset-password" onClick={this.clearPasswordReset}>Re-send Email</a>
+                </p>
+              </div>
             </div>
           </div>
       );
     }
 
     return (
-      <div className="row justify-content-center">
-        <div className="col-10 col-sm-7 col-md-5 col-lg-4">
-          <p>
-            If you‘d like to reset your password, please enter your email here
-            and a link to do so will be sent to the address you enter.
-          </p>
-          <AvForm onValidSubmit={this.handleValidSubmit}>
-            <AvGroup>
-              <Label for="emailAddress">Email</Label>
-              <AvInput
-                id="emailAddress"
-                name="emailAddress"
-                onChange={this.handleEmailChange}
-                onKeyPress={this.handleKeyPress}
-                placeholder="spacey@gmail.com"
-                required
-                type="email"
-                value={this.state.emailAddress}
-              />
-              <AvFeedback>A valid email is required to reset your password.</AvFeedback>
-            </AvGroup>
-            <Button color="primary">Reset Password</Button>
-          </AvForm>
+      <div>
+        <HeaderComponent/>
+        <div className="row justify-content-center">
+          <div className="col-10 col-sm-7 col-md-5 col-lg-4">
+            <p>
+              If you‘d like to reset your password, please enter your email here
+              and a link to do so will be sent to the address you enter.
+            </p>
+            <AvForm onValidSubmit={this.handleValidSubmit}>
+              <AvGroup>
+                <Label for="emailAddress">Email</Label>
+                <AvInput
+                  id="emailAddress"
+                  name="emailAddress"
+                  onChange={this.handleEmailChange}
+                  onKeyPress={this.handleKeyPress}
+                  placeholder="spacey@gmail.com"
+                  required
+                  type="email"
+                  value={this.state.emailAddress}
+                />
+                <AvFeedback>A valid email is required to reset your password.</AvFeedback>
+              </AvGroup>
+              <Button color="primary">Reset Password</Button>
+            </AvForm>
+          </div>
         </div>
       </div>
     );

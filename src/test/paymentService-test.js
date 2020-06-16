@@ -23,7 +23,7 @@ describe('PayPal Order', () => {
     transactions: '',
     quantity: 1,
     purchaseName: 'Prerequisite Probe Access',
-    purchasePrice: 10.00,
+    purchasePrice: 9.99,
     taxPrice: 0.00,
     shippingPrice: 0.00,
     description: 'Prerequisite Probe Access',

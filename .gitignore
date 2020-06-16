@@ -109,3 +109,6 @@ dist
 
 # Application Configuration
 config.json
+
+# Dev Webpack Config
+webpack.config.js

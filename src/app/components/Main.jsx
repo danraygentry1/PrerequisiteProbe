@@ -60,7 +60,7 @@ export const Main = () => (
     <Provider store={store}>
       <div>
         <ConnectedNav />
-        <HeaderComponent />
+
         <section className="page-content container-fluid">
           <ErrorBox />
           <Route exact path="/" render={RouteGuard(HomeComponent)} />

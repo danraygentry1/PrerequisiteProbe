@@ -4,6 +4,7 @@ import {
   AvForm, AvGroup, AvInput, AvFeedback,
 } from 'availity-reactstrap-validation';
 import { Button, Label } from 'reactstrap';
+import {HeaderComponent} from "./Header";
 
 export default class OrderPage extends React.Component {
   constructor(props) {
@@ -37,23 +38,26 @@ export default class OrderPage extends React.Component {
 
   render() {
     return (
-      <AvForm onValidSubmit={this.handleValidSubmit}>
-        <AvGroup />
-        <div className="card border-0 flex-grow-0 flex align-items-center justify-content-center wizard-background">
-          <div className="card-body">
-            <div className="card border-0 flex-grow-0 flex align-items-center justify-content-center wizard-background">
-              Click PayPal button below to order!
-              <br/>
-              <br/>
-              <button>
-                <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_200x51.png" alt="PayPal" />
-              </button>
-              <br />
+      <div>
+        <HeaderComponent/>
+        <AvForm onValidSubmit={this.handleValidSubmit}>
+          <AvGroup />
+          <div className="card border-0 flex-grow-0 flex align-items-center justify-content-center wizard-background">
+            <div className="card-body">
+              <div className="card border-0 flex-grow-0 flex align-items-center justify-content-center wizard-background">
+                Click PayPal button below to order for only $9.99!
+                <br/>
+                <br/>
+                <button>
+                  <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_200x51.png" alt="PayPal" />
+                </button>
+                <br />
+              </div>
+              <Button href="/register-user" color="primary" className="form-control mt2 btn btn-primary ">Go Back</Button>
             </div>
-            <Button href="/register-user" color="primary" className="form-control mt2 btn btn-primary ">Go Back</Button>
           </div>
-        </div>
-      </AvForm>
+        </AvForm>
+      </div>
     );
   }
 }

@@ -5,10 +5,12 @@ import * as mutations from '../store/mutations';
 /*import { NavComponent } from './Nav';*/
 import { ConnectedNav } from './Nav';
 import { isTokenVerified, logout } from "../../auth/Auth"
+import {HeaderComponent} from "./Header";
 
 export const LoginComponent = ({authenticateUser, createAccount, authenticated})=>{
   return <div>
       <ConnectedNav />
+      <HeaderComponent />
         <div className="card border-0 flex-grow-0 flex align-items-center justify-content-center">
             <div className="row p-3">
               <div className="card-body border-dark card border-1 m-1">
@@ -29,14 +31,13 @@ export const LoginComponent = ({authenticateUser, createAccount, authenticated})
               </div>
               <div className="card-body border-dark card border-1 m-1">
                     <h5 className="card-title">New to Prerequisite Probe?</h5>
+                  <p align="left">Create an account and purchase <br /> a lifetime membership for only $9.99!</p>
                     <button className="form-control mt2 btn btn-primary" onClick={createAccount}>Create Account</button>
               </div>
             </div>
         </div>
     </div>
-};  //authenticateUser is a destructed argument.
-    //component, store, saga, back to component
-    //bootstrap - col-6 is column width of 6
+};
 
 
 const mapStateToProps = ({session})=>({
