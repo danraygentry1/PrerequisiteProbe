@@ -128,11 +128,11 @@ app.post('/saveresethash', async (req, res) => {
 
         // Put together the email
         const emailData = {
-          from: `PrerequisiteProbe <postmaster@${appConfig.mailgun.domain}>`,
+          from: `PTSchoolProbe <postmaster@${appConfig.mailgun.domain}>`,
           to: foundUser.email_address,
           subject: 'Reset Your Password',
           text: `A password reset has been requested for the PrerequisiteProbe account connected to this email address. If you made this request, please click the following link: ${appConfig.url}/change-password/${passwordResetHash} ... if you didn't make this request, feel free to ignore it!`,
-          html: `<p>Hello ${foundUser.first_name}, your user name is:  ${foundUser.user_name}.  A password reset has been requested for the Prerequisite Probe account connected to this email address. If you made this request, please click the following link: <a href="${appConfig.url}/change-password/${passwordResetHash}" target="_blank">${appConfig.url}/change-password/${passwordResetHash}</a>.</p><p>If you didn't make this request, feel free to ignore it!</p>`,
+          html: `<p>Hello ${foundUser.first_name}, your user name is:  ${foundUser.user_name}.  A password reset has been requested for the PT School Probe account connected to this email address. If you made this request, please click the following link: <a href="${appConfig.url}/change-password/${passwordResetHash}" target="_blank">${appConfig.url}/change-password/${passwordResetHash}</a>.</p><p>If you didn't make this request, feel free to ignore it!</p>`,
         };
 
         // Send it

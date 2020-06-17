@@ -13,14 +13,17 @@ export const NavComponent = ({ firstName }) => (
 
   <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div className="container">
-      <Link className="nav-link" to="/"><img src="../../../images/FullColor_TextOnly_Menu%20Version%20250x22.png" alt="" /></Link>
+      <Link className="nav-link" to="/"><img src="../../../images/PtSchoolProbe_250x25_72dpi.png" alt="" /></Link>
       <div className="collapse navbar-collapse" id="navbarResponsive">
         <ul className="navbar-nav ml-auto">
+          <li className="nav-item">
+            <Link className="nav-link" to="/terms">Terms</Link>
+          </li>
           <li className="nav-item">
             <Link className="nav-link" to="/about">About</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="mailto:danraygentry@gmail.com?subject=Prerequisite Probe Question" target="_blank">Contact</a>
+            <a className="nav-link" href="mailto:danraygentry@gmail.com?subject=PT School Probe Question" target="_blank">Contact</a>
           </li>
           <li className="nav-item">
             {isTokenVerified(Cookies.get('auth'))

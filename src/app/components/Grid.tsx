@@ -133,7 +133,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 case 'LOR':
                     tooltip = 'Letters of Recommendation';
                     break;
-                case 'Roll Admis?':
+                case 'Roll Admiss?':
                     tooltip = 'Rolling Admission';
                     break;
                 case 'Program Start Dt':
@@ -214,11 +214,11 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 { text: 'Pt School Id', datafield: 'pt_school_id', filtertype: 'number', cellsalign: 'right', columngroup: 'school', width: '6%',  enabletooltips:true, hidden:true },
                 { text: 'Name',  datafield: 'school_name', columntype: 'textbox', filtertype: 'input', width: '15%', columngroup: 'school', enabletooltips:true, rendered: tooltiprenderer }, //pinned: true
                 { text: 'State',  datafield: 'state', filtertype: 'checkedlist', width: '7%', columngroup: 'school', enabletooltips:true, rendered: tooltiprenderer }, //pinned: true
-                { text: 'Program Start Dt', datafield: 'program_start_dt', filtertype: 'range', cellsalign: 'right', cellsformat: 'd', columngroup: 'school', width: '9%', enabletooltips:true, rendered: tooltiprenderer   },
+                { text: 'Program Start Dt', datafield: 'program_start_dt', filtertype: 'range', cellsalign: 'right', cellsformat: 'd', columngroup: 'school', width: '9%', enabletooltips:true, hidden:true, rendered: tooltiprenderer   },
                 { text: 'PTCAS Deadline', datafield: 'ptcas_deadline_dt', filtertype: 'range', cellsalign: 'right', cellsformat: 'd', columngroup: 'school', width: '9%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Interview?', datafield: 'interview_req', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'school',  width: '6%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'LOR', datafield: 'lor_num', filtertype: 'number', columngroup: 'school', width: '5%', enabletooltips:true, rendered: tooltiprenderer },
-                { text: 'Roll Admis?', datafield: 'rolling_admission', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'school',  width: '6%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
+                { text: 'Roll Admiss?', datafield: 'rolling_admission', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'school',  width: '6%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
                 { text: 'Class Size', datafield: 'class_size', filtertype: 'number', cellsalign: 'right', columngroup: 'school', width: '6%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
                 { text: 'Degree Req?', datafield: 'degree_req', columntype: 'textbox', filtertype: 'input', columngroup: 'school', width: '6%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
                 { text: 'Hrs Req?', datafield: 'required', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'observation',  width: '5%', enabletooltips:true, rendered: tooltiprenderer },
@@ -238,11 +238,11 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 { text: 'Tot Min', datafield: 'score_total_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '5%',  enabletooltips:true, rendered: tooltiprenderer }, //, cellsrenderer: renderer
             ],
             listBoxSource: [
-                { label: 'Program Start Date', value: 'program_start_dt', checked: true },
+                { label: 'Program Start Date', value: 'program_start_dt', checked: false },
                 { label: 'PTCAS Deadline', value: 'ptcas_deadline_dt', checked: true },
                 { label: 'Interview?', value: 'interview_req', checked: true },
                 { label: 'LOR', value: 'lor_num', checked: true },
-                { label: 'Roll Admis?', value: 'rolling_admission', checked: false },
+                { label: 'Rolling Admission?', value: 'rolling_admission', checked: false },
                 { label: 'Class Size', value: 'class_size', checked: false },
                 { label: 'Degree Req?', value: 'degree_req', checked: false },
                 { label: 'Hrs Req', value: 'required', checked: true },
@@ -279,9 +279,9 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
         return (
             <div className="container-fluid">
                 <br/>
-                *Tutition data reflects our best efforts to calculate based on criteria presented on each pt school's website.
+                *Tutition data reflects our best efforts to calculate based on criteria presented on PT school websites.
                 <br/>
-                *GPA, GRE, and Observation minimums and averages display "0" if no data was found for that data field, i.e., Cum Min = 0
+                *GPA, GRE, and Observation minimums and averages display "0" if no minimum or average was found for that school, i.e., Prereq Min = 0
                 <br/>
                 <br/>
                 <div className="row">
@@ -290,7 +290,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                             <h5 className="card-title">Add/Remove Search Columns</h5>
                             <JqxListBox theme={'bootstrap'} onCheckChange={this.myListBoxOnCheckChange}
                                         style={{ float: 'left' }}
-                                        width='100%' height={200}
+                                        width='100%' height={400}
                                         source={this.state.listBoxSource} checkboxes={true}/>
                         </div>
                     </div>

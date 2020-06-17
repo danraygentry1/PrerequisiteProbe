@@ -59,11 +59,11 @@ res.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,
             createTime: "",
             transactions: "",
             quantity: 1,
-            purchaseName: "Prerequisite Probe Access",
+            purchaseName: "PT School Probe Access",
             purchasePrice: 10.00,
             taxPrice: 0.00,
             shippingPrice: 0.00,
-            description: "Prerequisite Probe Access"
+            description: "PT School Probe Access"
         };
         preReqPurchaseRepo.BuySingle(orderObj, (err, url)=>{
             /* res.header("Access-Control-Allow-Origin", '*');

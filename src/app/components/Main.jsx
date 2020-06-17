@@ -9,19 +9,19 @@ import { AboutComponent } from './About';
 import ChangePasswordPageContainer from './ChangePasswordPageContainer';
 import { ConnectedDashboard } from './Dashboard';
 import { ConnectedLogin } from './Login';
-
-
 // import { NavComponent } from './Nav';
 import { ConnectedNav } from './Nav';
 import DevTools from './DevTools';
 import ErrorBox from './ErrorBoxContainer';
+import { FooterComponent } from "./Footer";
 import { HomeComponent } from './Home';
-import { HeaderComponent } from './Header';
 import { history } from '../store/history';
 import { isTokenVerified, logout } from '../../auth/Auth';
+import { PrivacyComponent } from "./Privacy";
 import ResetPasswordPage from './ResetPasswordPageContainer';
 import RegistrationPageContainer from './RegistrationPageContainer';
 import OrderPageContainer from './OrderPageContainer';
+import { TermsComponent } from './Terms';
 // Router - parent component that all routes have to be inside
 // Router - component that displays different depending what the URL is
 import { store } from '../store';
@@ -48,10 +48,6 @@ const RouteGuard = (Component) => ({ match }) => {
     return <Redirect to="/login" />;
   }
 
-  /* if (match.url === '/') {
-    logout();
-    return <Component match={match} />;
-  } */
   return <Component match={match} />;
 };
 
@@ -65,10 +61,10 @@ export const Main = () => (
           <ErrorBox />
           <Route exact path="/" render={RouteGuard(HomeComponent)} />
           <Route exact path="/login" component={ConnectedLogin} />
-          {/*<Route exact path="/change-password/" render={RouteGuard(ChangePasswordPageContainer)} />*/}
           <Route exact path="/change-password/:hash" render={RouteGuard(ChangePasswordPageContainer)} />
           <Route exact path="/about" render={RouteGuard(AboutComponent)} />
-
+          <Route exact path="/terms" render={RouteGuard(TermsComponent)} />
+          <Route exact path="/privacy" render={RouteGuard(PrivacyComponent)} />
           {/*<Route
             path="/buysingle"
             component={() => {
@@ -91,6 +87,7 @@ export const Main = () => (
         </section>
         <DevTools />
       </div>
+
       {/* // call spinner if app is running slow
         <div className="loader-wrapper" style={progress > 0 ? { display: 'block' } : { display: 'none' }}>
             <div className="loader-box">
