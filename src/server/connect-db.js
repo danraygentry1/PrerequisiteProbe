@@ -41,9 +41,10 @@ export async function getPTSchoolInfo(pool) {
   let ptSchoolRowsInnerArray = [];
 
   const ptSchoolSelect = {
-    text: 'select pt_school.pt_school_id, pt_school.name as school_name, pt_school.state, pt_school.program_start_dt, pt_deadline.ptcas_deadline_dt, pt_school.interview_req, pt_school.lor_num, pt_deadline.rolling_admission, '
-        + 'pt_school.class_size, pt_school.degree_req, pt_hours.required, pt_hours.hours_min, pt_school.tuition_in_state_full, pt_school.tuition_out_state_full, pt_gpa.gpa_overall_min, pt_gpa.gpa_overall_avg, '
-        + 'pt_gpa.gpa_prereq_min, pt_gpa.gpa_prereq_avg, pt_gre_exam.score_verbal_min, pt_gre_exam.score_verbal_avg, pt_gre_exam.score_quant_min, pt_gre_exam.score_quant_avg, '
+    text: 'select pt_school.pt_school_id, pt_school.name as school_name, pt_school.state, pt_school.program_link, pt_school.program_start_dt, pt_deadline.ptcas_deadline_dt, pt_school.ptcas_participate, pt_school.interview_req, pt_school.lor_num, pt_deadline.rolling_admission, '
+        + 'pt_school.class_size, pt_school.degree_req, pt_hours.required, pt_hours.hours_min, pt_hours.hours_competitive, pt_school.tuition_in_state_full, pt_school.tuition_out_state_full, pt_gpa.gpa_overall_min, pt_gpa.gpa_overall_avg, '
+        + 'pt_gpa.gpa_prereq_min, pt_gpa.gpa_prereq_avg, pt_gpa.gpa_science_min, pt_gpa.gpa_science_avg, pt_gpa.gpa_prereq_last60_min, pt_gpa.gpa_prereq_last60_avg,  '
+        + 'pt_gre_exam.required as gre_required, pt_gre_exam.score_verbal_min, pt_gre_exam.score_verbal_avg, pt_gre_exam.score_quant_min, pt_gre_exam.score_quant_avg, '
         + 'pt_gre_exam.score_writing_min, pt_gre_exam.score_writing_avg, pt_gre_exam.score_total_min ' + ''
         + 'from pt_school '
         + 'Inner Join pt_deadline on pt_school.pt_school_id = pt_deadline.pt_school_id '

@@ -33,28 +33,36 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                     { name: 'pt_school_id', type: 'number', map: '0' },
                     { name: 'school_name', type: 'string', map: '1' },
                     { name: 'state', type: 'string', map: '2' },
-                    { name: 'program_start_dt', type: 'date', map: '3' },
-                    { name: 'ptcas_deadline_dt', type: 'date', map: '4' },
-                    { name: 'interview_req', type: 'bool', map: '5' },
-                    { name: 'lor_num', type: 'number', map: '6' },
-                    { name: 'rolling_admission', type: 'number', map: '7' },
-                    { name: 'class_size', type: 'number', map: '8' },
-                    { name: 'degree_req', type: 'string', map: '9' },
-                    { name: 'required', type: 'bool', map: '10' },
-                    { name: 'hours_min', type: 'number', map: '11' },
-                    { name: 'tuition_in_state_full', type: 'number', map: '12' },
-                    { name: 'tuition_out_state_full', type: 'number', map: '13' },
-                    { name: 'gpa_overall_min', type: 'float', map: '14' },
-                    { name: 'gpa_overall_avg', type: 'float', map: '15' },
-                    { name: 'gpa_prereq_min', type: 'float', map: '16' },
-                    { name: 'gpa_prereq_avg', type: 'float', map: '17' },
-                    { name: 'score_verbal_min', type: 'number', map: '18' },
-                    { name: 'score_verbal_avg', type: 'number', map: '19' },
-                    { name: 'score_quant_min', type: 'number', map: '20' },
-                    { name: 'score_quant_avg', type: 'number', map: '21' },
-                    { name: 'score_writing_min', type: 'number', map: '22' },
-                    { name: 'score_writing_avg', type: 'number', map: '23' },
-                    { name: 'score_total_min', type: 'number', map: '24' },
+                    { name: 'program_link', type: 'string', map: '3' },
+                    { name: 'program_start_dt', type: 'date', map: '4' },
+                    { name: 'ptcas_deadline_dt', type: 'date', map: '5' },
+                    { name: 'ptcas_participate', type: 'bool', map: '6' },
+                    { name: 'interview_req', type: 'bool', map: '7' },
+                    { name: 'lor_num', type: 'number', map: '8' },
+                    { name: 'rolling_admission', type: 'bool', map: '9' },
+                    { name: 'class_size', type: 'number', map: '10' },
+                    { name: 'degree_req', type: 'string', map: '11' },
+                    { name: 'required', type: 'bool', map: '12' },
+                    { name: 'hours_min', type: 'number', map: '13' },
+                    { name: 'hours_competitive', type: 'number', map: '14' },
+                    { name: 'tuition_in_state_full', type: 'number', map: '15' },
+                    { name: 'tuition_out_state_full', type: 'number', map: '16' },
+                    { name: 'gpa_overall_min', type: 'float', map: '17' },
+                    { name: 'gpa_overall_avg', type: 'float', map: '18' },
+                    { name: 'gpa_prereq_min', type: 'float', map: '19' },
+                    { name: 'gpa_prereq_avg', type: 'float', map: '20' },
+                    { name: 'gpa_science_min', type: 'float', map: '21' },
+                    { name: 'gpa_science_avg', type: 'float', map: '22' },
+                    { name: 'gpa_prereq_last60_min', type: 'float', map: '23' },
+                    { name: 'gpa_prereq_last60_avg', type: 'float', map: '24' },
+                    { name: 'gre_required', type: 'bool', map: '25' },
+                    { name: 'score_verbal_min', type: 'number', map: '26' },
+                    { name: 'score_verbal_avg', type: 'number', map: '27' },
+                    { name: 'score_quant_min', type: 'number', map: '28' },
+                    { name: 'score_quant_avg', type: 'number', map: '29' },
+                    { name: 'score_writing_min', type: 'number', map: '30' },
+                    { name: 'score_writing_avg', type: 'number', map: '31' },
+                    { name: 'score_total_min', type: 'number', map: '32' },
 
                 ],
                 datatype: 'array',
@@ -127,6 +135,12 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 case 'State':
                     tooltip = 'School State';
                     break;
+                case 'Program Link':
+                    tooltip = 'Program Link';
+                    break;
+                case 'PTCAS Participate?':
+                    tooltip = 'Participating in PTCAS??';
+                    break;
                 case 'Interview?':
                     tooltip = 'Interview Required?';
                     break;
@@ -139,13 +153,13 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 case 'Program Start Dt':
                     tooltip = 'PT Program Start Date';
                     break;
-                case 'PTCAS Deadline':
-                    tooltip = 'PTCAS Deadline Date';
+                case 'App Deadline':
+                    tooltip = 'Application Deadline Date';
                     break;
                 case 'Class Size':
                     tooltip = 'Class Size';
                     break;
-                case 'Degree Req?':
+                case 'Dgr Req?':
                     tooltip = 'Degree Required';
                     break;
                 case 'Hrs Req?':
@@ -153,6 +167,9 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                     break;
                 case 'Hrs Min':
                     tooltip = 'Minimum Observation Hours';
+                    break;
+                case 'Hrs Rec':
+                    tooltip = 'Recommended Observation Hours';
                     break;
                 case 'In State':
                     tooltip = 'In State Tuition';
@@ -166,11 +183,26 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 case 'Cum Avg':
                     tooltip = 'Average Cumulative GPA';
                     break;
-                case 'Prq Min':
+                case 'Prereq Min':
                     tooltip = 'Minimum Prerequisite GPA';
                     break;
-                case 'Prq Avg':
+                case 'Prereq Avg':
                     tooltip = 'Average Prerequisite GPA';
+                    break;
+                case 'Sci Min':
+                    tooltip = 'Minimum Science GPA';
+                    break;
+                case 'Sci Avg':
+                    tooltip = 'Average Science GPA';
+                    break;
+                case 'Last 60 Min':
+                    tooltip = 'Minimum Last 60 credits GPA';
+                    break;
+                case 'Last 60 Avg':
+                    tooltip = 'Average Last 60 credits GPA';
+                    break;
+                case 'GRE Req?':
+                    tooltip = 'GRE Required';
                     break;
                 case 'Verb Min':
                     tooltip = 'Minimum Verbal GRE Score';
@@ -211,24 +243,32 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 { text: 'GPA', align: 'center', name: 'gpa' }
             ],
             columns: [
+                { text: 'Name',  datafield: 'school_name',  columntype: 'textbox', filtertype: 'input', width: '15%',  enabletooltips:true, pinned: true, rendered: tooltiprenderer }, //pinned: true
                 { text: 'Pt School Id', datafield: 'pt_school_id', filtertype: 'number', cellsalign: 'right', columngroup: 'school', width: '6%',  enabletooltips:true, hidden:true },
-                { text: 'Name',  datafield: 'school_name', columntype: 'textbox', filtertype: 'input', width: '15%', columngroup: 'school', enabletooltips:true, rendered: tooltiprenderer }, //pinned: true
                 { text: 'State',  datafield: 'state', filtertype: 'checkedlist', width: '7%', columngroup: 'school', enabletooltips:true, rendered: tooltiprenderer }, //pinned: true
                 { text: 'Program Start Dt', datafield: 'program_start_dt', filtertype: 'range', cellsalign: 'right', cellsformat: 'd', columngroup: 'school', width: '9%', enabletooltips:true, hidden:true, rendered: tooltiprenderer   },
-                { text: 'PTCAS Deadline', datafield: 'ptcas_deadline_dt', filtertype: 'range', cellsalign: 'right', cellsformat: 'd', columngroup: 'school', width: '9%', enabletooltips:true, rendered: tooltiprenderer },
+                { text: 'Program Link',  datafield: 'program_link', columntype: 'textbox', filtertype: 'input', width: '10%', columngroup: 'school', enabletooltips:true, hidden:true, rendered: tooltiprenderer }, //pinned: true
+                { text: 'App Deadline', datafield: 'ptcas_deadline_dt', filtertype: 'range', cellsalign: 'right', cellsformat: 'd', columngroup: 'school', width: '9%', enabletooltips:true, rendered: tooltiprenderer },
+                { text: 'PTCAS Participate?', datafield: 'ptcas_participate', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'school', hidden:true, width: '10%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Interview?', datafield: 'interview_req', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'school',  width: '6%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'LOR', datafield: 'lor_num', filtertype: 'number', columngroup: 'school', width: '5%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Roll Admiss?', datafield: 'rolling_admission', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'school',  width: '6%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
                 { text: 'Class Size', datafield: 'class_size', filtertype: 'number', cellsalign: 'right', columngroup: 'school', width: '6%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
-                { text: 'Degree Req?', datafield: 'degree_req', columntype: 'textbox', filtertype: 'input', columngroup: 'school', width: '6%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
-                { text: 'Hrs Req?', datafield: 'required', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'observation',  width: '5%', enabletooltips:true, rendered: tooltiprenderer },
+                { text: 'Dgr Req?', datafield: 'degree_req', columntype: 'textbox', filtertype: 'input', columngroup: 'school', width: '6%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
+                { text: 'Hrs Req?', datafield: 'required', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'observation',  width: '6%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Hrs Min', datafield: 'hours_min', filtertype: 'number', cellsalign: 'right', columngroup: 'observation', width: '5%', enabletooltips:true, rendered: tooltiprenderer },
+                { text: 'Hrs Rec', datafield: 'hours_competitive', filtertype: 'number', cellsalign: 'right', columngroup: 'observation', width: '5%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
                 { text: 'In State', datafield: 'tuition_in_state_full',  filtertype: 'number', cellsalign: 'right', cellsformat: 'c2', columngroup: 'tuition', width: '8%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Out of State', datafield: 'tuition_out_state_full',  filtertype: 'number', cellsalign: 'right', cellsformat: 'c2', columngroup: 'tuition', width: '8%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Cum Min', datafield: 'gpa_overall_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '5%', enabletooltips:true, rendered: tooltiprenderer  },
                 { text: 'Cum Avg', datafield: 'gpa_overall_avg', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '5%', enabletooltips:true, hidden:true, rendered: tooltiprenderer  },
-                { text: 'Prereq Min', datafield: 'gpa_prereq_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '7%', enabletooltips:true, rendered: tooltiprenderer },
+                { text: 'Prereq Min', datafield: 'gpa_prereq_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '7%', enabletooltips:true,  rendered: tooltiprenderer },
                 { text: 'Prereq Avg', datafield: 'gpa_prereq_avg', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '7%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
+                { text: 'Sci Min', datafield: 'gpa_science_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '5%', enabletooltips:true, hidden:true, rendered: tooltiprenderer  },
+                { text: 'Sci Avg', datafield: 'gpa_science_avg', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '5%', enabletooltips:true, hidden:true, rendered: tooltiprenderer  },
+                { text: 'Last 60 Min', datafield: 'gpa_prereq_last60_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '7%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
+                { text: 'Last 60 Avg', datafield: 'gpa_prereq_last60_avg', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '7%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
+                { text: 'GRE Req?', datafield: 'gre_required', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'gre',  width: '6%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Verb Min', datafield: 'score_verbal_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '5%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Verb Avg', datafield: 'score_verbal_avg', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '5%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
                 { text: 'Quant Min', datafield: 'score_quant_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '6%', enabletooltips:true, rendered: tooltiprenderer },
@@ -237,22 +277,31 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 { text: 'Write Avg', datafield: 'score_writing_avg', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '6%',  enabletooltips:true, hidden:true, rendered: tooltiprenderer },
                 { text: 'Tot Min', datafield: 'score_total_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '5%',  enabletooltips:true, rendered: tooltiprenderer }, //, cellsrenderer: renderer
             ],
+
             listBoxSource: [
+                { label: 'Program Link', value: 'program_link', checked: false },
                 { label: 'Program Start Date', value: 'program_start_dt', checked: false },
-                { label: 'PTCAS Deadline', value: 'ptcas_deadline_dt', checked: true },
-                { label: 'Interview?', value: 'interview_req', checked: true },
-                { label: 'LOR', value: 'lor_num', checked: true },
+                { label: 'Application Deadline', value: 'ptcas_deadline_dt', checked: true },
+                { label: 'PTCAS Participating?', value: 'ptcas_participate', checked: false },
+                { label: 'Interview Required?', value: 'interview_req', checked: true },
+                { label: 'Letters of Recommendation (LOR)', value: 'lor_num', checked: true },
                 { label: 'Rolling Admission?', value: 'rolling_admission', checked: false },
                 { label: 'Class Size', value: 'class_size', checked: false },
-                { label: 'Degree Req?', value: 'degree_req', checked: false },
-                { label: 'Hrs Req', value: 'required', checked: true },
+                { label: 'Degree Required?', value: 'degree_req', checked: false },
+                { label: 'Hrs Required', value: 'required', checked: true },
                 { label: 'Hrs Min', value: 'hours_min', checked: true },
+                { label: 'Hrs Recommended', value: 'hours_competitive', checked: false },
                 { label: 'Tuition (In State)', value: 'tuition_in_state_full', checked: true },
                 { label: 'Tuition (Out State)', value: 'tuition_out_state_full', checked: true },
                 { label: 'GPA Cumulative Min', value: 'gpa_overall_min', checked: true },
                 { label: 'GPA Cumulative Avg', value: 'gpa_overall_avg', checked: false },
                 { label: 'GPA Prereq Min', value: 'gpa_prereq_min', checked: true },
                 { label: 'GPA Prereq Avg', value: 'gpa_prereq_avg', checked: false },
+                { label: 'GPA Science Min', value: 'gpa_science_min', checked: false },
+                { label: 'GPA Science Avg', value: 'gpa_science_avg', checked: false },
+                { label: 'GPA Last 60 Min', value: 'gpa_prereq_last60_min', checked: false },
+                { label: 'GPA Last 60 Avg', value: 'gpa_prereq_last60_avg', checked: false },
+                { label: 'GRE Required?', value: 'gre_required', checked: true },
                 { label: 'GRE Verb Min', value: 'score_verbal_min', checked: true },
                 { label: 'GRE Verb Avg', value: 'score_verbal_avg', checked: false },
                 { label: 'GRE Quant Min', value: 'score_quant_min', checked: true },
@@ -279,10 +328,9 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
         return (
             <div className="container-fluid">
                 <br/>
-                *Tutition data reflects our best efforts to calculate based on criteria presented on PT school websites.
-                <br/>
-                *GPA, GRE, and Observation minimums and averages display "0" if no minimum or average was found for that school, i.e., Prereq Min = 0
-                <br/>
+                <div style={{fontSize: 12}}>*Tutition data reflects our best efforts to calculate based on criteria presented on PT school websites. </div>
+                <div style={{fontSize: 12}}> *GPA, GRE, LOR and Observation minimums and averages display "0" if no minimum or average was found for that school, i.e., Prereq Min = 0. </div>
+                <div style={{fontSize: 12}}> *Interview Required, Rolling Admissions, and GRE Required values are assumed as "No" if no data was found for that school. </div>
                 <br/>
                 <div className="row">
                     <div className="card p-0 col-md-2 border-dark">
@@ -320,7 +368,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                           </div>
                         </div>
                         {/*</div>*/}
-                        <div className="row p-2">
+                        <div className="row p-1">
                         {/*flex align-items-center justify-content-center*/}
                             <div className="card col-md-2 border-0 flex align-items-center justify-content-center">
                                 <div className="card-body card col-md-2 border-0 flex align-items-center" >
