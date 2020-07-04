@@ -17,13 +17,16 @@ export const NavComponent = ({ firstName }) => (
       <div className="collapse navbar-collapse" id="navbarResponsive">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
+            <Link className="nav-link" to="/">Home</Link>
+          </li>
+          <li className="nav-item">
             <Link className="nav-link" to="/terms">Terms</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/about">About</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="mailto:danraygentry@gmail.com?subject=PT School Probe Question" target="_blank">Contact</a>
+            <a className="nav-link" href="mailto:ptschoolprobe@gmail.com?subject=PT School Probe Question" target="_blank">Contact</a>
           </li>
           <li className="nav-item">
             {isTokenVerified(Cookies.get('auth'))

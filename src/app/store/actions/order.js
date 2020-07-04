@@ -24,7 +24,7 @@ export function orderProduct() {
       // what to send
       {
         method: 'POST',
-        body: JSON.stringify(authentication.userObj),
+        body: JSON.stringify(authentication),
         headers: {
           'Content-Type': 'application/json',
         },

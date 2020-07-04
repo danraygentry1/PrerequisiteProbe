@@ -10,14 +10,16 @@ export const passwordSaveSuccess = () => ({ type: 'AUTHENTICATION_PASSWORD_SAVE_
 export const passwordResetHashCreated = () => ({ type: 'AUTHENTICATION_PASSWORD_RESET_HASH_CREATED' });
 export const passwordResetHashFailure = (error) => ({ type: 'AUTHENTICATION_PASSWORD_RESET_HASH_FAILURE', error });
 export const passwordSaveClear = () => ({ type: 'AUTHENTICATION_PASSWORD_SAVE_CLEAR' });
-export const registrationSuccess = (userObj) => ({type: 'AUTHENTICATION_REGISTRATION_SUCCESS', userObj });
+export const registrationSuccess = (userObj) => ({ type: 'AUTHENTICATION_REGISTRATION_SUCCESS', userObj });
+//export const registrationSuccessBackButton = (userObj) => ({ type: 'AUTHENTICATION_REGISTRATION_SUCCESS_BACKBUTTON', userObj }); future back button data persistance
 export const registrationFailure = (error) => ({ type: 'AUTHENTICATION_REGISTRATION_FAILURE', error });
 export const registrationClear = () => ({ type: 'AUTHENTICATION_REGISTRATION_CLEAR' });
+export const registerCouponToUserSuccess = (couponCodeId, couponCodePercent) => ({ type: 'AUTHENTICATION_REGISTERCOUPONTOUSER_SUCCESS', couponCodeId, couponCodePercent });
+export const registerCouponToUserFailure = (error) => ({ type: 'AUTHENTICATION_REGISTERCOUPONTOUSER_FAILURE', error });
 
 
 export function registerUser(userObj) {
   return async (dispatch) => {
-
     // clear the error box if it's displayed
     dispatch(clearError());
 
@@ -46,7 +48,7 @@ export function registerUser(userObj) {
       })
       .then((json) => {
         if (json.success) {
-            history.push('/order');
+          history.push('/order');
           return dispatch(registrationSuccess(userObj));
         }
         return dispatch(registrationFailure(new Error(json.error.message ? 'Something went wrong while attempting to create the user. Please try again.' : json.error)));
@@ -58,11 +60,51 @@ export function registerUser(userObj) {
   };
 }
 
+export function registerCouponToUser(couponCode) {
+  return async (dispatch) => {
+    // clear the error box if it's displayed
+    dispatch(clearError());
+
+    // turn on spinner
+    dispatch(incrementProgress());
+
+    // contact the API
+    await fetch(
+      // where to contact
+      '/getcouponcode',
+      // what to send
+      {
+        method: 'POST',
+        body: JSON.stringify({ couponCode }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'same-origin',
+      },
+    )
+      .then((response) => {
+        if (response.status === 200) {
+          return response.json();
+        }
+        return null;
+      })
+      .then((json) => {
+        if (json.success) {
+          return dispatch(registerCouponToUserSuccess(json.couponCodeId, json.couponCodePercent));
+        }
+        return dispatch(registerCouponToUserFailure(new Error(json.error.message ? 'Something went wrong while attempting to apply coupon code. Please try again.' : json.error)));
+      })
+      .catch((error) => dispatch(registerCouponToUserFailure(new Error(error.message || 'Something went wrong while attempting to apply coupon code. Please try again.'))));
+
+    // turn off spinner
+    return dispatch(decrementProgress());
+  };
+}
+
 
 // Send email to API for hashing
 export function createHash(emailAddress) {
   return async (dispatch) => {
-
     // clear the error box if it's displayed
     dispatch(clearError());
 
@@ -106,7 +148,6 @@ export function createHash(emailAddress) {
 // Save a user's password
 export function savePassword(data) {
   return async (dispatch) => {
-
     // clear the error box if it's displayed
     dispatch(clearError());
 

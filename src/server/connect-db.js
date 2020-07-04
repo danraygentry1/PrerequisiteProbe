@@ -6,7 +6,7 @@ const { Pool, Client } = require('pg');
   const pool = new Pool({
     user: 'doadmin',
     host: 'prerequisitprobe-db-postgresql-nyc1-04154-do-user-7519641-0.a.db.ondigitalocean.com',
-    database: 'Physical_Therapy',
+    database: 'Physical_Therapy_Test',
     password: 'ltah1edkek4qnp9l',
     port: 25060,
     ssl: true,
@@ -305,6 +305,41 @@ export async function getPTUserOrderByPayId(pool, PayId) {
   return ptUserOrderRows;
 }
 // ---END pt_user_order table section-------------------------------------------------------------------------------------------------------------------------------
+// ---pt_coupon_code table section---------------------------------------------------------------------------------------------------------------------------------
+export async function getPTCouponCode(pool, couponCode) {
+  const ptCouponCodeRows = {};
+  const ptCouponCodeColumns = [];
 
+  const ptCouponCodeSelect = {
+    text: 'SELECT * FROM pt_coupon_code WHERE coupon_code = $1 and expired = false',
+    values: [couponCode],
+    rowMode: 'array',
+  };
 
+  console.log('PT Coupon Code Select!!!');
+  // async/await - check out a client
+  await (async () => {
+    const client = await pool.connect();
+    try {
+      const resCoupon = await client.query(ptCouponCodeSelect);
+      let i = 0;
+      resCoupon.fields.map((key) => {
+        ptCouponCodeColumns.push({ key: key.name });
+      });
+      resCoupon.rows.map((rowkey) => {
+        ptCouponCodeColumns.map((columnkey) => {
+          ptCouponCodeRows[columnkey.key] = rowkey[i];
+          i += 1;
+        });
+        i = 0;
+      });
+    } finally {
+      // Make sure to release the client before any error handling,
+      // just in case the error handling itself throws an error.
+      client.release();
+    }
+  })().catch((e) => console.log(e.stack));
+
+  return ptCouponCodeRows;
+}
 // connectDB()

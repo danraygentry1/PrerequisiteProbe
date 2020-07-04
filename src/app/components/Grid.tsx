@@ -25,7 +25,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
         this.clearFiltering = this.clearFiltering.bind(this);
         this.myGridOnFilter = this.myGridOnFilter.bind(this);
         this.myListBoxOnCheckChange = this.myListBoxOnCheckChange.bind(this);
-        this.excelBtnOnClick = this.excelBtnOnClick.bind(this)
+       /* this.excelBtnOnClick = this.excelBtnOnClick.bind(this)*/
         //this.state.ready = this.state.ready.bind(this);
         const source: any =
             {
@@ -248,8 +248,8 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 { text: 'State',  datafield: 'state', filtertype: 'checkedlist', width: '7%', columngroup: 'school', enabletooltips:true, rendered: tooltiprenderer }, //pinned: true
                 { text: 'Program Start Dt', datafield: 'program_start_dt', filtertype: 'range', cellsalign: 'right', cellsformat: 'd', columngroup: 'school', width: '9%', enabletooltips:true, hidden:true, rendered: tooltiprenderer   },
                 { text: 'Program Link',  datafield: 'program_link', columntype: 'textbox', filtertype: 'input', width: '10%', columngroup: 'school', enabletooltips:true, hidden:true, rendered: tooltiprenderer }, //pinned: true
-                { text: 'App Deadline', datafield: 'ptcas_deadline_dt', filtertype: 'range', cellsalign: 'right', cellsformat: 'd', columngroup: 'school', width: '9%', enabletooltips:true, rendered: tooltiprenderer },
-                { text: 'PTCAS Participate?', datafield: 'ptcas_participate', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'school', hidden:true, width: '10%', enabletooltips:true, rendered: tooltiprenderer },
+                { text: 'App Deadline', datafield: 'ptcas_deadline_dt', filtertype: 'range', cellsalign: 'right', cellsformat: 'd', columngroup: 'school', width: '8%', enabletooltips:true, rendered: tooltiprenderer },
+                { text: 'PTCAS Participate?', datafield: 'ptcas_participate', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'school', hidden:true, width: '9%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Interview?', datafield: 'interview_req', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'school',  width: '6%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'LOR', datafield: 'lor_num', filtertype: 'number', columngroup: 'school', width: '5%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Roll Admiss?', datafield: 'rolling_admission', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'school',  width: '6%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
@@ -258,11 +258,11 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 { text: 'Hrs Req?', datafield: 'required', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'observation',  width: '6%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Hrs Min', datafield: 'hours_min', filtertype: 'number', cellsalign: 'right', columngroup: 'observation', width: '5%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Hrs Rec', datafield: 'hours_competitive', filtertype: 'number', cellsalign: 'right', columngroup: 'observation', width: '5%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
-                { text: 'In State', datafield: 'tuition_in_state_full',  filtertype: 'number', cellsalign: 'right', cellsformat: 'c2', columngroup: 'tuition', width: '8%', enabletooltips:true, rendered: tooltiprenderer },
-                { text: 'Out of State', datafield: 'tuition_out_state_full',  filtertype: 'number', cellsalign: 'right', cellsformat: 'c2', columngroup: 'tuition', width: '8%', enabletooltips:true, rendered: tooltiprenderer },
+                { text: 'In State', datafield: 'tuition_in_state_full',  filtertype: 'number', cellsalign: 'right', cellsformat: 'c2', columngroup: 'tuition', width: '7%', enabletooltips:true, rendered: tooltiprenderer },
+                { text: 'Out of State', datafield: 'tuition_out_state_full',  filtertype: 'number', cellsalign: 'right', cellsformat: 'c2', columngroup: 'tuition', width: '7%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Cum Min', datafield: 'gpa_overall_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '5%', enabletooltips:true, rendered: tooltiprenderer  },
                 { text: 'Cum Avg', datafield: 'gpa_overall_avg', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '5%', enabletooltips:true, hidden:true, rendered: tooltiprenderer  },
-                { text: 'Prereq Min', datafield: 'gpa_prereq_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '7%', enabletooltips:true,  rendered: tooltiprenderer },
+                { text: 'Prereq Min', datafield: 'gpa_prereq_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '6%', enabletooltips:true,  rendered: tooltiprenderer },
                 { text: 'Prereq Avg', datafield: 'gpa_prereq_avg', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '7%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
                 { text: 'Sci Min', datafield: 'gpa_science_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '5%', enabletooltips:true, hidden:true, rendered: tooltiprenderer  },
                 { text: 'Sci Avg', datafield: 'gpa_science_avg', filtertype: 'number', cellsalign: 'right', columngroup: 'gpa', width: '5%', enabletooltips:true, hidden:true, rendered: tooltiprenderer  },
@@ -275,7 +275,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 { text: 'Quant Avg', datafield: 'score_quant_avg', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '6%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
                 { text: 'Write Min', datafield: 'score_writing_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '6%',  enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Write Avg', datafield: 'score_writing_avg', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '6%',  enabletooltips:true, hidden:true, rendered: tooltiprenderer },
-                { text: 'Tot Min', datafield: 'score_total_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '5%',  enabletooltips:true, rendered: tooltiprenderer }, //, cellsrenderer: renderer
+                { text: 'Tot Min', datafield: 'score_total_min', filtertype: 'number', cellsalign: 'right', columngroup: 'gre', width: '5%',  enabletooltips:true, hidden:true, rendered: tooltiprenderer }, //, cellsrenderer: renderer
             ],
 
             listBoxSource: [
@@ -308,7 +308,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 { label: 'GRE Quant Avg', value: 'score_quant_avg', checked: false },
                 { label: 'GRE Write Min', value: 'score_writing_min', checked: true },
                 { label: 'GRE Write Avg', value: 'score_writing_avg', checked: false },
-                { label: 'GRE Total Min', value: 'score_total_min', checked: true }
+                { label: 'GRE Total Min', value: 'score_total_min', checked: false }
             ],
             initrowdetails,
             ready: (): void => {
@@ -327,11 +327,22 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
         console.log(this.myGrid);
         return (
             <div className="container-fluid">
-                <br/>
-                <div style={{fontSize: 12}}>*Tutition data reflects our best efforts to calculate based on criteria presented on PT school websites. </div>
-                <div style={{fontSize: 12}}> *GPA, GRE, LOR and Observation minimums and averages display "0" if no minimum or average was found for that school, i.e., Prereq Min = 0. </div>
-                <div style={{fontSize: 12}}> *Interview Required, Rolling Admissions, and GRE Required values are assumed as "No" if no data was found for that school. </div>
-                <br/>
+                <div className="row">
+                    <div className="card p-0 col-md-7 border-0">
+                        <div className="card-body">
+                            <br/>
+                            <div style={{fontSize: 12}}>*Tutition data reflects our best efforts to calculate based on criteria presented on PT school websites. </div>
+                            <div style={{fontSize: 12}}> *GPA, GRE, LOR and Observation minimums and averages display "0" if no minimum or average was found for that school, i.e., Prereq Min = 0. </div>
+                            <div style={{fontSize: 12}}> *Interview Required, Rolling Admissions, and GRE Required values are assumed as "No" if no data was found for that school. </div>
+                            <br/>
+                        </div>
+                    </div>
+                    <div className="card p-0 col-md-5 border-0 align-items-start">
+                        <div className="card-body">
+                            <a href="http://www.preptgrind.com" target="_blank"><img src="../../../images/Pre%20PT%20Grind/Pre-PT%20Grind%20Banner%201%2020%25.png" alt="" /> </a>
+                        </div>
+                    </div>
+                </div>
                 <div className="row">
                     <div className="card p-0 col-md-2 border-dark">
                         <div className="card-body">
@@ -340,6 +351,9 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                                         style={{ float: 'left' }}
                                         width='100%' height={400}
                                         source={this.state.listBoxSource} checkboxes={true}/>
+
+                            <p>-----------------------------------------</p>
+                            <div style={{fontSize: 12}}>*School data updated as of 06/01/2020</div>
                         </div>
                     </div>
 
@@ -381,12 +395,12 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                                     Filters: <JqxPanel ref={this.myPanel} theme={"bootstrap"} width={300} height={120} />
                                 </div>
                             </div>
-                            <div className="card col-md-7 border-0 flex align-items-end ">
+                           {/* <div className="card col-md-7 border-0 flex align-items-end ">
                                 <br />
                                 <div className="card-body card border-0">
                                     <JqxButton onClick={this.excelBtnOnClick}> <img src="../../../images/export-excel icon.png" alt="" /></JqxButton>
                                 </div>
-                            </div>
+                            </div>*/}
 
                         </div>
                     </div>
@@ -405,9 +419,9 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
             this.myPanel.current!.prepend('<div style="margin-top: 5px;">' + eventData + '</div>');
         }
     };
-    private excelBtnOnClick() {
+   /* private excelBtnOnClick() {
         this.myGrid.current!.exportdata('xls', 'jqxGrid');
-    };
+    };*/
     private myListBoxOnCheckChange(event: any): void {
         this.myGrid.current!.beginupdate();
         if (event.args.checked) {

@@ -43,7 +43,7 @@ const RouteGuard = (Component) => ({ match }) => {
     return <Redirect to="/login" />;
   } */
 
-  if (isTokenVerified(Cookies.get('auth')) && (match.url != '/dashboard' && match.url != '/' && match.url != '/about' && match.url != '/buysingle' && match.url != '/success' && match.url != '/cancel')) {
+  if (isTokenVerified(Cookies.get('auth')) && (match.url != '/dashboard' && match.url != '/' && match.url != '/about' && match.url != '/buysingle' && match.url != '/success' && match.url != '/cancel' && match.url != '/terms' && match.url != '/privacy' )) {
     logout();
     return <Redirect to="/login" />;
   }

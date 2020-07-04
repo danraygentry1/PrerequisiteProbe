@@ -10,20 +10,27 @@ export const HomeComponent = () => (
   <div>
     <ConnectedNav />
     <HeaderComponent />
-    <div className="card border-0 flex-grow-0 flex align-items-center justify-content-center">
-      <div className="card-body">
-        <h5 className="card-title">About Us:</h5>
-        {/*   <p>
-                    I know first hand how difficult the process of finding the right graduate school(s) can be.  As a Software Developer turned Pre-Physical therapy student
-                    who was eventually accepted into school, I despised the difficult process of finding the right school;
-                    Thus, I created a way to help students match their stats with school-specific requirements.  Indeed, each individual student has specific
-                    criteria like cost, GRE score, GPA and observation hours that factor into their school application decisions.  Currently, no easy way exists where
-                    this critical information is compiled into one place in an easily searchable format...Until Now.
-                </p> */}
-        <ReactPlayer
-          playing
-          url="https://youtu.be/9IOi2EB5wNI"
-        />
+    <div className="container-fluid text-nowrap">
+      <div className="row text-nowrap">
+        <div className="card p-0 col-md-2 border-0 text-nowrap flex-grow-0 flex align-items-center justify-content-center">
+          <div className="card-body">
+            {/* <span className="text-nowrap flex-grow-0 flex align-items-left justify-content-left"> */}
+            {' '}
+            <a href="http://www.preptgrind.com" target="_blank"><img src="../../../images/Pre%20PT%20Grind/Pre-Pt%20Grind%20Blue%2030%25%20partnership.png" alt="" /></a>
+            {' '}
+            {/* </span> */}
+          </div>
+        </div>
+        <div className="card p-0 col-md-8 border-0 text-nowrap flex-grow-0 flex align-items-center justify-content-center">
+          <div className="card-body">
+            {/* <span className="text-nowrap flex-grow-0 flex align-items-center justify-content-center"> */}
+              <ReactPlayer
+                  playing
+                  url="https://www.youtube.com/watch?v=N1hBR1HHHpU&feature=youtu.be"
+              />
+            {/* </span> */}
+          </div>
+        </div>
       </div>
     </div>
   </div>

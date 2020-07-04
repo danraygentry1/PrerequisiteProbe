@@ -9,7 +9,7 @@ import { Router } from 'react-router';
 import md5 from 'md5';
 import { authenticationRoute } from './authenticate';
 import {
-  connectDB, getPTUser, getPTUserByEmail, getPTUserByHash, getPTUserOrderByPayId
+  connectDB, getPTUser, getPTUserByEmail, getPTUserByHash, getPTUserOrderByPayId, getPTCouponCode
 } from './connect-db';
 const http = require('http');
 const crypto = require('crypto');
@@ -101,6 +101,21 @@ app.post('/getuser', async (req, res) => {
   return result
 });
 
+app.post('/getcouponcode', async (req, res) => {
+    let result
+    const pool = await connectDB();
+    const couponCodeRow = await getPTCouponCode(pool, req.body.couponCode);
+    try {
+        if (Object.keys(couponCodeRow).length === 0 ){
+            result = res.send(JSON.stringify({ error: 'Coupon code does not exist or has expired.  Please try a different code' }));
+        }else result = res.send(JSON.stringify({ success: true, couponCodeId: couponCodeRow.pt_coupon_code_id, couponCodePercent: couponCodeRow.percent}));
+    }
+    catch {
+        result = res.send(JSON.stringify({ error: 'Something went wrong while attempting to create the coupon code. Please try again.' }));
+    }
+    return result
+});
+
 
 
 // POST to saveresethash
@@ -131,7 +146,7 @@ app.post('/saveresethash', async (req, res) => {
           from: `PTSchoolProbe <postmaster@${appConfig.mailgun.domain}>`,
           to: foundUser.email_address,
           subject: 'Reset Your Password',
-          text: `A password reset has been requested for the PrerequisiteProbe account connected to this email address. If you made this request, please click the following link: ${appConfig.url}/change-password/${passwordResetHash} ... if you didn't make this request, feel free to ignore it!`,
+          text: `A password reset has been requested for the PT School Probe account connected to this email address. If you made this request, please click the following link: ${appConfig.url}/change-password/${passwordResetHash} ... if you didn't make this request, feel free to ignore it!`,
           html: `<p>Hello ${foundUser.first_name}, your user name is:  ${foundUser.user_name}.  A password reset has been requested for the PT School Probe account connected to this email address. If you made this request, please click the following link: <a href="${appConfig.url}/change-password/${passwordResetHash}" target="_blank">${appConfig.url}/change-password/${passwordResetHash}</a>.</p><p>If you didn't make this request, feel free to ignore it!</p>`,
         };
 
@@ -183,9 +198,18 @@ app.post('/savepassword', async (req, res) => {
 
 //* **PayPal Section*************************************************************************************************************
 app.post('/buysingle', (req, res) => {
-  let userObj = req.body;
+  let userObj = req.body.userObj;
+  let couponCodeId = req.body.couponCodeId
+  let couponCodePercent = req.body.couponCodePercent
   let result;
+  let purchasePrice = 14.99
   console.log(`USER OBJECT SENT TO BUY SINGLE SUCCESSFUL${userObj.toString()}`);
+
+  if (couponCodeId !== ""){
+    purchasePrice = parseFloat(Number((1 - couponCodePercent) * 14.99).toFixed(2))
+  } else purchasePrice = 14.99
+
+  console.log(purchasePrice);
   const orderObj = {
     orderID: '',
     orderType: 'PayPal',
@@ -193,7 +217,7 @@ app.post('/buysingle', (req, res) => {
     transactions: '',
     quantity: 1,
     purchaseName: 'Prerequisite Probe Access',
-    purchasePrice: 9.99,
+    purchasePrice: purchasePrice,
     taxPrice: 0.00,
     shippingPrice: 0.00,
     description: 'Prerequisite Probe Access',
@@ -232,14 +256,15 @@ app.post('/buysingle', (req, res) => {
 });
 
 app.get('/cancel/:orderID', (req, res) => {
-  const { orderID } = req.params;
+  res.send(`<h1>Order Canceled</h1>Thanks for visiting.  We hope you come back!`);
+  /*const { orderID } = req.params;
   preReqPurchaseRepo.CancelOrder(orderID, (err, results) => {
     if (err) {
       res.send('There was an error removing this order');
     } else {
       res.redirect('/');
     }
-  });
+  });*/
 });
 
 app.get('/success/:orderID', async (req, res) => {

@@ -2,10 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ce02b82-2744-48b5-9601-dadee3ab73ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/server/services/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/FullColor_1280x1024_72dpi 50%.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/Facebook Cover 360 x 360.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/Facebook Cover Color.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/Facebook Profile Image 360 x 360.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024.eps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024_300dpi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024_72dpi 50%.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024_72dpi 60%.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024_72dpi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024_72dpi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_IconOnly_1280x1024_72dpi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_TextOnly_1280x1024_72dpi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_TransparentBg_1280x1024_72dpi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/Grayscale_1280x1024_72dpi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/PT School Probe_Facebook 50-80% -- cropped.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/PT School Probe_Facebook 50-80%.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/PT School Probe_Facebook 50-80-80% - Cropped.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/PT School Probe_Facebook 50-80-80%.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/PT School Probe_Facebook 50-80-80-90%.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/Youtube Cover Art.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/PT School Probe/website_logo_solid_background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Pre PT Grind/Pre-PT Grind Banner 1 15%.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Pre PT Grind/Pre-PT Grind Banner 1 20%.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Pre PT Grind/Pre-Pt Grind Blue 30% partnership.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repos/Pre Pt Grind/Pre-PT Grind Banner 1 20%.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repos/Pre Pt Grind/Pre-PT Grind Banner 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repos/Pre Pt Grind/Pre-Pt Grind Blue Partnership 30%.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repos/Pre Pt Grind/Pre-Pt Grind Blue.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/videos/PrerequisiteProbeVideo.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/About.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Grid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Nav.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/OrderPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/OrderPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/OrderPageContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/OrderPageContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/RegistrationPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/RegistrationPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Terms.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Terms.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/actions/authenticate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/actions/authenticate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/actions/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/actions/order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/reducers/authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/reducers/authentication.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/reducers/error.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/reducers/error.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/sagas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/sagas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/connect-db.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/connect-db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/services/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/services/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/authenticate-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/authenticate-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/connect-db-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/connect-db-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/paymentService-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/paymentService-test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,7 +98,7 @@
     <property name="js.last.introduce.type" value="LET" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images/Pre PT Grind" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -62,18 +114,18 @@
     <property name="ts.external.directory.path" value="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\app\components" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\server\backup" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\server\auth" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\app\components" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\Pre PT Grind" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\Pre Pt Grind" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\public\videos" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\public\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\repos" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\Pre Pt Grind" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\app\components" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe" />
     </key>
   </component>
@@ -89,7 +141,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.Database Transactions.Should get PT user from database">
+  <component name="RunManager" selected="Mocha.PayPal Order.Should create a single order">
     <configuration name="Server JavaScript" type="JavascriptDebugType" uri="http://localhost:8080/" useFirstLineBreakpoints="true">
       <mapping url="webpack:///src/app" local-file="$PROJECT_DIR$/src/app" />
       <mapping url="webpack:///src" local-file="$PROJECT_DIR$/src" />
@@ -134,7 +186,24 @@
         </option>
       </method>
     </configuration>
-    <configuration name="Database Transactions.Should get PT user from database" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="Coupon Code Tests.POST /.should get user object if exists" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options>--require @babel/register</extra-mocha-options>
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/src/test/authenticate-test.js</test-file>
+      <test-names>
+        <name value="Coupon Code Tests" />
+        <name value="POST /" />
+        <name value="should get user object if exists" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Database Transactions.Should get PT Coupon Code ID from database based on coupon code" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -146,11 +215,11 @@
       <test-file>$PROJECT_DIR$/src/test/connect-db-test.js</test-file>
       <test-names>
         <name value="Database Transactions" />
-        <name value="Should get PT user from database" />
+        <name value="Should get PT Coupon Code ID from database based on coupon code" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="PT User Transactions.Should Update PT_User subscribed field" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="PayPal Order" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -158,43 +227,10 @@
       <pass-parent-env>true</pass-parent-env>
       <ui>bdd</ui>
       <extra-mocha-options>--require @babel/register</extra-mocha-options>
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/src/test/postgresService-test.js</test-file>
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/src/test/paymentService-test.js</test-file>
       <test-names>
-        <name value="PT User Transactions" />
-        <name value="Should Update PT_User subscribed field" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="PT User Transactions.Should Update PT_User table with newly reset password" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <ui>bdd</ui>
-      <extra-mocha-options>--require @babel/register</extra-mocha-options>
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/src/test/postgresService-test.js</test-file>
-      <test-names>
-        <name value="PT User Transactions" />
-        <name value="Should Update PT_User table with newly reset password" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="PT User Transactions.Should Update pt_user subscribed field" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <ui>bdd</ui>
-      <extra-mocha-options>--require @babel/register</extra-mocha-options>
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/src/test/postgresService-test.js</test-file>
-      <test-names>
-        <name value="PT User Transactions" />
-        <name value="Should Update pt_user subscribed field" />
+        <name value="PayPal Order" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -214,6 +250,23 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="User Account Tests.POST /.should get user object if exists" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options>--require @babel/register</extra-mocha-options>
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/src/test/authenticate-test.js</test-file>
+      <test-names>
+        <name value="User Account Tests" />
+        <name value="POST /" />
+        <name value="should get user object if exists" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="mocha-javascript-test-runner">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -229,20 +282,20 @@
     <list>
       <item itemvalue="JavaScript Debug.Server JavaScript" />
       <item itemvalue="Mocha.PayPal Order.Should create a single order" />
-      <item itemvalue="Mocha.PT User Transactions.Should Update PT_User table with newly reset password" />
-      <item itemvalue="Mocha.PT User Transactions.Should Update PT_User subscribed field" />
-      <item itemvalue="Mocha.PT User Transactions.Should Update pt_user subscribed field" />
-      <item itemvalue="Mocha.Database Transactions.Should get PT user from database" />
       <item itemvalue="Node.js.Server" />
       <item itemvalue="Node.js.API" />
+      <item itemvalue="Mocha.Database Transactions.Should get PT Coupon Code ID from database based on coupon code" />
+      <item itemvalue="Mocha.Coupon Code Tests.POST /.should get user object if exists" />
+      <item itemvalue="Mocha.User Account Tests.POST /.should get user object if exists" />
+      <item itemvalue="Mocha.PayPal Order" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Mocha.Database Transactions.Should get PT user from database" />
         <item itemvalue="Mocha.PayPal Order.Should create a single order" />
-        <item itemvalue="Mocha.PT User Transactions.Should Update pt_user subscribed field" />
-        <item itemvalue="Mocha.PT User Transactions.Should Update PT_User subscribed field" />
-        <item itemvalue="Mocha.PT User Transactions.Should Update PT_User table with newly reset password" />
+        <item itemvalue="Mocha.PayPal Order" />
+        <item itemvalue="Mocha.Coupon Code Tests.POST /.should get user object if exists" />
+        <item itemvalue="Mocha.Database Transactions.Should get PT Coupon Code ID from database based on coupon code" />
+        <item itemvalue="Mocha.User Account Tests.POST /.should get user object if exists" />
       </list>
     </recent_temporary>
   </component>
@@ -302,7 +355,8 @@
       <workItem from="1589565786836" duration="47396000" />
       <workItem from="1589927848120" duration="37450000" />
       <workItem from="1590432993699" duration="34363000" />
-      <workItem from="1590552197196" duration="117133000" />
+      <workItem from="1590552197196" duration="141505000" />
+      <workItem from="1593455264536" duration="68053000" />
     </task>
     <servers />
   </component>
@@ -332,7 +386,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/paymentService-test.js</url>
-          <line>83</line>
+          <line>86</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -402,7 +456,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>128</line>
+          <line>143</line>
           <option name="timeStamp" value="163" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -427,7 +481,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>151</line>
+          <line>166</line>
           <option name="timeStamp" value="199" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -437,32 +491,32 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>131</line>
+          <line>146</line>
           <option name="timeStamp" value="203" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>142</line>
+          <line>157</line>
           <option name="timeStamp" value="207" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>144</line>
+          <line>159</line>
           <option name="timeStamp" value="208" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/actions/authenticate.js</url>
-          <line>88</line>
+          <line>87</line>
           <option name="timeStamp" value="210" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/actions/authenticate.js</url>
-          <line>94</line>
+          <line>93</line>
           <option name="timeStamp" value="211" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/actions/authenticate.js</url>
-          <line>102</line>
+          <line>101</line>
           <option name="timeStamp" value="212" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -482,7 +536,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>180</line>
+          <line>195</line>
           <option name="timeStamp" value="226" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -492,78 +546,53 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>149</line>
+          <line>164</line>
           <option name="timeStamp" value="241" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>125</line>
+          <line>140</line>
           <option name="timeStamp" value="242" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>140</line>
+          <line>155</line>
           <option name="timeStamp" value="243" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>115</line>
+          <line>130</line>
           <option name="timeStamp" value="244" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>170</line>
+          <line>185</line>
           <option name="timeStamp" value="245" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>168</line>
+          <line>183</line>
           <option name="timeStamp" value="246" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>176</line>
+          <line>191</line>
           <option name="timeStamp" value="247" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>173</line>
+          <line>188</line>
           <option name="timeStamp" value="248" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>161</line>
+          <line>176</line>
           <option name="timeStamp" value="250" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>89</line>
-          <option name="timeStamp" value="256" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/authenticate-test.js</url>
           <line>76</line>
           <option name="timeStamp" value="257" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>100</line>
-          <option name="timeStamp" value="258" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>98</line>
-          <option name="timeStamp" value="259" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>94</line>
-          <option name="timeStamp" value="260" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>95</line>
-          <option name="timeStamp" value="261" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/services/postgresService.js</url>
@@ -572,7 +601,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>219</line>
+          <line>243</line>
           <option name="timeStamp" value="269" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -606,18 +635,13 @@
           <option name="timeStamp" value="287" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/connect-db.js</url>
-          <line>228</line>
-          <option name="timeStamp" value="288" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/connect-db-test.js</url>
           <line>37</line>
           <option name="timeStamp" value="289" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>245</line>
+          <line>270</line>
           <option name="timeStamp" value="293" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -657,7 +681,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>214</line>
+          <line>238</line>
           <option name="timeStamp" value="315" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -671,59 +695,90 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/sagas.js</url>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="318" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/services/postgresService.js</url>
           <line>82</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="322" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>202</line>
-          <properties lambdaOrdinal="-1" />
+          <line>226</line>
           <option name="timeStamp" value="324" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>212</line>
-          <properties lambdaOrdinal="-1" />
+          <line>236</line>
           <option name="timeStamp" value="325" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/connect-db-test.js</url>
           <line>21</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="327" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/Grid.tsx</url>
           <line>19</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="328" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/Grid.tsx</url>
           <line>27</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="329" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/Grid.tsx</url>
           <line>85</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="330" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/server/connect-db.js</url>
+          <line>342</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="331" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/test/connect-db-test.js</url>
+          <line>43</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="334" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/server/server.js</url>
+          <line>104</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="335" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/server/server.js</url>
+          <line>108</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="336" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/test/authenticate-test.js</url>
+          <line>94</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="337" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/server/services/paymentService.js</url>
+          <line>87</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="338" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/test/paymentService-test.js</url>
+          <line>80</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="339" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="mocha-javascript-test-runner">
-        <watch expression="results[0]" language="JavaScript" />
-        <watch expression="results[0].pt_user_id" language="JavaScript" />
-        <watch expression="userObj.user_name" language="JavaScript" />
-        <watch expression="userObj" language="JavaScript" />
+        <watch expression="res" language="JavaScript" />
       </configuration>
     </watches-manager>
   </component>

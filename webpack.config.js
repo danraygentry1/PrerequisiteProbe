@@ -25,7 +25,6 @@ module.exports = {
     sourceMapFilename: '[name].js.map',
     // crossOriginLoading: 'anonymous',
 
-
   },
   resolve: {
     extensions: ['.js', '.jsx', '.tsx', '.ts'],

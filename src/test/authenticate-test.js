@@ -1,8 +1,8 @@
 // Import the dependencies for testing
 import chai from 'chai';
 import chaiHttp from 'chai-http';
+import md5 from 'md5';
 import { app2 } from '../server/server';
-import md5 from "md5";
 // Configure chai
 chai.use(chaiHttp);
 chai.should();
@@ -62,7 +62,7 @@ describe('User Account Tests', () => {
       const userObj = {
         first_name: 'Danny',
         last_name: 'Pinturo',
-        user_name: 'Dev',
+        user_name: 'dannys',
         password_hash: md5('jeffery'),
         email_address: 'danraygentry@hotmail.com',
         subscribed: 'false',
@@ -71,6 +71,24 @@ describe('User Account Tests', () => {
         .post('/getuser')
         .send({
           userObj,
+        })
+        .end((err, res) => {
+          // res.should.have.status(200);
+          res.body.should.be.a('object');
+          done();
+        });
+    });
+  });
+});
+describe('Coupon Code Tests', () => {
+  describe('POST /', () => {
+    // Test to get all students record
+    it('should get user object if exists', (done) => {
+      const couponCode = 'preptgrind';
+      chai.request(app2)
+        .post('/getcouponcode')
+        .send({
+          couponCode,
         })
         .end((err, res) => {
           // res.should.have.status(200);

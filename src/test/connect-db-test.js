@@ -3,7 +3,7 @@ import sinon from 'sinon';
 import md5 from 'md5';
 import { describe } from 'mocha';
 import {
-  connectDB, getPTSchoolCourseInfo, getPTSchoolInfo, getPTUser, getPTUserByHash, getPTUserOrderByPayId
+  connectDB, getPTSchoolCourseInfo, getPTSchoolInfo, getPTUser, getPTUserByHash, getPTUserOrderByPayId, getPTCouponCode,
 } from '../server/connect-db';
 // import postgresService from '../server/services/postgresService'
 
@@ -36,6 +36,12 @@ describe('Database Transactions', () => {
     const payId = 'PAYID-L222P6Y48480965U3241125N'
     const userOrder = await getPTUserOrderByPayId(pool, payId);
     should.exist(userOrder);
+  });
+  it('Should get PT Coupon Code ID from database based on coupon code', async () => {
+    const pool = await connectDB();
+    const couponCode = 'preptgrind'
+    const couponCodeRow = await getPTCouponCode(pool, couponCode);
+    should.exist(couponCodeRow);
   });
 
 });

@@ -8,6 +8,8 @@ const initialState = {
   lastName: '',
   registrationSucceeded: false,
   username: '',
+  couponCodeId: '',
+  couponCodePercent: 1,
   userObj: {},
 };
 
@@ -78,6 +80,13 @@ export default function reducer(state = initialState, action) {
       newState.registrationSucceeded = false;
       return newState;
     }
+    case 'AUTHENTICATION_REGISTERCOUPONTOUSER_SUCCESS': {
+      const newState = Object.assign({}, state);
+      newState.couponCodeId = action.couponCodeId;
+      newState.couponCodePercent = action.couponCodePercent;
+      return newState;
+    }
+
     default: {
       return state;
     }

@@ -32,11 +32,14 @@ describe('PayPal Order', () => {
   const userObj = {
     first_name: 'Danny',
     last_name: 'Pinturo',
-    user_name: 'danny1',
+    user_name: 'danny18',
     password_hash: md5('jeffery'),
-    email_address: 'danny2@gmail.com',
+    email_address: 'danny18@gmail.com',
     subscribed: 'false',
   };
+
+  const couponCodeId = 1
+  const couponCodePercent = 0.2
 
   let url = '';
   beforeEach(() => {
@@ -71,7 +74,7 @@ describe('PayPal Order', () => {
     chai.request(app2)
       .post('/buysingle')
       .send({
-        userObj,
+        userObj, couponCodeId, couponCodePercent,
       })
       .end((err, res) => {
         // res.should.have.status(200);
