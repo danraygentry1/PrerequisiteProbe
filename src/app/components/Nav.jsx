@@ -13,7 +13,7 @@ export const NavComponent = ({ firstName }) => (
 
   <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div className="container">
-      <Link className="nav-link" to="/"><img src="../../../images/PtSchoolProbe_250x25_72dpi.png" alt="" /></Link>
+      <Link className="nav-link" to="/"><img src="../../../images/PT%20School%20Probe/PtSchoolProbe_250x25_72dpi.png" alt="" /></Link>
       <div className="collapse navbar-collapse" id="navbarResponsive">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">

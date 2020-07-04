@@ -12,7 +12,7 @@ export const HeaderComponent = () => {
     <div>
       <header>
         <div className="parent d-flex justify-content-center flex align-items-center">
-          <img src="../../../images/PtSchoolProbe_1024x811_72dpi.png" alt="" width={200} />
+          <img src="../../../images/PT%20School%20Probe/PtSchoolProbe_1024x811_72dpi.png" alt="" width={200} />
         </div>
       </header>
     </div>

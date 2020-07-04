@@ -2,63 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ce02b82-2744-48b5-9601-dadee3ab73ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/FullColor_1280x1024_72dpi 50%.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/Facebook Cover 360 x 360.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/Facebook Cover Color.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/Facebook Profile Image 360 x 360.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024_300dpi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024_72dpi 50%.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024_72dpi 60%.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024_72dpi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024_72dpi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_IconOnly_1280x1024_72dpi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_TextOnly_1280x1024_72dpi.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/FullColor_TransparentBg_1280x1024_72dpi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/Grayscale_1280x1024_72dpi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/PT School Probe_Facebook 50-80% -- cropped.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/PT School Probe_Facebook 50-80%.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/PT School Probe_Facebook 50-80-80% - Cropped.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/PT School Probe_Facebook 50-80-80%.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/PT School Probe_Facebook 50-80-80-90%.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/Youtube Cover Art.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/PT School Probe/website_logo_solid_background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Pre PT Grind/Pre-PT Grind Banner 1 15%.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Pre PT Grind/Pre-PT Grind Banner 1 20%.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Pre PT Grind/Pre-Pt Grind Blue 30% partnership.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repos/Pre Pt Grind/Pre-PT Grind Banner 1 20%.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repos/Pre Pt Grind/Pre-PT Grind Banner 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repos/Pre Pt Grind/Pre-Pt Grind Blue Partnership 30%.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repos/Pre Pt Grind/Pre-Pt Grind Blue.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/videos/PrerequisiteProbeVideo.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/About.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/FullColor_1280x1024_72dpi 50%.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/FullColor_IconOnly_10%x10%_72dpi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/FullColor_IconOnly_75%.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/FullColor_IconOnly_Big_whitespace%.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/FullColor_TextOnly_1280x1024_72dpi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/FullColor_TextOnly_Menu Version 250x22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/FullColor_TextOnly_Menu Version.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/Facebook Cover 360 x 360.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/Facebook Cover Color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/Facebook Profile Image 360 x 360.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024.eps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024_300dpi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024_72dpi 50%.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024_72dpi 60%.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024_72dpi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/FullColor_1280x1024_72dpi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/FullColor_IconOnly_1280x1024_72dpi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/FullColor_TextOnly_1280x1024_72dpi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/FullColor_TransparentBg_1280x1024_72dpi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/Grayscale_1280x1024_72dpi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/PT School Probe_Facebook 50-80% -- cropped.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/PT School Probe_Facebook 50-80%.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/PT School Probe_Facebook 50-80-80% - Cropped.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/PT School Probe_Facebook 50-80-80%.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/PT School Probe_Facebook 50-80-80-90%.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/Youtube Cover Art.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PT School Probe/website_logo_solid_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PTSchoolProbe_1024x743_72dpi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Prerequiste Probe Croped_1024x1024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Prerequiste Probe Cropped2_1024x1024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Prerequiste Probe Cropped3_1024x1024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Prerequiste Probe Cropped4_1024x1024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Prerequiste Probe Cropped5_1024x1024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Prerequiste Probe Cropped6_1024x1024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Prerequiste Probe Cropped7_1024x1024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Prerequiste Probe Cropped8_1024x1024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Prerequiste Probe Cropped9_1024x1024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Prerequiste Probe FullColor_1024x1024 60%.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Prerequiste Probe FullColor_1024x1024 80%.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Prerequiste Probe FullColor_1024x1024 90%.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Prerequiste Probe FullColor_1024x1024 small%.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Prerequiste Probe FullColor_1024x1024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Prerequiste Probe FullColor_1900x1080.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PtSchoolProbe_1024x811_72dpi.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/PT School Probe/PtSchoolProbe_1024x811_72dpi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/PtSchoolProbe_250x25_72dpi.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/PT School Probe/PtSchoolProbe_250x25_72dpi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/export-excel icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/PT School Probe/export-excel icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ptschoolprobe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/ChangePasswordPageContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/ChangePasswordPageContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Grid.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Nav.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/OrderPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/OrderPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/OrderPageContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/OrderPageContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/RegistrationPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/RegistrationPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Terms.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Terms.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/actions/authenticate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/actions/authenticate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/actions/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/actions/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/reducers/authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/reducers/authentication.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/reducers/error.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/reducers/error.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/sagas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/sagas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/connect-db.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/connect-db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/services/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/services/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/authenticate-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/authenticate-test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/connect-db-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/connect-db-test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/paymentService-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/paymentService-test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/wizard/AccountPayWizard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/wizard/Plugs.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/wizard/Stars.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/wizard/nav.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/wizard/nav.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/wizard/transitions.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/wizard/wizard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/wizard/wizard.less" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +104,7 @@
     <property name="js.last.introduce.type" value="LET" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images/Pre PT Grind" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images/PT School Probe" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -115,18 +121,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\PT School Probe" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\Pre PT Grind" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\Pre Pt Grind" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\public\videos" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\public\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\PT School Probe" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\repos" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\Pre Pt Grind" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\app\components" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -356,7 +362,7 @@
       <workItem from="1589927848120" duration="37450000" />
       <workItem from="1590432993699" duration="34363000" />
       <workItem from="1590552197196" duration="141505000" />
-      <workItem from="1593455264536" duration="68053000" />
+      <workItem from="1593455264536" duration="71538000" />
     </task>
     <servers />
   </component>

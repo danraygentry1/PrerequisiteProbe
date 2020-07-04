@@ -395,10 +395,10 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                                     Filters: <JqxPanel ref={this.myPanel} theme={"bootstrap"} width={300} height={120} />
                                 </div>
                             </div>
-                           {/* <div className="card col-md-7 border-0 flex align-items-end ">
+                            {/*<div className="card col-md-7 border-0 flex align-items-end ">
                                 <br />
                                 <div className="card-body card border-0">
-                                    <JqxButton onClick={this.excelBtnOnClick}> <img src="../../../images/export-excel icon.png" alt="" /></JqxButton>
+                                    <JqxButton onClick={this.excelBtnOnClick}> <img src="../../../images/PT%20School%20Probe/export-excel%20icon.png" alt="" /></JqxButton>
                                 </div>
                             </div>*/}
 

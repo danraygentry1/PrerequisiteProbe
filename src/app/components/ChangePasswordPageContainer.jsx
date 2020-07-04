@@ -13,7 +13,7 @@ export class ChangePasswordPageContainer extends React.Component {
   }
 
   // Clear password changed state on unmount: when app is not displaying it
-  componentwillUnmount() {
+  componentWillUnmount() {
     const { dispatch } = this.props;
     dispatch(passwordSaveClear());
   }
