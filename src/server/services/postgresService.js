@@ -5,8 +5,8 @@ import { connectDB } from '../connect-db';
 
   postgresService.create_pt_user_order_on_buy = async (colName, orderObj, userObj, cb) => {
     const pool = await connectDB.connectDB();
-    const text = 'INSERT INTO pt_user_order(pt_user_id, order_type, purchase_name, purchase_price, tax_price, "desc") VALUES($1, $2, $3, $4, $5, $6) RETURNING *';
-    const values = [userObj.pt_user_id, orderObj.orderType, orderObj.purchaseName, orderObj.purchasePrice, orderObj.taxPrice, orderObj.description];
+    const text = 'INSERT INTO pt_user_order(pt_user_id, order_type, purchase_name, purchase_price, tax_price, "desc", pt_coupon_code_id) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *';
+    const values = [userObj.pt_user_id, orderObj.orderType, orderObj.purchaseName, orderObj.purchasePrice, orderObj.taxPrice, orderObj.description, userObj.couponCodeId];
     try {
       const res = await pool.query(text, values);
       console.log(res.rows[0]);

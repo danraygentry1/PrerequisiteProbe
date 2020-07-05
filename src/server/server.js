@@ -203,13 +203,16 @@ app.post('/buysingle', (req, res) => {
   let couponCodePercent = req.body.couponCodePercent
   let result;
   let purchasePrice = 14.99
-  console.log(`USER OBJECT SENT TO BUY SINGLE SUCCESSFUL${userObj.toString()}`);
+
 
   if (couponCodeId !== ""){
+    userObj.couponCodeId = couponCodeId
     purchasePrice = parseFloat(Number((1 - couponCodePercent) * 14.99).toFixed(2))
   } else purchasePrice = 14.99
 
+  console.log(`USER OBJECT SENT TO BUY SINGLE SUCCESSFUL${userObj.toString()}`);
   console.log(purchasePrice);
+
   const orderObj = {
     orderID: '',
     orderType: 'PayPal',
