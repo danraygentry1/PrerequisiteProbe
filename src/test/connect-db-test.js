@@ -24,7 +24,7 @@ describe('Database Transactions', () => {
     const user = await getPTUser(pool, username);
     should.exist(user);
   });
-//horse shit
+//horse shit times 2
   it('Should get PT user from database based on password reset hash', async () => {
     const pool = await connectDB();
     const passwordResetHash = 'seeefffsss'
