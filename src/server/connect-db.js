@@ -2,21 +2,22 @@ const fs = require('fs');
 const { Pool, Client } = require('pg');
 
 // Digital Ocean postgres
- export async function connectDB() {
-  const pool = new Pool({
-    user: 'doadmin',
-    host: 'prerequisitprobe-db-postgresql-nyc1-04154-do-user-7519641-0.a.db.ondigitalocean.com',
-    database: 'Physical_Therapy_Test',
-    password: 'ltah1edkek4qnp9l',
-    port: 25060,
-    ssl: true,
-  });
-  // pool.query('SELECT NOW()', (err, res) => {
-  //   console.log(err, res)
-  //  pool.end()
-  // });
-  return pool;
+export async function connectDB() {
+    const pool = new Pool({
+        user: 'doadmin',
+        host: 'prerequisitprobe-db-postgresql-nyc1-04154-do-user-7519641-0.a.db.ondigitalocean.com',
+        database: 'Physical_Therapy',
+        password: 'ltah1edkek4qnp9l',
+        port: 25060,
+        ssl: true,
+    });
+    // pool.query('SELECT NOW()', (err, res) => {
+    //   console.log(err, res)
+    //  pool.end()
+    // });
+    return pool;
 }
+
 
 
 // amazon postgress
@@ -41,7 +42,9 @@ export async function getPTSchoolInfo(pool) {
   let ptSchoolRowsInnerArray = [];
 
   const ptSchoolSelect = {
-    text: 'select pt_school.pt_school_id, pt_school.name as school_name, pt_school.state, pt_school.program_link, pt_school.program_start_dt, pt_deadline.ptcas_deadline_dt, pt_school.ptcas_participate, pt_school.interview_req, pt_school.lor_num, pt_deadline.rolling_admission, '
+    text: 'select pt_school.pt_school_id, pt_school.name as school_name, pt_school.state, pt_school.program_link, pt_school.program_start_dt AT TIME ZONE \'UTC\' AT TIME ZONE \'US/Pacific\', '
+        + 'pt_deadline.ptcas_deadline_dt AT TIME ZONE \'UTC\' AT TIME ZONE \'US/Pacific\', '
+        + 'pt_school.ptcas_participate, pt_school.interview_req, pt_school.lor_num, pt_deadline.rolling_admission, '
         + 'pt_school.class_size, pt_school.degree_req, pt_hours.required, pt_hours.hours_min, pt_hours.hours_competitive, pt_school.tuition_in_state_full, pt_school.tuition_out_state_full, pt_gpa.gpa_overall_min, pt_gpa.gpa_overall_avg, '
         + 'pt_gpa.gpa_prereq_min, pt_gpa.gpa_prereq_avg, pt_gpa.gpa_science_min, pt_gpa.gpa_science_avg, pt_gpa.gpa_prereq_last60_min, pt_gpa.gpa_prereq_last60_avg,  '
         + 'pt_gre_exam.required as gre_required, pt_gre_exam.score_verbal_min, pt_gre_exam.score_verbal_avg, pt_gre_exam.score_quant_min, pt_gre_exam.score_quant_avg, '
@@ -126,12 +129,12 @@ export async function getPTSchoolCourseInfo(pool) {
         ptSchoolCourseRowsInnerArray = [];
         i = 0;
       });
-      /*console.log('PT School Course Rows!!!');
+      /* console.log('PT School Course Rows!!!');
       console.log(ptSchoolCourseRowsArray);
        console.log("PT School Course Columns!!!")
        console.log(ptSchoolCourseColumnsArray)
        console.log("PT REs!!!")
-       console.log(resPT)*/
+       console.log(resPT) */
     } finally {
       // Make sure to release the client before any error handling,
       // just in case the error handling itself throws an error.
@@ -154,7 +157,7 @@ export async function getPTUser(pool, username) {
   };
 
   console.log('PT User Select!!!');
-  //console.log(ptUserSelect);
+  // console.log(ptUserSelect);
   // async/await - check out a client
   await (async () => {
     const client = await pool.connect();
@@ -188,7 +191,7 @@ export async function getPTUserByEmail(pool, email) {
   const ptUserColumns = [];
 
   const ptUserSelect = {
-    text: 'SELECT * FROM pt_user WHERE email_address = $1',
+    text: 'SELECT * FROM pt_user WHERE email_address = $1 and subscribed = true',
     values: [email],
     rowMode: 'array',
   };
@@ -228,13 +231,13 @@ export async function getPTUserByHash(pool, passwordResetHash) {
   const ptUserColumns = [];
 
   const ptUserSelect = {
-    text: 'SELECT * FROM pt_user WHERE password_reset = $1',
+    text: 'SELECT * FROM pt_user WHERE password_reset = $1 and subscribed = true',
     values: [passwordResetHash],
     rowMode: 'array',
   };
 
   console.log('PT User Select!!!');
-  //console.log(ptUserSelect);
+  // console.log(ptUserSelect);
   // async/await - check out a client
   await (async () => {
     const client = await pool.connect();
