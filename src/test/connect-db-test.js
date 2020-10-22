@@ -20,7 +20,7 @@ describe('Database Transactions', () => {
   });
   it('Should get PT user from database', async () => {
     const pool = await connectDB();
-    const username = 'danraygentry';
+    const username = 'danny';
     const user = await getPTUser(pool, username);
     should.exist(user);
   });
