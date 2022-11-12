@@ -11,7 +11,7 @@ const cssOutputLocation = process.env.NODE_ENV === 'production'
 // export default {
 module.exports = {
   target: 'web',
-  mode: 'development',
+  mode: 'production',
 
   /* entry: path.resolve(__dirname, 'src', 'app'), // index.jsx has special designation, always looked for */
   context: resolve(__dirname, 'src', 'app'),
@@ -22,15 +22,13 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: '/',
-    sourceMapFilename: '[name].js.map',
     // crossOriginLoading: 'anonymous',
+
 
   },
   resolve: {
     extensions: ['.js', '.jsx', '.tsx', '.ts'],
   },
-  devtool: 'source-map',
-  // devtool: 'false',
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
@@ -113,14 +111,4 @@ if (process.env.NODE_ENV === 'production') {
       minRatio: 0.8,
     }),
   );
-}
-if (process.env.NODE_ENV !== 'production') {
-  // array.unshift sticks stuff at the beginning of an array
-  // as opposed to array.push, which puts stuff at the end
-  module.exports.entry.unshift(
-    'react-hot-loader/patch',
-    'react-hot-loader/babel',
-    'webpack-hot-middleware/client',
-  );
-  module.exports.plugins.unshift(new webpack.HotModuleReplacementPlugin());
 }

@@ -43,31 +43,10 @@ app.use('/vendor', express.static('vendor'))
 app.use('/css', express.static('css'))
 app.use('/images', express.static('images'))
 
-// WebpackServer.  logging to node console during development
-// create a virtual javascript file that watches for changes and hot reloads them
-if (process.env.NODE_ENV !== 'production') {
-  const webpackCompiler = webpack(webpackConfig);
-  app.use(webpackDevMiddleware(webpackCompiler, {
-    publicPath: webpackConfig.output.publicPath,
-    stats: {
-      colors: true,
-      chunks: true,
-      'errors-only': true,
-    },
-  }));
-   app.use(webpackHotMiddleware(webpackCompiler, {
-     log: console.log,
-   }));
-
-  console.log("WEBPACK Middleware")
-}
 
 
 //* **Authentication Section*****************************************************************************************************
 authenticationRoute(app);
-
-
-
 
 
 
@@ -153,20 +132,19 @@ app.post('/saveresethash', async (req, res) => {
         // Send it
         mailgun.messages().send(emailData, (error, body) => {
           if (error || !body) {
-            result = res.send(JSON.stringify({ error: 'Something went wrong while attempting to send password reset email. Please try again.' }));
+            result = res.send(JSON.stringify({ error: 'Something went wrong while attempting to send password reset email. Payment may have failed or an incorrect email address was entered.' }));
           } else {
             result = res.send(JSON.stringify({ success: true }));
           }
         });
       });
-    } else result = res.send(JSON.stringify({ error: 'Something went wrong while attempting to send password reset email. Please try again.' }));
+    } else result = res.send(JSON.stringify({ error: 'Something went wrong while attempting to send password reset email. Payment may have failed or an incorrect email address was entered.' }));
   } catch (err) {
     // if the user doesn't exist, error out
-    result = res.send(JSON.stringify({ error: 'Something went wrong while attempting to send password reset email. Please try again.' }));
+    result = res.send(JSON.stringify({ error: 'Something went wrong while attempting to send password reset email. Payment may have failed or an incorrect email address was entered.' }));
   }
   return result;
 });
-
 // POST to savepassword
 app.post('/savepassword', async (req, res) => {
   let result;
@@ -202,13 +180,13 @@ app.post('/buysingle', (req, res) => {
   let couponCodeId = req.body.couponCodeId
   let couponCodePercent = req.body.couponCodePercent
   let result;
-  let purchasePrice = 14.99
+  let purchasePrice = 15.99
 
 
   if (couponCodeId !== ""){
     userObj.couponCodeId = couponCodeId
-    purchasePrice = parseFloat(Number((1 - couponCodePercent) * 14.99).toFixed(2))
-  } else purchasePrice = 14.99
+    purchasePrice = parseFloat(Number((1 - couponCodePercent) * 15.99).toFixed(2))
+  } else purchasePrice = 15.99
 
   console.log(`USER OBJECT SENT TO BUY SINGLE SUCCESSFUL${userObj.toString()}`);
   console.log(purchasePrice);
@@ -327,19 +305,11 @@ app.get('/orderdetails/:orderID', (req, res) => {
 // put all other routs above the app.use('/*', index) route so that express will catch
 // any API routes and not send them to the react app
 
-if (process.env.NODE_ENV !== 'production') {
-  app.get('/*', (req, res) => {
-    res.sendFile(path.resolve('index.html')); // allows us to not use webpack dev server in production.
-  });
-}
-
-//FIX
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.resolve(__dirname, '../../dist'))); //everthing will be served from this url
-  app.get('/*', (req, res) => {
+app.use(express.static(path.resolve(__dirname, '../../dist'))); //everthing will be served from this url
+app.get('/*', (req, res) => {
     res.sendFile(path.resolve('index.html')); //allows us to not use webpack dev server in production.
   });
-}
+
 
 // Export our app for testing purposes
 export const app2 = app;

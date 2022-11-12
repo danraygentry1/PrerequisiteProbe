@@ -352,7 +352,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                                         width='100%' height={400}
                                         source={this.state.listBoxSource} checkboxes={true}/>
 
-                            <p>-----------------------------------------</p>
+                            <hr />
                             <div style={{fontSize: 12}}>*School data updated as of 06/01/2020</div>
                         </div>
                     </div>

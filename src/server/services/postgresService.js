@@ -103,20 +103,20 @@ import { connectDB } from '../connect-db';
 
   postgresService.update_pt_user_password_reset = async (tableName, passwordReset, emailAddress, cb) => {
     const pool = await connectDB.connectDB();
-    const text = 'UPDATE pt_user set password_reset = $1 where email_address = $2 RETURNING *';
+    const text = 'UPDATE pt_user set password_reset = $1 where email_address = $2 and subscribed = true RETURNING *';
     const values = [passwordReset, emailAddress];
 
     const res = await pool.query(text, values);
     console.log(res.rows[0]);
     if (res.rows[0]) {
       cb(res.rows, null);
-    } else cb(null, new Error('Something went wrong with creating password reset hash'));
+    } else cb(null, new Error('Something went wrong while attempting to send password reset email. Payment may have failed or an incorrect email address was entered.'));
     // { name: 'brianc', email: 'brian.m.carlson@gmail.com' }
   };
 
   postgresService.update_pt_user_password = async (passwordHash, passwordReset, cb) => {
     const pool = await connectDB.connectDB();
-    const text = 'UPDATE pt_user set password_hash = $1 where password_reset = $2 RETURNING *';
+    const text = 'UPDATE pt_user set password_hash = $1 where password_reset = $2 and subscribed = true RETURNING *';
     const values = [passwordHash, passwordReset];
 
     const res = await pool.query(text, values);

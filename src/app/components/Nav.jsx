@@ -25,6 +25,9 @@ export const NavComponent = ({ firstName }) => (
           <li className="nav-item">
             <Link className="nav-link" to="/about">About</Link>
           </li>
+	  <li className="nav-item">
+            <Link className="nav-link" to="/testimonials">Testimonials</Link>
+          </li>
           <li className="nav-item">
             <a className="nav-link" href="mailto:ptschoolprobe@gmail.com?subject=PT School Probe Question" target="_blank">Contact</a>
           </li>
@@ -34,12 +37,12 @@ export const NavComponent = ({ firstName }) => (
              <Link className="nav-link" to="/dashboard">Dashboard</Link>
               ) : ''}
           </li>
-          <li className="nav-item">
+          {/*<li className="nav-item">
             {!isTokenVerified(Cookies.get('auth'))
               ? (
                 <Link className="nav-link" to="/register-user">Create Account</Link>
               ) : ''}
-          </li>
+          </li>*/}
           <li className="nav-item">
             {isTokenVerified(Cookies.get('auth'))
               ? (

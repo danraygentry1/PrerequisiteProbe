@@ -24,15 +24,17 @@ export const LoginComponent = ({authenticateUser, createAccount, authenticated})
                             Login incorrect</p> : null}
                         <br/>
                         <button type="submit" className="form-control mt2 btn btn-primary">Login</button>
-                        <span><Link to="/reset-password">Forgot user name or password?</Link></span>
+                        <span><Link to="/reset-password">Forgots user name or password?</Link></span>
                         <br/><br/>
                         <br/>
                     </form>
               </div>
               <div className="card-body border-dark card border-1 m-1">
                     <h5 className="card-title">New to PT School Probe?</h5>
-                  <p align="left">Create an account and purchase <br /> a one-year membership for only $9.99!</p>
-                    <button className="form-control mt2 btn btn-primary" onClick={createAccount}>Create Account</button>
+                  {/*<p align="left">Create an account and purchase <br /> a one-year membership for only $15.99!</p>*/}
+                  <p align="left">We are not accepting any new members <br /> until our database has been updated</p>
+                    {/*<button className="form-control mt2 btn btn-primary" onClick={createAccount}>Create Account</button>*/}
+                    <button disabled color="gray" onClick={createAccount}>Create Account</button>
               </div>
             </div>
         </div>
