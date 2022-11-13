@@ -3,21 +3,20 @@ const { Pool, Client } = require('pg');
 
 // Digital Ocean postgres
 export async function connectDB() {
-    const pool = new Pool({
-        user: 'doadmin',
-        host: 'prerequisitprobe-db-postgresql-nyc1-04154-do-user-7519641-0.a.db.ondigitalocean.com',
-        database: 'Physical_Therapy',
-        password: 'ltah1edkek4qnp9l',
-        port: 25060,
-        ssl: true,
-    });
-    // pool.query('SELECT NOW()', (err, res) => {
-    //   console.log(err, res)
-    //  pool.end()
-    // });
-    return pool;
+  const pool = new Pool({
+    user: 'doadmin',
+    host: 'prerequisitprobe-db-postgresql-nyc1-04154-do-user-7519641-0.a.db.ondigitalocean.com',
+    database: 'Physical_Therapy_Test',
+    password: 'ltah1edkek4qnp9l',
+    port: 25060,
+    ssl: true,
+  });
+  // pool.query('SELECT NOW()', (err, res) => {
+  //   console.log(err, res)
+  //  pool.end()
+  // });
+  return pool;
 }
-
 
 
 // amazon postgress

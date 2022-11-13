@@ -1,1 +1,1 @@
-sitemap: 'https://www.ptschoolprobe.com/sitemap.xml'
+sitemap: 'https://www.ptschoolmatch.net/sitemap.xml'
