@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ce02b82-2744-48b5-9601-dadee3ab73ad" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/services/postgresService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/services/postgresService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/connect-db.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -228,12 +230,12 @@
     <list>
       <item itemvalue="JavaScript Debug.Server JavaScript" />
       <item itemvalue="Mocha.PayPal Order.Should create a single order" />
-      <item itemvalue="Node.js.Server" />
-      <item itemvalue="Node.js.API" />
       <item itemvalue="Mocha.Database Transactions.Should get PT Coupon Code ID from database based on coupon code" />
       <item itemvalue="Mocha.Coupon Code Tests.POST /.should get user object if exists" />
       <item itemvalue="Mocha.User Account Tests.POST /.should get user object if exists" />
       <item itemvalue="Mocha.PayPal Order" />
+      <item itemvalue="Node.js.Server" />
+      <item itemvalue="Node.js.API" />
     </list>
     <recent_temporary>
       <list>
@@ -401,11 +403,6 @@
           <option name="timeStamp" value="150" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>143</line>
-          <option name="timeStamp" value="163" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/services/paymentService.js</url>
           <line>124</line>
           <option name="timeStamp" value="165" />
@@ -426,29 +423,9 @@
           <option name="timeStamp" value="182" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>166</line>
-          <option name="timeStamp" value="199" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/authenticate-test.js</url>
           <line>38</line>
           <option name="timeStamp" value="201" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>146</line>
-          <option name="timeStamp" value="203" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>157</line>
-          <option name="timeStamp" value="207" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>159</line>
-          <option name="timeStamp" value="208" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/actions/authenticate.js</url>
@@ -481,59 +458,9 @@
           <option name="timeStamp" value="220" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>195</line>
-          <option name="timeStamp" value="226" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/services/postgresService.js</url>
           <line>90</line>
           <option name="timeStamp" value="230" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>164</line>
-          <option name="timeStamp" value="241" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>140</line>
-          <option name="timeStamp" value="242" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>155</line>
-          <option name="timeStamp" value="243" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>130</line>
-          <option name="timeStamp" value="244" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>185</line>
-          <option name="timeStamp" value="245" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>183</line>
-          <option name="timeStamp" value="246" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>191</line>
-          <option name="timeStamp" value="247" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>188</line>
-          <option name="timeStamp" value="248" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>176</line>
-          <option name="timeStamp" value="250" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/authenticate-test.js</url>
@@ -544,11 +471,6 @@
           <url>file://$PROJECT_DIR$/src/server/services/postgresService.js</url>
           <line>83</line>
           <option name="timeStamp" value="267" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>246</line>
-          <option name="timeStamp" value="269" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/actions/order.js</url>
@@ -571,11 +493,6 @@
           <option name="timeStamp" value="276" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/connect-db.js</url>
-          <line>240</line>
-          <option name="timeStamp" value="286" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/postgresService-test.js</url>
           <line>55</line>
           <option name="timeStamp" value="287" />
@@ -584,11 +501,6 @@
           <url>file://$PROJECT_DIR$/src/test/connect-db-test.js</url>
           <line>37</line>
           <option name="timeStamp" value="289" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>273</line>
-          <option name="timeStamp" value="293" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/services/postgresService.js</url>
@@ -626,11 +538,6 @@
           <option name="timeStamp" value="314" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>241</line>
-          <option name="timeStamp" value="315" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/BuySingle.jsx</url>
           <option name="timeStamp" value="316" />
         </line-breakpoint>
@@ -647,16 +554,6 @@
           <url>file://$PROJECT_DIR$/src/server/services/postgresService.js</url>
           <line>82</line>
           <option name="timeStamp" value="322" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>229</line>
-          <option name="timeStamp" value="324" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>239</line>
-          <option name="timeStamp" value="325" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/connect-db-test.js</url>
@@ -679,45 +576,23 @@
           <option name="timeStamp" value="330" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/connect-db.js</url>
-          <line>342</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="331" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/connect-db-test.js</url>
           <line>43</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="334" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>104</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="335" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/server/server.js</url>
-          <line>108</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="336" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/authenticate-test.js</url>
           <line>94</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="337" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/services/paymentService.js</url>
           <line>87</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="338" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/test/paymentService-test.js</url>
           <line>80</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="339" />
         </line-breakpoint>
       </breakpoints>
