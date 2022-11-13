@@ -22,6 +22,7 @@ import ResetPasswordPage from './ResetPasswordPageContainer';
 import RegistrationPageContainer from './RegistrationPageContainer';
 import OrderPageContainer from './OrderPageContainer';
 import { TermsComponent } from './Terms';
+import { TestimonialComponent } from "./Testimonial";
 // Router - parent component that all routes have to be inside
 // Router - component that displays different depending what the URL is
 import { store } from '../store';
@@ -63,6 +64,7 @@ export const Main = () => (
           <Route exact path="/login" component={ConnectedLogin} />
           <Route exact path="/change-password/:hash" render={RouteGuard(ChangePasswordPageContainer)} />
           <Route exact path="/about" render={RouteGuard(AboutComponent)} />
+          <Route exact path="/testimonials" render={RouteGuard(TestimonialComponent)} />
           <Route exact path="/terms" render={RouteGuard(TermsComponent)} />
           <Route exact path="/privacy" render={RouteGuard(PrivacyComponent)} />
           {/*<Route

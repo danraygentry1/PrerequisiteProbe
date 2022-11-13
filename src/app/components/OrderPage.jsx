@@ -70,7 +70,7 @@ export default class OrderPage extends React.Component {
                         <p align="center"><b>Promo Code Applied!</b></p>
                       </div>
                     )
-                      : <p>Click PayPal button to order a one-year membership for only $14.99!</p>}
+                      : <p>Click PayPal button to order a one-year membership for only $15.99!</p>}
                     <br />
                     <button>
                       <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_200x51.png" alt="PayPal" />
@@ -99,18 +99,18 @@ export default class OrderPage extends React.Component {
             {store.getState().authentication.couponCodeId !== ''
               ? (
                 <p align="right">
-                  Cost: $14.99
+                  Cost: $15.99
                   <br />
-                  <b>Discount:  (${Number(store.getState().authentication.couponCodePercent * 14.99).toFixed(2)})</b>
+                  <b>Discount:  (${Number(store.getState().authentication.couponCodePercent * 15.99).toFixed(2)})</b>
                   <br />
-                  Total Cost: ${Number((1 - store.getState().authentication.couponCodePercent) * 14.99).toFixed(2)}
+                  Total Cost: ${Number((1 - store.getState().authentication.couponCodePercent) * 15.99).toFixed(2)}
                 </p>
               )
               : (
                 <p align="right">
-                  Cost: $14.99
+                  Cost: $15.99
                   <br />
-                  Total Cost : $14.99
+                  Total Cost : $15.99
                 </p>
               )}
           </div>

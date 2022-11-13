@@ -72,7 +72,7 @@ export default class RegistrationPage extends React.Component {
         <HeaderComponent />
         <div className="row justify-content-center">
           <div className="col-10 col-sm-7 col-md-5 col-lg-4">
-            <p className="text-center">***One-year membership only $14.99!***</p>
+            <p className="text-center">***One-year membership only $15.99!***</p>
             <h3 className="text-center">Create Account</h3>
 
             <AvForm onValidSubmit={this.handleValidSubmit}>

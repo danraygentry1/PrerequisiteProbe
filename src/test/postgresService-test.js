@@ -82,7 +82,7 @@ describe('PT User Transactions', () => {
 
   it('Should Update pt_user table with password_reset hash', (done) => {
     const passwordReset = 'ORxb144gsafg555444';
-    const emailAddress = 'prerequisiteprobetest@gmail.com';
+    const emailAddress = 'danraygentry@gmail.com';
     postgresService.update_pt_user_password_reset('pt_user_order', passwordReset, emailAddress, (results) => {
       should.exist(results);
       done();

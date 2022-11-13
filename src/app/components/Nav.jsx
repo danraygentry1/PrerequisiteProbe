@@ -26,6 +26,9 @@ export const NavComponent = ({ firstName }) => (
             <Link className="nav-link" to="/about">About</Link>
           </li>
           <li className="nav-item">
+            <Link className="nav-link" to="/testimonials">Testimonials</Link>
+          </li>
+          <li className="nav-item">
             <a className="nav-link" href="mailto:ptschoolprobe@gmail.com?subject=PT School Probe Question" target="_blank">Contact</a>
           </li>
           <li className="nav-item">

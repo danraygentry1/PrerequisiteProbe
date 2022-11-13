@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import { connect } from 'react-redux';
 import { ConnectedNav } from './Nav';
@@ -24,9 +25,10 @@ export const HomeComponent = () => (
         <div className="card p-0 col-md-8 border-0 text-nowrap flex-grow-0 flex align-items-center justify-content-center">
           <div className="card-body">
             {/* <span className="text-nowrap flex-grow-0 flex align-items-center justify-content-center"> */}
+             Youtube Link: <a href="https://youtu.be/Pg-hBnJnEMU" target="_blank">Click Here</a>
               <ReactPlayer
                   playing
-                  url="https://www.youtube.com/watch?v=N1hBR1HHHpU&feature=youtu.be"
+                  url="https://youtu.be/Pg-hBnJnEMU"
               />
             {/* </span> */}
           </div>

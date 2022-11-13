@@ -16,12 +16,14 @@
     "pg-test": "babel-node src/server/connect-db",
     "generate-data-test": "babel-node src/sampledata/generatedata_JavaScript.js",
     "react-test": "riteway src/test/react-test.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "sitemap": "babel-node src/app/components/sitemap/sitemap-generator.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "3.0.0": "^3.0.0",
     "@babel/cli": "^7.7.4",
     "@babel/core": "^7.0.0",
     "@babel/node": "^7.0.0",
@@ -74,7 +76,8 @@
     "webpack-cli": "^3.1.2",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^3.1.7",
-    "webpack-hot-middleware": "^2.25.0"
+    "webpack-hot-middleware": "^2.25.0",
+    "whatwg-fetch": "^3.4.1"
   },
   "dependencies": {
     "@babel/core": "^7.0.0",
@@ -110,13 +113,13 @@
     "react-redux": "^5.0.7",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
+    "react-router-sitemap": "^1.2.0",
     "react-step-wizard": "^5.3.0",
     "reactstrap": "^8.4.1",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
     "redux-saga": "^0.16.2",
     "redux-thunk": "^2.3.0",
-    "uuid": "^3.3.3",
-    "whatwg-fetch": "^3.0.0"
+    "uuid": "^3.3.3"
   }
 }

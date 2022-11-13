@@ -3,6 +3,7 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 import md5 from 'md5';
 import { app2 } from '../server/server';
+import { registerUser} from "../app/store/actions/authenticate";
 // Configure chai
 chai.use(chaiHttp);
 chai.should();
@@ -32,7 +33,7 @@ describe('Password Tests', () => {
       chai.request(app2)
         .post('/saveresethash')
         .send({
-          emailAddress: 'prerequisiteprobetest@gmail.coms',
+          emailAddress: 'prerequisiteprobetest@gmail.com',
         })
         .end((err, res) => {
           // res.should.have.status(200);
@@ -62,10 +63,10 @@ describe('User Account Tests', () => {
       const userObj = {
         first_name: 'Danny',
         last_name: 'Pinturo',
-        user_name: 'dannys',
-        password_hash: md5('jeffery'),
-        email_address: 'danraygentry@hotmail.com',
-        subscribed: 'false',
+        user_name: 'danny',
+        password_hash: md5('Jimmybeam1!'),
+        email_address: 'prerequisiteprobetest@gmail.com',
+        subscribed: 'true',
       };
       chai.request(app2)
         .post('/getuser')
