@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ce02b82-2744-48b5-9601-dadee3ab73ad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/connect-db.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/server.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +42,7 @@
     <property name="js.last.introduce.type" value="LET" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images/PT School Probe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -62,19 +58,19 @@
     <property name="ts.external.directory.path" value="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\PT School Probe" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\Pre PT Grind" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\Pre Pt Grind" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\public\videos" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\PT School Probe" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\repos" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\Pre Pt Grind" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\app\components" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Dropbox\My PC (DESKTOP-FV357MP)\Documents\Pluralsight Tutorials\PrerequisiteProbe" />
+      <recent name="C:\Users\admin\Dropbox\My PC (DESKTOP-FV357MP)\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\server" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\PT School Probe" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\Pre PT Grind" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\Pre Pt Grind" />
     </key>
   </component>
   <component name="RunDashboard">
