@@ -112,3 +112,6 @@ config.json
 
 # Dev Webpack Config
 webpack.config.js
+
+#Database Connection
+src/server/connect-db.js
