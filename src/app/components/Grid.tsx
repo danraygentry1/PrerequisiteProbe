@@ -327,8 +327,8 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
         console.log(this.myGrid);
         return (
             <div className="container-fluid">
-                <div className="row">
-                    <div className="card p-0 col-md-7 border-0">
+                <div className="row mt-1">
+                    <div className="card p-0 col-md-7 border-0 " >
                         <div className="card-body">
                             <br/>
                             <div style={{fontSize: 12}}>*Tutition data reflects our best efforts to calculate based on criteria presented on PT school websites. </div>
@@ -337,7 +337,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                             <br/>
                         </div>
                     </div>
-                    <div className="card p-0 col-md-5 border-0 align-items-start">
+                    <div className="card col-md-5 border-0 align-items-start">
                         <div className="card-body">
                             <a href="http://www.preptgrind.com" target="_blank"><img src="../../../images/Pre%20PT%20Grind/Pre-PT%20Grind%20Banner%201%2020%25.png" alt="" /> </a>
                         </div>

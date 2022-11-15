@@ -11,8 +11,12 @@ export const HeaderComponent = () => {
   return (
     <div>
       <header>
-        <div className="parent d-flex justify-content-center flex align-items-center">
-          <img src="../../../images/PT%20School%20Probe/PtSchoolProbe_1024x811_72dpi.png" alt="" width={200} />
+        <div
+          className="parent d-flex justify-content-center flex align-items-center"
+          style={{ marginTop: '40px', marginBottom: '15px' }}
+
+        >
+          <img src="../../../images/Pre%20PT%20Grind/pt_school_match_gold_large_15.png" alt="" />
         </div>
       </header>
     </div>

@@ -11,13 +11,13 @@ import { Dashboard } from './Dashboard';
 
 export const NavComponent = ({ firstName }) => (
 
-  <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-black fixed-top">
     <div className="container">
-      <Link className="nav-link" to="/"><img src="../../../images/PT%20School%20Probe/PtSchoolProbe_250x25_72dpi.png" alt="" /></Link>
+      <Link className="nav-link" to="/"><img src="../../../images/Pre%20PT%20Grind/pt_school_match_white_large_5_75.png" alt="" /></Link>
       <div className="collapse navbar-collapse" id="navbarResponsive">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <Link className="nav-link" to="/">Home</Link>
+            <Link className="nav-link" to="/">Homes</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/terms">Terms</Link>
