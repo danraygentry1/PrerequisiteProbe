@@ -6,6 +6,7 @@ import { connect, Provider } from 'react-redux';
 import { Router, Route } from 'react-router-dom';
 import { Redirect } from 'react-router';
 import { AboutComponent } from './About';
+import { CongratsComponent} from "./Congrats";
 import ChangePasswordPageContainer from './ChangePasswordPageContainer';
 import { ConnectedDashboard } from './Dashboard';
 import { ConnectedLogin } from './Login';
@@ -67,6 +68,7 @@ export const Main = () => (
           <Route exact path="/testimonials" render={RouteGuard(TestimonialComponent)} />
           <Route exact path="/terms" render={RouteGuard(TermsComponent)} />
           <Route exact path="/privacy" render={RouteGuard(PrivacyComponent)} />
+          <Route exact path="/congrats" render={RouteGuard(CongratsComponent)} />
           {/*<Route
             path="/buysingle"
             component={() => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { registrationClear, registerUser } from '../store/actions/authenticate';
-
 import RegistrationPage from './RegistrationPage';
 import md5 from "md5";
 import {HeaderComponent} from './Header';
@@ -29,7 +28,7 @@ export class RegistrationPageContainer extends React.Component {
       user_name: formData.userName,
       password_hash: md5(formData.password),
       email_address: formData.emailAddress,
-      subscribed: false,
+      subscribed: true,
     };
     dispatch(registerUser(userObj));
   }
