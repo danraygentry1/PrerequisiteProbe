@@ -12,8 +12,8 @@ export const LoginComponent = ({authenticateUser, createAccount, authenticated})
       <ConnectedNav />
       <HeaderComponent />
         <div className="card border-0 flex-grow-0 flex align-items-center justify-content-center">
-            <div className="row p-3">
-              <div className="card-body border-dark card border-1 m-1">
+            <div className="row">
+              <div className="card-body border-dark card border-1">
                     <h5 className="card-title">Please Login</h5>
                     <form onSubmit={authenticateUser}>
                         <input type="text" placeholder="username" name="username"
@@ -29,12 +29,15 @@ export const LoginComponent = ({authenticateUser, createAccount, authenticated})
                         <br/>
                     </form>
               </div>
-              <div className="card-body border-dark card border-1 m-1">
+              <div className="card-body border-dark card border-1 flex align-items-center justify-content-center">
                     <h5 className="card-title">New to PT School Match?</h5>
+                  <div className="mb-1" style={{fontSize: 14, fontWeight: 'bold' }}>
+                      Visit <a href='https://www.preptgrind.com/resources' target="_blank">Pre Pt Grind</a> to sign up!
+                  </div>
                   {/*<p align="left">Create an account and purchase <br /> a one-year membership for only $15.99!</p>*/}
-                  <p align="left">We are not accepting any new members <br /> until our database has been updated</p>
-                    {/*<button className="form-control mt2 btn btn-primary" onClick={createAccount}>Create Account</button>*/}
-                    <button disabled color="gray" onClick={createAccount}>Create Account</button>
+                  {/*<p align="left">We are not accepting any new members <br /> until our database has been updated</p>*/}
+                  {/*  /!*<button className="form-control mt2 btn btn-primary" onClick={createAccount}>Create Account</button>*!/*/}
+                  {/*  <button disabled color="gray" onClick={createAccount}>Create Account</button>*/}
               </div>
             </div>
         </div>

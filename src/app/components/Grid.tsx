@@ -329,31 +329,28 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
             <div className="container-fluid">
                 <div className="row mt-1">
                     <div className="card p-0 col-md-7 border-0 " >
-                        <div className="card-body">
-                            <br/>
+                        <div className="card-body mt-2 mb-2">
                             <div style={{fontSize: 12}}>*Tutition data reflects our best efforts to calculate based on criteria presented on PT school websites. </div>
                             <div style={{fontSize: 12}}> *GPA, GRE, LOR and Observation minimums and averages display "0" if no minimum or average was found for that school, i.e., Prereq Min = 0. </div>
                             <div style={{fontSize: 12}}> *Interview Required, Rolling Admissions, and GRE Required values are assumed as "No" if no data was found for that school. </div>
-                            <br/>
                         </div>
                     </div>
-                    <div className="card col-md-5 border-0 align-items-start">
+                    <div className="card col-md-5 border-0 align-items-start mt-2 mb-2">
                         <div className="card-body">
-                            <a href="http://www.preptgrind.com" target="_blank"><img src="../../../images/Pre%20PT%20Grind/Pre-PT%20Grind%20Banner%201%2020%25.png" alt="" /> </a>
+                            <div style={{fontSize: 12, fontWeight:"bold"}}>***This dashboard is up to date for application to the 2023 cycle.*** </div>
                         </div>
                     </div>
                 </div>
                 <div className="row">
                     <div className="card p-0 col-md-2 border-dark">
                         <div className="card-body">
-                            <h5 className="card-title">Add/Remove Search Columns</h5>
+                            <h5 className="card-title align-center" style={{fontSize: 14, fontWeight:"bold"}}>Add/Remove Search Columns</h5>
                             <JqxListBox theme={'bootstrap'} onCheckChange={this.myListBoxOnCheckChange}
                                         style={{ float: 'left' }}
-                                        width='100%' height={400}
+                                        width='100%' height={600}
                                         source={this.state.listBoxSource} checkboxes={true}/>
 
                             <hr />
-                            <div style={{fontSize: 12}}>*School data updated as of 06/01/2020</div>
                         </div>
                     </div>
 
@@ -391,7 +388,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                                 </div>
                             </div>
                             <div className="card col-md-3 border-0 flex align-items-center ">
-                                <div className="card-body card border-0">
+                                <div className="card-body card border-0" style={{fontSize: 16, fontWeight:"bold"}}>
                                     Filters: <JqxPanel ref={this.myPanel} theme={"bootstrap"} width={300} height={120} />
                                 </div>
                             </div>

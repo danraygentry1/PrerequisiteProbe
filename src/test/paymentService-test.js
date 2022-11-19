@@ -22,11 +22,11 @@ describe('PayPal Order', () => {
     createTime: '',
     transactions: '',
     quantity: 1,
-    purchaseName: 'PT School Probe Access',
+    purchaseName: 'PT School Match Access',
     purchasePrice: 9.99,
     taxPrice: 0.00,
     shippingPrice: 0.00,
-    description: 'PT School Probe Access',
+    description: 'PT School Match Access',
   };
   // INSERT INTO pt_user(first_name, last_name, user_name, password_hash, email_address, subscribed) VALUES($1, $2, $3, $4, $5, $6) RETURNING *'
   const userObj = {

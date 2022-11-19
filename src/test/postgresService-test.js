@@ -20,11 +20,11 @@ describe('PayPal Order', () => {
     createTime: '',
     transactions: '',
     quantity: 1,
-    purchaseName: 'PT School Probe Access',
+    purchaseName: 'PT School Match Access',
     purchasePrice: 10.00,
     taxPrice: 0.00,
     shippingPrice: 0.00,
-    description: 'PT School Probe Access',
+    description: 'PT School Match Access',
   };
 
   const userObj = {

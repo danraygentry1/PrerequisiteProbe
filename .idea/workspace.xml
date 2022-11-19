@@ -2,19 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ce02b82-2744-48b5-9601-dadee3ab73ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/Pre PT Grind/pt_school_match_gold_large.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Pre PT Grind/pt_school_match_gold_med.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Pre PT Grind/pt_school_match_white_background_med.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Pre PT Grind/pt_school_match_white_large.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Pre PT Grind/pt_school_match_white_med.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/favicon.ico" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prod_bak/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/prod_bak/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/About.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Footer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Grid.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Nav.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Terms.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Terms.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Testimonial.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Testimonial.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/backup/server-orig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/backup/server-orig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/paymentService-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/paymentService-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/postgresService-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/postgresService-test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/bootstrap/css/JQXGrid/jqx.bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/JQXGrid/jqx.bootstrap.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
     </list>
@@ -73,19 +78,19 @@
     <property name="ts.external.directory.path" value="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Dropbox\My PC (DESKTOP-FV357MP)\Documents\Pluralsight Tutorials\PrerequisiteProbe\images" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\PT School Probe" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\repos" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\Pre Pt Grind" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\admin\Dropbox\My PC (DESKTOP-FV357MP)\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\Pre PT Grind" />
       <recent name="C:\Users\admin\Dropbox\My PC (DESKTOP-FV357MP)\Documents\Pluralsight Tutorials\PrerequisiteProbe" />
       <recent name="C:\Users\admin\Dropbox\My PC (DESKTOP-FV357MP)\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\server" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\PT School Probe" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\Pre PT Grind" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\PT School Probe" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\repos" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\Pre Pt Grind" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\app\components" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -395,7 +400,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/Login.jsx</url>
-          <line>52</line>
+          <line>55</line>
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
