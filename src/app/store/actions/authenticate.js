@@ -11,7 +11,7 @@ export const passwordResetHashCreated = () => ({ type: 'AUTHENTICATION_PASSWORD_
 export const passwordResetHashFailure = (error) => ({ type: 'AUTHENTICATION_PASSWORD_RESET_HASH_FAILURE', error });
 export const passwordSaveClear = () => ({ type: 'AUTHENTICATION_PASSWORD_SAVE_CLEAR' });
 export const registrationSuccess = (userObj) => ({ type: 'AUTHENTICATION_REGISTRATION_SUCCESS', userObj });
-//export const registrationSuccessBackButton = (userObj) => ({ type: 'AUTHENTICATION_REGISTRATION_SUCCESS_BACKBUTTON', userObj }); future back button data persistance
+// export const registrationSuccessBackButton = (userObj) => ({ type: 'AUTHENTICATION_REGISTRATION_SUCCESS_BACKBUTTON', userObj }); future back button data persistance
 export const registrationFailure = (error) => ({ type: 'AUTHENTICATION_REGISTRATION_FAILURE', error });
 export const registrationClear = () => ({ type: 'AUTHENTICATION_REGISTRATION_CLEAR' });
 export const registerCouponToUserSuccess = (couponCodeId, couponCodePercent) => ({ type: 'AUTHENTICATION_REGISTERCOUPONTOUSER_SUCCESS', couponCodeId, couponCodePercent });
@@ -48,7 +48,7 @@ export function registerUser(userObj) {
       })
       .then((json) => {
         if (json.success) {
-          history.push('/order');
+          history.push('/congrats');
           return dispatch(registrationSuccess(userObj));
         }
         return dispatch(registrationFailure(new Error(json.error.message ? 'Something went wrong while attempting to create the user. Please try again.' : json.error)));

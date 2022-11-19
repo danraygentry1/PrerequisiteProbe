@@ -29,21 +29,6 @@ export default class RegistrationPage extends React.Component {
     };
   }
 
-  /* if user click "go back button" on the order page, the users data
-    will be preserved; thus they won't have to re-enter their data' */
-  // DELETE
-  /*componentDidMount() {
-    if (store.getState().authentication.userObj) {
-      this.setState({
-        firstName: store.getState().authentication.userObj.first_name,
-        lastName: store.getState().authentication.userObj.last_name,
-        userName: store.getState().authentication.userObj.user_name,
-        emailAddress: store.getState().authentication.userObj.email_address,
-      });
-    }
-  }*/
-
-
   // Handle input changes
   handleInputChange(e) {
     this.setState({ [e.currentTarget.id]: e.target.value });
@@ -72,7 +57,7 @@ export default class RegistrationPage extends React.Component {
         <HeaderComponent />
         <div className="row justify-content-center">
           <div className="col-10 col-sm-7 col-md-5 col-lg-4">
-            <p className="text-center">***One-year membership only $15.99!***</p>
+            {/*<p className="text-center">***One-year membership only $15.99!***</p>*/}
             <h3 className="text-center">Create Account</h3>
 
             <AvForm onValidSubmit={this.handleValidSubmit}>
