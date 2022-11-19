@@ -17,7 +17,7 @@ export const NavComponent = ({ firstName }) => (
       <div className="collapse navbar-collapse" id="navbarResponsive">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <Link className="nav-link" to="/">Homes</Link>
+            <Link className="nav-link" to="/">How To</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/terms">Terms</Link>
@@ -29,7 +29,7 @@ export const NavComponent = ({ firstName }) => (
             <Link className="nav-link" to="/testimonials">Testimonials</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="mailto:ptschoolprobe@gmail.com?subject=PT School Probe Question" target="_blank">Contact</a>
+            <a className="nav-link" href="mailto:ptschoolmatch@gmail.com?subject=PT School Match Question" target="_blank">Contact</a>
           </li>
           <li className="nav-item">
             {isTokenVerified(Cookies.get('auth'))

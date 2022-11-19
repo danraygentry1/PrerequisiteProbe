@@ -183,11 +183,11 @@
 }
 
 .jqx-progressbar-value-bootstrap, .jqx-splitter-collapse-button-horizontal-bootstrap {
-    background-color: #F8E889;
+    background-color: #6E461A;
 }
 
 .jqx-splitter-collapse-button-vertical-bootstrap, .jqx-progressbar-value-vertical-bootstrap {
-    background-color: #F8E889;
+    background-color: #6E461A;
 }
 
 .jqx-scrollbar-thumb-state-pressed-bootstrap, .jqx-splitter-splitbar-vertical-bootstrap, .jqx-splitter-splitbar-horizontal-bootstrap, .jqx-scrollbar-thumb-state-pressed-horizontal-bootstrap {
@@ -342,20 +342,20 @@
 
 .jqx-fill-state-normal-bootstrap.jqx-primary {
     color: #ffffff;
-    background-color: #F8E889;
-    border-color: #F8E889;
+    background-color: #6E461A;
+    border-color: #6E461A;
 }
 
 .jqx-fill-state-hover-bootstrap.jqx-primary {
     color: #ffffff;
-    background-color: #F8E889;
-    border-color: #F8E889;
+    background-color: #6E461A;
+    border-color: #6E461A;
 }
 
 .jqx-fill-state-pressed-bootstrap.jqx-primary {
     color: #ffffff;
-    background-color: #F8E889;
-    border-color: #F8E889;
+    background-color: #6E461A;
+    border-color: #6E461A;
 }
 
 .jqx-fill-state-normal-bootstrap.jqx-warning {
@@ -414,20 +414,20 @@
 
 .jqx-fill-state-normal-bootstrap.jqx-info {
     color: #ffffff;
-    background-color: #F8E889;
-    border-color: #F8E889;
+    background-color: #6E461A;
+    border-color: #6E461A;
 }
 
 .jqx-fill-state-hover-bootstrap.jqx-info {
     color: #ffffff;
-    background-color: #F8E889;
-    border-color: #F8E889;
+    background-color: #6E461A;
+    border-color: #6E461A;
 }
 
 .jqx-fill-state-pressed-bootstrap.jqx-info {
     color: #ffffff;
-    background-color: #F8E889;
-    border-color: #F8E889;
+    background-color: #6E461A;
+    border-color: #6E461A;
 }
 
 .jqx-fill-state-normal-bootstrap.jqx-inverse {
@@ -459,8 +459,8 @@
 }
 .jqx-fill-state-hover-bootstrap{
     color: #fff !important;
-    background-color: #F8E889 !important;
-    border-color: #F8E889 !important;
+    background-color: #6E461A !important;
+    border-color: #6E461A !important;
     outline: 0;
 }
 .jqx-grid-cell-hover-bootstrap {
@@ -895,8 +895,8 @@ input[type="password"].jqx-input-bootstrap:-ms-input-placeholder, input[type="pa
 }
 
 .jqx-slider-rangebar-bootstrap {
-    border-color: #F8E889;
-    background: #F8E889;
+    border-color: #6E461A;
+    background: #6E461A;
 }
 
 .jqx-slider-button-bootstrap {
