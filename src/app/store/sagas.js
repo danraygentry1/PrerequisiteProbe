@@ -46,7 +46,7 @@ export function* createAccountSaga() {
       // yield axios.post(url + '/');
       yield put(mutations.createAccount());
 
-      history.push('./register-user');
+      history.push('./register-user-x33xr7kfl4nvjfrkelsDDekffk4guyiridlsoe');
       // history.push('/dashboard');
       // history.push('../buysingle');
       // axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';

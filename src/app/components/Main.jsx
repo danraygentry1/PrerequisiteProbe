@@ -84,7 +84,7 @@ export const Main = () => (
           />*/}
           <Route exact path="/dashboard" render={RouteGuard(ConnectedDashboard)} />
           <Route exact path="/reset-password" render={RouteGuard(ResetPasswordPage)} />
-          <Route exact path="/register-user" render={RouteGuard(RegistrationPageContainer)} />
+          <Route exact path="/register-user-x33xr7kfl4nvjfrkelsDDekffk4guyiridlsoe" render={RouteGuard(RegistrationPageContainer)} />
           <Route exact path="/order" render={RouteGuard(OrderPageContainer)} />
           <Route exact path="/buysingle" render={RouteGuard(BuySingleComponent)} />
 

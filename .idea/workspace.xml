@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ce02b82-2744-48b5-9601-dadee3ab73ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/components/Congrats.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/RegistrationPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/RegistrationPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/RegistrationPageContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/RegistrationPageContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/actions/authenticate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/actions/authenticate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/services/postgresService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/services/postgresService.js" afterDir="false" />
-    </list>
+    <list default="true" id="1ce02b82-2744-48b5-9601-dadee3ab73ad" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,13 +224,13 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Server JavaScript" />
-      <item itemvalue="Mocha.PayPal Order.Should create a single order" />
-      <item itemvalue="Mocha.Database Transactions.Should get PT Coupon Code ID from database based on coupon code" />
-      <item itemvalue="Mocha.Coupon Code Tests.POST /.should get user object if exists" />
-      <item itemvalue="Mocha.User Account Tests.POST /.should get user object if exists" />
-      <item itemvalue="Mocha.PayPal Order" />
-      <item itemvalue="Node.js.Server" />
       <item itemvalue="Node.js.API" />
+      <item itemvalue="Node.js.Server" />
+      <item itemvalue="Mocha.Coupon Code Tests.POST /.should get user object if exists" />
+      <item itemvalue="Mocha.Database Transactions.Should get PT Coupon Code ID from database based on coupon code" />
+      <item itemvalue="Mocha.PayPal Order" />
+      <item itemvalue="Mocha.PayPal Order.Should create a single order" />
+      <item itemvalue="Mocha.User Account Tests.POST /.should get user object if exists" />
     </list>
     <recent_temporary>
       <list>
@@ -605,13 +597,11 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/server/server.js</url>
           <line>308</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="365" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/store/actions/authenticate.js</url>
           <line>50</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="367" />
         </line-breakpoint>
       </breakpoints>
