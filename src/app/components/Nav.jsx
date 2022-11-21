@@ -40,7 +40,7 @@ export const NavComponent = ({ firstName }) => (
           {/*<li className="nav-item">
             {!isTokenVerified(Cookies.get('auth'))
               ? (
-                <Link className="nav-link" to="/register-user">Create Account</Link>
+                <Link className="nav-link" to="/register-user-x33xr7kfl4nvjfrkelsDDekffk4guyiridlsoe">Create Account</Link>
               ) : ''}
           </li>*/}
           <li className="nav-item">
