@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ce02b82-2744-48b5-9601-dadee3ab73ad" name="Default Changelist" comment="" />
+    <list default="true" id="1ce02b82-2744-48b5-9601-dadee3ab73ad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/images/Pre PT Grind/pre-pt-grind-and-dan.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/About.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Grid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Login.jsx" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +48,7 @@
     <property name="js.last.introduce.type" value="LET" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images/PT School Probe" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -57,19 +64,19 @@
     <property name="ts.external.directory.path" value="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\admin\Dropbox\My PC (DESKTOP-FV357MP)\Documents\Pluralsight Tutorials\PrerequisiteProbe\images" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\PT School Probe" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\repos" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\Pre Pt Grind" />
-      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Dropbox\My PC (DESKTOP-FV357MP)\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\PT School Probe" />
       <recent name="C:\Users\admin\Dropbox\My PC (DESKTOP-FV357MP)\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\app\components" />
       <recent name="C:\Users\admin\Dropbox\My PC (DESKTOP-FV357MP)\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\Pre PT Grind" />
       <recent name="C:\Users\admin\Dropbox\My PC (DESKTOP-FV357MP)\Documents\Pluralsight Tutorials\PrerequisiteProbe" />
       <recent name="C:\Users\admin\Dropbox\My PC (DESKTOP-FV357MP)\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\server" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Dropbox\My PC (DESKTOP-FV357MP)\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\Pre PT Grind" />
+      <recent name="C:\Users\admin\Dropbox\My PC (DESKTOP-FV357MP)\Documents\Pluralsight Tutorials\PrerequisiteProbe\images" />
       <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\PT School Probe" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\src\repos" />
+      <recent name="C:\Users\admin\Documents\Pluralsight Tutorials\PrerequisiteProbe\images\Pre Pt Grind" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -383,7 +390,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/components/Login.jsx</url>
-          <line>55</line>
+          <line>54</line>
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
