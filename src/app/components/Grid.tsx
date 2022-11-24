@@ -68,6 +68,14 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 datatype: 'array',
                 localdata: props.rows
             };
+        const linkrenderer = (row: number, column: any, value: any): any => {
+            if (value.indexOf('#') !== -1) {
+                value = value.substring(0, value.indexOf('#'));
+            }
+            const format = { target: '"_blank"' };
+            const html = jqx.dataFormat.formatlink(value, format);
+            return html;
+        }
         const ptSchoolCourseSource: any = {
             datafields: [
                 { name: 'pt_school_id', type: 'number', map: '0' },
@@ -247,8 +255,8 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 { text: 'Pt School Id', datafield: 'pt_school_id', filtertype: 'number', cellsalign: 'right', columngroup: 'school', width: '6%',  enabletooltips:true, hidden:true },
                 { text: 'State',  datafield: 'state', filtertype: 'checkedlist', width: '7%', columngroup: 'school', enabletooltips:true, rendered: tooltiprenderer }, //pinned: true
                 { text: 'Program Start Dt', datafield: 'program_start_dt', filtertype: 'range', cellsalign: 'right', cellsformat: 'd', columngroup: 'school', width: '9%', enabletooltips:true, hidden:true, rendered: tooltiprenderer   },
-                { text: 'Program Link',  datafield: 'program_link', columntype: 'textbox', filtertype: 'input', width: '10%', columngroup: 'school', enabletooltips:true, hidden:true, rendered: tooltiprenderer }, //pinned: true
-                { text: 'App Deadline', datafield: 'ptcas_deadline_dt', filtertype: 'range', cellsalign: 'right', cellsformat: 'd', columngroup: 'school', width: '8%', enabletooltips:true, rendered: tooltiprenderer },
+                { text: 'Program Link',  datafield: 'program_link', columntype: 'textbox', filtertype: 'input', width: '8%', columngroup: 'school', enabletooltips:true, hidden:false, cellsrenderer: linkrenderer, rendered: tooltiprenderer }, //pinned: true
+                { text: 'App Deadline', datafield: 'ptcas_deadline_dt', filtertype: 'range', cellsalign: 'right', cellsformat: 'd', columngroup: 'school', width: '8%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
                 { text: 'PTCAS Participate?', datafield: 'ptcas_participate', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'school', hidden:true, width: '9%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Interview?', datafield: 'interview_req', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'school',  width: '6%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'LOR', datafield: 'lor_num', filtertype: 'number', columngroup: 'school', width: '5%', enabletooltips:true, rendered: tooltiprenderer },
