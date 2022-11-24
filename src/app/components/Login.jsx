@@ -32,7 +32,7 @@ export const LoginComponent = ({authenticateUser, createAccount, authenticated})
               <div className="card-body border-dark card border-1 flex align-items-center justify-content-center">
                     <h5 className="card-title">New to PT School Match?</h5>
                   <div className="mb-1" style={{fontSize: 14, fontWeight: 'bold' }}>
-                      Visit <a href='https://www.preptgrind.com/resources' target="_blank">Pre Pt Grind</a> to sign up!
+                      Visit <a href='https://www.preptgrind.com/pt-school-match' target="_blank">Pre Pt Grind</a> to sign up!
                   </div>
                   {/*<p align="left">Create an account and purchase <br /> a one-year membership for only $15.99!</p>*/}
                   {/*<p align="left">We are not accepting any new members <br /> until our database has been updated</p>*/}

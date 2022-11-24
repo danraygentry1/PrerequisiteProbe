@@ -337,7 +337,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                     </div>
                     <div className="card col-md-5 border-0 align-items-start mt-2 mb-2">
                         <div className="card-body">
-                            <div style={{fontSize: 12, fontWeight:"bold"}}>***This dashboard is up to date for application to the 2023 cycle.*** </div>
+                            <div style={{fontSize: 12, fontWeight:"bold"}}>***This dashboard is up to date as of November 20, 2022.*** </div>
                         </div>
                     </div>
                 </div>
