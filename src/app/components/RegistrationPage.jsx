@@ -51,13 +51,15 @@ export default class RegistrationPage extends React.Component {
   }
 
   render() {
-    return (
+    const deadLineFunnel = '<!-- Deadline Funnel --><script type="text/javascript" data-cfasync="false">function SendUrlToDeadlineFunnel(e){var r,t,c,a,h,n,o,A,i = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",d=0,l=0,s="",u=[];if(!e)return e;do r=e.charCodeAt(d++),t=e.charCodeAt(d++),c=e.charCodeAt(d++),A=r<<16|t<<8|c,a=A>>18&63,h=A>>12&63,n=A>>6&63,o=63&A,u[l++]=i.charAt(a)+i.charAt(h)+i.charAt(n)+i.charAt(o);while(d<e.length);s=u.join("");var C=e.length%3;var decoded = (C?s.slice(0,C-3):s)+"===".slice(C||3);decoded = decoded.replace("+", "-");decoded = decoded.replace("/", "_");return decoded;} var dfUrl = SendUrlToDeadlineFunnel(location.href); var dfParentUrlValue;try {dfParentUrlValue = window.parent.location.href;} catch(err) {if(err.name === "SecurityError") {dfParentUrlValue = document.referrer;}}var dfParentUrl = (parent !== window) ? ("/" + SendUrlToDeadlineFunnel(dfParentUrlValue)) : "";(function() {var s = document.createElement("script");s.type = "text/javascript";s.async = true;s.setAttribute("data-scriptid", "dfunifiedcode");s.src ="https://a.deadlinefunnel.com/unified/reactunified.bundle.js?userIdHash=eyJpdiI6ImZMdEsyVGNtMG12cUhSUlFJV3FlSWc9PSIsInZhbHVlIjoiNkJFSHVVZ3BUMXpQUThJNVFBQ3FOQT09IiwibWFjIjoiZTgxNjk5NzkzNzNhYmY3MjcxZWQ3OWZkYmUyYjJmOGRhMTE5MDdhMTExNjYyOGU0MjBhMDUzZGU3OGFiNzIwNyJ9&pageFromUrl="+dfUrl+"&parentPageFromUrl="+dfParentUrl;var s2 = document.getElementsByTagName("script")[0];s2.parentNode.insertBefore(s, s2);})();</script><!-- End Deadline Funnel -->';
 
+    return (
       <div>
+        <div className="content" style={{ fontSize: 14, fontWeight: 'bold' }} dangerouslySetInnerHTML={{__html: deadLineFunnel }}></div>
         <HeaderComponent />
         <div className="row justify-content-center">
           <div className="col-10 col-sm-7 col-md-5 col-lg-4">
-            {/*<p className="text-center">***One-year membership only $15.99!***</p>*/}
+            {/* <p className="text-center">***One-year membership only $15.99!***</p> */}
             <h3 className="text-center">Create Account</h3>
 
             <AvForm onValidSubmit={this.handleValidSubmit}>
@@ -145,6 +147,7 @@ export default class RegistrationPage extends React.Component {
             </AvForm>
           </div>
         </div>
+
       </div>
     );
   }
