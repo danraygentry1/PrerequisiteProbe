@@ -227,13 +227,13 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Server JavaScript" />
-      <item itemvalue="Node.js.API" />
-      <item itemvalue="Node.js.Server" />
       <item itemvalue="Mocha.Coupon Code Tests.POST /.should get user object if exists" />
       <item itemvalue="Mocha.Database Transactions.Should get PT Coupon Code ID from database based on coupon code" />
       <item itemvalue="Mocha.PayPal Order" />
       <item itemvalue="Mocha.PayPal Order.Should create a single order" />
       <item itemvalue="Mocha.User Account Tests.POST /.should get user object if exists" />
+      <item itemvalue="Node.js.API" />
+      <item itemvalue="Node.js.Server" />
     </list>
     <recent_temporary>
       <list>
