@@ -396,7 +396,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                                 </div>
                             </div>
                             <div className="card col-md-3 border-0 flex align-items-center ">
-                                <div className="card-body card border-0" style={{fontSize: 16, fontWeight:"bold"}}>
+                                <div className="card-body card border-0" style={{fontSize: 20, fontWeight:"bold"}}>
                                     Filters: <JqxPanel ref={this.myPanel} theme={"bootstrap"} width={300} height={120} />
                                 </div>
                             </div>
@@ -420,7 +420,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
         this.myPanel.current!.clearcontent();
         const filterinfo = this.myGrid.current!.getfilterinformation();
         for (const filterinfoItem of filterinfo) {
-            const eventData = 'Filter Column: ' + filterinfoItem.filtercolumntext;
+            const eventData = '&nbsp &nbsp--&nbsp' + filterinfoItem.filtercolumntext;
             this.myPanel.current!.prepend('<div style="margin-top: 5px;">' + eventData + '</div>');
         }
     };
