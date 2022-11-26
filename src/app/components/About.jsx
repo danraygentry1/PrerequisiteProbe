@@ -26,10 +26,10 @@ export const AboutComponent = () => (
               Dr. Joses & Dr. Casey are both physical therapists who realized that many students struggled to get into physical therapy school and have dedicated the past 8+ years helping students get into DPT programs without wasting time or money!
             </p>
             <p>
-              We are the PT School Match team, which is a partnered resource between the Co-founders of Pre-PT Grind LLC, Joses Ngugi & Casey Coleman along with the creator of this software, Daniel Gentry!
+              Which is why teaming up with Daniel Gentry to build this resource for you was a no-brainer!
             </p>
             <p>
-              We are the PT School Match team, which is a partnered resource between the Co-founders of Pre-PT Grind LLC, Joses Ngugi & Casey Coleman along with the creator of this software, Daniel Gentry!
+              As a software developer turned pre-physical therapy student who was eventually accepted into school, Daniel despised the difficult process of finding the right school. He along with thousands of other students went through a challenging process that we don’t want you to experience.
             </p>
             <p>
               {/* eslint-disable-next-line max-len */}

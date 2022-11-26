@@ -255,7 +255,7 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
                 { text: 'Pt School Id', datafield: 'pt_school_id', filtertype: 'number', cellsalign: 'right', columngroup: 'school', width: '6%',  enabletooltips:true, hidden:true },
                 { text: 'State',  datafield: 'state', filtertype: 'checkedlist', width: '7%', columngroup: 'school', enabletooltips:true, rendered: tooltiprenderer }, //pinned: true
                 { text: 'Program Start Dt', datafield: 'program_start_dt', filtertype: 'range', cellsalign: 'right', cellsformat: 'd', columngroup: 'school', width: '9%', enabletooltips:true, hidden:true, rendered: tooltiprenderer   },
-                { text: 'Program Link',  datafield: 'program_link', columntype: 'textbox', filtertype: 'input', width: '8%', columngroup: 'school', enabletooltips:true, hidden:false, cellsrenderer: linkrenderer, rendered: tooltiprenderer }, //pinned: true
+                { text: 'Program Link',  datafield: 'program_link', columntype: 'textbox', filtertype: 'input', width: '8%', columngroup: 'school', enabletooltips:true, cellsrenderer: linkrenderer, rendered: tooltiprenderer }, //pinned: true
                 { text: 'App Deadline', datafield: 'ptcas_deadline_dt', filtertype: 'range', cellsalign: 'right', cellsformat: 'd', columngroup: 'school', width: '8%', enabletooltips:true, hidden:true, rendered: tooltiprenderer },
                 { text: 'PTCAS Participate?', datafield: 'ptcas_participate', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'school', hidden:true, width: '9%', enabletooltips:true, rendered: tooltiprenderer },
                 { text: 'Interview?', datafield: 'interview_req', columntype: 'checkbox', filtertype: 'bool', threestatecheckbox: true, columngroup: 'school',  width: '6%', enabletooltips:true, rendered: tooltiprenderer },
@@ -287,9 +287,9 @@ class Grid extends React.PureComponent<{}, IState, IMyProps> {
             ],
 
             listBoxSource: [
-                { label: 'Program Link', value: 'program_link', checked: false },
+                { label: 'Program Link', value: 'program_link', checked: true },
                 { label: 'Program Start Date', value: 'program_start_dt', checked: false },
-                { label: 'Application Deadline', value: 'ptcas_deadline_dt', checked: true },
+                { label: 'Application Deadline', value: 'ptcas_deadline_dt', checked: false },
                 { label: 'PTCAS Participating?', value: 'ptcas_participate', checked: false },
                 { label: 'Interview Required?', value: 'interview_req', checked: true },
                 { label: 'Letters of Recommendation (LOR)', value: 'lor_num', checked: true },
