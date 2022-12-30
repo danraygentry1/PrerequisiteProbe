@@ -55,7 +55,7 @@
     "jsonwebtoken": "^8.5.1",
     "less-loader": "^5.0.0",
     "merge-stream": "^2.0.0",
-    "mocha": "^6.2.2",
+    "mocha": "^10.2.0",
     "nodemon-webpack-plugin": "^4.2.2",
     "react-data-grid": "^6.1.0",
     "react-data-grid-addons": "^6.1.0",
